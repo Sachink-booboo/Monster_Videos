@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using DG.Tweening;
 using UnityEngine;
 using Random = UnityEngine.Random;
@@ -18,6 +19,8 @@ public class Enemy : PoolableObject
     public LayerMask wallLayer;
     
     public bool isDead;
+    public float rollSpeed;
+    [SerializeField] Transform childTransform;
     [SerializeField] private Animator animator;
     [SerializeField] private Transform target;
     
@@ -201,10 +204,12 @@ public class Enemy : PoolableObject
         currentState = targetHash;
     }
 
-    public void Damage(int damage = 10)
+    private bool hitByCar;
+    public void Damage(int damage = 10, bool hitbyCar = false)
     {
         currenHealth -= damage;
         PulseEmission(0.75f,0.05f);
+        hitByCar  = hitbyCar;
         if (currenHealth <= 0)
         {
             Dead();
@@ -265,13 +270,32 @@ public class Enemy : PoolableObject
         GetComponent<Collider>().enabled = false;
         controller.detectCollisions = false;
         gameObject.layer = 0;
+        gameObject.tag = "Untagged";
         isDead = true;
         PlayAnim(deathHash);
-        DOVirtual.DelayedCall(0.8f, () =>
+        if (hitByCar)
         {
-            gameObject.SetActive(false);
-        });
-        //pool.Release(this);
+            Vector3 targetDeathPos = transform.position - transform.forward * Random.Range(9,15);
+            Vector3 randomAxis = Random.onUnitSphere;
+            transform.DOJump(targetDeathPos, Random.Range(2f,3.5f), 1, 1.5f).SetEase(Ease.Linear).OnUpdate(() =>
+            {
+                childTransform.Rotate(randomAxis * rollSpeed * Time.deltaTime, Space.Self);
+            });
+            StartCoroutine(DisableObject());
+        }
+        else
+        {
+            DOVirtual.DelayedCall(0.8f, () =>
+            {
+                gameObject.SetActive(false);
+            });
+        }
+    }
+
+    IEnumerator DisableObject()
+    {
+        yield return new WaitForSeconds(5);
+        gameObject.SetActive(false);
     }
 
     public void Active(Vector3 spawnPos)

@@ -76,16 +76,16 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.W))
-        {
-            die = true;
-            PlayAnim(winHash);
-            CameraShake.instance.ChangeFov(40);
-            if (!CameraShake.instance.hook1)
-            {
-                CameraShake.instance.SwitchCamera(3);
-            }
-        }
+        // if (Input.GetKeyDown(KeyCode.W))
+        // {
+        //     die = true;
+        //     PlayAnim(winHash);
+        //     CameraShake.instance.ChangeFov(40);
+        //     if (!CameraShake.instance.hook1)
+        //     {
+        //         CameraShake.instance.SwitchCamera(3);
+        //     }
+        // }
         DetectClimbable();
         HandleMovement();
         HandleJumpAndGravity();
@@ -249,6 +249,7 @@ public class PlayerController : MonoBehaviour
     private bool die;
     public void Damage(float damage)
     {
+        return;
         if(die == true) return;
         DOTween.Kill(playerMaterial); // Prevent stacking animations
         damageEffectAnim.Play();
@@ -299,13 +300,17 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    public void JumpOutfromTrolley(Vector3 target)
+    public void JumpOutfromTrolley(Vector3 target, bool fromTrolley = false)
     {
         this.enabled = false;
         transform.DOJump(target,1.5f,1,1.25f).SetEase(Ease.Linear).OnComplete(() =>
         {
             this.enabled = true;
-            CameraShake.instance.SwitchCamera(3);
+            GetComponent<Shooting>().enabled = true;
+            if (fromTrolley)
+            {
+                CameraShake.instance.SwitchCamera(3);
+            }
         });
         transform.DORotateQuaternion(Quaternion.Euler(0,90,0), 0.25f);
         PlayAnim(jumpHash);

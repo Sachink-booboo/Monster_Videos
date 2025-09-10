@@ -69,12 +69,12 @@ public class CameraShake : MonoBehaviour
     {
         if (hook1 == true)
         {
-            Vector3 currentRotation = virtualCamera.transform.eulerAngles;
-            Vector3 targetRotation = new Vector3(60, currentRotation.y, currentRotation.z);
-            ChangeFollowOffset(new Vector3(0,13,-10));
-            virtualCamera.transform
-                .DORotate(targetRotation, 2)
-                .SetEase(Ease.InOutSine).SetDelay(2);
+            // Vector3 currentRotation = virtualCamera.transform.eulerAngles;
+            // Vector3 targetRotation = new Vector3(60, currentRotation.y, currentRotation.z);
+            // ChangeFollowOffset(new Vector3(0,13,-10));
+            // virtualCamera.transform
+            //     .DORotate(targetRotation, 2)
+            //     .SetEase(Ease.InOutSine).SetDelay(2);
         }
     }
 
@@ -126,12 +126,7 @@ public class CameraShake : MonoBehaviour
     {
         shakeSets[shakeSetIndex].noise.AmplitudeGain = shakeAmplitude;
         shakeSets[shakeSetIndex].noise.FrequencyGain = shakeFrequency;
-        print("Set shake values " + shakeSetIndex);
-
         yield return new WaitForSeconds(duration);
-
-        print(shakeSetIndex + " Reset Shake Values");
-        print(shakeSets[shakeSetIndex].defaultAmplitude + " " +  shakeSets[shakeSetIndex].defaultFrequency );
         shakeSets[shakeSetIndex].noise.AmplitudeGain = shakeSets[shakeSetIndex].defaultAmplitude;
         shakeSets[shakeSetIndex].noise.FrequencyGain = shakeSets[shakeSetIndex].defaultFrequency;
         previousShakeIndex = 0;

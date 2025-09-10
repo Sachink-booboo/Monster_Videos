@@ -1295,6 +1295,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   isDead: 0
+  rollSpeed: 500
+  childTransform: {fileID: 6148988377008897991}
   animator: {fileID: 1895764777611707155}
   target: {fileID: 0}
   isBoss: 0

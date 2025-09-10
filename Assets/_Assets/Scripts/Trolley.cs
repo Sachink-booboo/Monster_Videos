@@ -50,7 +50,7 @@ public class Trolley : MonoBehaviour
             CameraShake.instance.Shake(1,4f,4f,1);
             DOVirtual.DelayedCall(0.2f, () =>
             {
-                PlayerController.instance.JumpOutfromTrolley(targetPos.position);
+                PlayerController.instance.JumpOutfromTrolley(targetPos.position, true);
                 CameraShake.instance.SwitchCamera(2);
             });
         }
