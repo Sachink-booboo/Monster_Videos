@@ -2,7 +2,9 @@ using System;
 using UnityEngine;
 using System.Collections.Generic;
 using System.Linq;
+using System.Numerics;
 using UnityEngine.Animations.Rigging;
+using Vector3 = UnityEngine.Vector3;
 
 public class Shooting : MonoBehaviour
 {
@@ -12,11 +14,12 @@ public class Shooting : MonoBehaviour
     [SerializeField] private LayerMask enemyLayerMask;
     [SerializeField] private float rightOffset, leftOffset, forwardOffset;
     private float currentRightWeight, currentLeftWieght, currentSpineWieght;
-    private Transform rightTarget, leftTarget, centerTarget;
+    public Transform rightTarget, leftTarget, centerTarget;
     [SerializeField] private GunSet[] gunSets;
     private int currentSelectedGunSet;
     public bool hasRocketLauncher;
     [SerializeField] Bullet bulletPrefab;
+    public Camera mainCam; 
 
     [Serializable]
     public class GunSet
@@ -40,11 +43,15 @@ public class Shooting : MonoBehaviour
     private void Update()
     {
         SwitchGun();
+        
         if (hasRocketLauncher)
         {
             rightTarget = null;
             leftTarget = null;
-            DetectCenter();
+            //DetectCenter();
+            centerTarget.position = transform.position;
+            RotateTowardsMouse();
+            centerSpineTarget.position = centerTarget.position + Vector3.up * 1f + centerTarget.forward * 2.5f;
             SetSpineWeight();
         }
         else
@@ -53,7 +60,37 @@ public class Shooting : MonoBehaviour
             DetectLeftSide();
             HandelHandAim();
         }
-        CheckForShoot();
+
+        if (currentSelectedGunSet == 0)
+        {
+            CheckForShoot();
+        }
+        else
+        {
+            
+        }
+    }
+
+    [SerializeField] private float rotationSpeed;
+    void RotateTowardsMouse()
+    {
+        float horizontal = 0f;
+
+        if (Input.GetKey(KeyCode.A))
+        {
+            horizontal = -1f;
+        }
+        else if (Input.GetKey(KeyCode.D))
+        {
+            horizontal = 1f;
+        }
+        else if (Input.GetKey(KeyCode.F))
+        {
+            gunSets[currentSelectedGunSet].Guns[0].StopSpray();
+        }
+        
+        // Rotate around Y axis
+        centerTarget.Rotate(Vector3.up * horizontal * rotationSpeed * Time.deltaTime);
     }
 
     void DetectRightSide()
@@ -97,7 +134,7 @@ public class Shooting : MonoBehaviour
 
         if (centerTarget != null)
         {
-            centerSpineTarget.position = Vector3.Lerp(centerSpineTarget.position, centerTarget.position + new Vector3(0,0.5f,0), Time.deltaTime * 10);
+            centerSpineTarget.position = Vector3.Lerp(centerSpineTarget.position, centerTarget.position + new Vector3(0,1.5f,0), Time.deltaTime * 10);
         }
     }
     
@@ -199,5 +236,10 @@ public class Shooting : MonoBehaviour
             gunSets[i].EnableGuns(false);
         }
         gunSets[currentSelectedGunSet].EnableGuns(true);
+        if (gunIndex == 2)
+        {
+            centerTarget = new GameObject().transform;
+            gunSets[currentSelectedGunSet].Guns[0].StartSpray();
+        }
     }
 }

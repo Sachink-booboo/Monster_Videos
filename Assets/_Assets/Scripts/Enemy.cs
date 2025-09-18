@@ -17,6 +17,7 @@ public class Enemy : PoolableObject
     public float climbSpeed = 3f;
     public float climbCheckDistance = 1f;
     public LayerMask wallLayer;
+    public LayerMask enemyWallLayer;
     
     public bool isDead;
     public float rollSpeed;
@@ -26,6 +27,8 @@ public class Enemy : PoolableObject
     
     private readonly int idleHash = Animator.StringToHash("Idle");
     private readonly int runHash = Animator.StringToHash("Running");
+    private readonly int runHash2 = Animator.StringToHash("Running2");
+    private int finalRunHash;
     private readonly int jumpHash = Animator.StringToHash("Jump");
     private readonly int climbHash = Animator.StringToHash("Climb");
     private readonly int climbUpHash = Animator.StringToHash("ClimbUp");
@@ -44,6 +47,7 @@ public class Enemy : PoolableObject
     private float buildingTopY;
     private bool canStop;
     public bool isBoss;
+    public bool specialEnemy;
     
     private static readonly int BaseColorID = Shader.PropertyToID("_DiffuseColor");
     private static readonly int OutlineColorID = Shader.PropertyToID("_OutlineColor");
@@ -52,6 +56,10 @@ public class Enemy : PoolableObject
     private float currenHealth;
     [SerializeField] private float maxHealth;
 
+    [SerializeField] private GameObject normalZombie;
+    [SerializeField] private GameObject burningZombie;
+    [SerializeField] private GameObject headFireEffect;
+    [SerializeField] private ParticleSystem switchFireEffect;
     void Start()
     {
         currenHealth = maxHealth;
@@ -59,6 +67,8 @@ public class Enemy : PoolableObject
         target = PlayerController.instance.transform;
         currentState = idleHash;
         animator.Play(idleHash);
+        int rand = Random.Range(0, 2);
+        finalRunHash = rand == 0 ? runHash : runHash2;
         if (!isBoss)
         {
             offset = new Vector3(Random.Range(-3,3),0,Random.Range(-1,1));
@@ -79,9 +89,10 @@ public class Enemy : PoolableObject
     void DetectClimbable()
     {
         if (isClimbingUp) return; // prevent detection while climb-up animation is playing
-
+        int layerMask = (1 << LayerMask.NameToLayer("wall")) | (1 << LayerMask.NameToLayer("enemywall"));
+        
         // Forward ray to detect climbable wall
-        if (Physics.Raycast(transform.position, transform.forward, out RaycastHit hit, climbCheckDistance, wallLayer))
+        if (Physics.Raycast(transform.position, transform.forward, out RaycastHit hit, climbCheckDistance,layerMask))
         {
             isClimbing = true;
             velocity = Vector3.zero;
@@ -189,7 +200,7 @@ public class Enemy : PoolableObject
         if (!isJumping && !canStop)
         {
             if (isMoving)
-                PlayAnim(runHash);
+                PlayAnim(finalRunHash);
             else
                 PlayAnim(idleHash);
         }
@@ -215,9 +226,9 @@ public class Enemy : PoolableObject
             Dead();
         }
         UpdateHealthUi();
-        Vector3 spawnPos = transform.position + new Vector3(0, 1, 0);
+        Vector3 spawnPos = transform.position + new Vector3(0, 1f, 0);
 
-        if (isBoss)
+        if (isBoss || fireZombie)
         {
             var bloodParticle = ObjectPooling.Instance.Spawn<BloodParticle>(PoolType.yellowBlood,spawnPos);
             bloodParticle.Play(-transform.forward);
@@ -248,8 +259,8 @@ public class Enemy : PoolableObject
     public void Dead()
     {
         Vector3 spawnPos = transform.position + new Vector3(0, 1.75f, 0);
-        var coin = ObjectPooling.Instance.Spawn<BloodParticle>(PoolType.goldCoin,spawnPos);
-        coin.Play(Vector3.up);
+         var coin = ObjectPooling.Instance.Spawn<BloodParticle>(PoolType.goldCoin,spawnPos);
+         coin.Play(Vector3.up);
        // Vector3 floatingTextSpawnPos = CameraShake.instance.cam.WorldToScreenPoint(spawnPos);
        // FloatingText floatingText = ObjectPooling.Instance.Spawn<FloatingText>(PoolType.ScoreText,floatingTextSpawnPos);
         //floatingText.ShowText(1);
@@ -258,17 +269,27 @@ public class Enemy : PoolableObject
             emissionSeq.Kill();
         }
 
-        if (CameraShake.instance.hook1)
+        if (fireZombie)
         {
-            SetEmissionValue(0.75f);
+            
         }
         else
         {
-            SetPlayerBlackDead(Color.black, Color.red, 0.005f);
+            if (CameraShake.instance.hook1)
+            {
+                SetEmissionValue(0.75f);
+            }
+            else
+            {
+                SetPlayerBlackDead(Color.black, Color.red, 0.005f);
+            }
         }
         
         GetComponent<Collider>().enabled = false;
-        controller.detectCollisions = false;
+        if (controller != null)
+        {
+            controller.detectCollisions = false;
+        }
         gameObject.layer = 0;
         gameObject.tag = "Untagged";
         isDead = true;
@@ -385,5 +406,20 @@ public class Enemy : PoolableObject
     {
         this.enabled = true;
         gameObject.layer = LayerMask.NameToLayer("enemy");
+    }
+
+    private bool switched = false;
+    public bool fireZombie;
+    public void SwitchEnemy()
+    {
+        if(switched) return;
+        
+        switched = true;
+        fireZombie = true;
+        headFireEffect.SetActive(true);
+        targetRenderer.GetPropertyBlock(mpb,0);
+        mpb.SetFloat(floatPropertyName, 2);
+        targetRenderer.SetPropertyBlock(mpb,0);
+        switchFireEffect.Play();
     }
 }

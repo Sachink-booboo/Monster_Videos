@@ -5,6 +5,7 @@ public class Gun : MonoBehaviour
     public ParticleSystem bulletMuzzle;
     public Transform bulletSpawnPos;
     public float fireRate;
+    [SerializeField] private ParticleSystem waterSpray;
 
     private int[] spreadAngles = new[] {-4,-2,-1,0, 1,2,4};
 
@@ -38,5 +39,17 @@ public class Gun : MonoBehaviour
             }
         }
         bulletMuzzle.Play();
+    }
+
+    public void StartSpray()
+    {
+        bulletMuzzle.Play();
+        waterSpray.Play();
+    }
+
+    public void StopSpray()
+    {
+        bulletMuzzle.Stop();
+        waterSpray.Stop();
     }
 }

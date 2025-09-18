@@ -19,8 +19,8 @@ TagManager:
   - damager
   - player
   - car
-  - 
-  - 
+  - enemywall
+  - barrier
   - 
   - 
   - 

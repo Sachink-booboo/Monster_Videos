@@ -72,10 +72,12 @@ Material:
     m_Ints: []
     m_Floats:
     - _AmbientStrength: 0.558
+    - _ColorSaturation: 1
     - _Color_Intensity: 1
     - _Color_Saturation: 1
     - _Color_Shift: 0.919
     - _Emissive: 1
+    - _EmissiveIntensity: 1.82
     - _Emissive_Intensity: 0.85
     - _FalloffAmount: 0.616
     - _FalloffAmount_1: 0.02

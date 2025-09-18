@@ -52,8 +52,9 @@ public class UpgradeTrigger : MonoBehaviour
 
         if (!CameraShake.instance.hook1)
         {
-            EnemyActivator.Instance.EnableEnemy();
+            //EnemyActivator.Instance.EnableEnemy();
         }
+        EnemyActivator.Instance.EnableEnemy();
         //CameraShake.instance.ChangeFov(70,0.25f);
     }
 

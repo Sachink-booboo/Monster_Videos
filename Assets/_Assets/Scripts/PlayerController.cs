@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using DG.Tweening;
 using Unity.Cinemachine;
 using UnityEngine;
@@ -30,6 +31,7 @@ public class PlayerController : MonoBehaviour
     private bool isMoving;
     private bool isClimbing;
     private bool isClimbingUp;
+    private bool isSliding;
     private float buildingTopY;
 
     // Animation hashes
@@ -42,6 +44,7 @@ public class PlayerController : MonoBehaviour
     private readonly int winHash = Animator.StringToHash("Win");
     private readonly int aimIdleHash = Animator.StringToHash("AimIdle");
     private readonly int aimRunHash = Animator.StringToHash("AimRun");
+    private readonly int slideHash = Animator.StringToHash("Slide");
     private int currentState;
     private int currenActiveLayer;
 
@@ -74,18 +77,24 @@ public class PlayerController : MonoBehaviour
         //playerMaterial = skinnedMeshRenderer.material;
     }
 
+    [SerializeField] private GameObject waterSprayGun;
     void Update()
     {
-        // if (Input.GetKeyDown(KeyCode.W))
-        // {
-        //     die = true;
-        //     PlayAnim(winHash);
-        //     CameraShake.instance.ChangeFov(40);
-        //     if (!CameraShake.instance.hook1)
-        //     {
-        //         CameraShake.instance.SwitchCamera(3);
-        //     }
-        // }
+        if (Input.GetKeyDown(KeyCode.W))
+        {
+            die = true;
+            PlayAnim(winHash);
+            CameraShake.instance.ChangeFov(40);
+            if (!CameraShake.instance.hook1)
+            {
+                CameraShake.instance.SwitchCamera(3);
+            }
+
+            if (waterSprayGun != null)
+            {
+                waterSprayGun.SetActive(false);
+            }
+        }
         DetectClimbable();
         HandleMovement();
         HandleJumpAndGravity();
@@ -158,6 +167,13 @@ public class PlayerController : MonoBehaviour
 
         if (isMoving)
         {
+            if (Input.GetKeyDown(KeyCode.C))
+            {
+                // slide
+                if(slideCorutine != null) return;
+                isSliding = true;
+                slideCorutine = StartCoroutine(DisableSlide());
+            }
             controller.Move(move * moveSpeed * Time.deltaTime);
 
             Quaternion targetRotation = Quaternion.LookRotation(move, Vector3.up);
@@ -167,6 +183,14 @@ public class PlayerController : MonoBehaviour
                 rotationSpeed * Time.deltaTime * 100f
             );
         }
+    }
+
+    private Coroutine slideCorutine;
+    IEnumerator DisableSlide()
+    {
+        yield return new WaitForSeconds(1f);
+        isSliding = false;
+        slideCorutine = null;
     }
 
     // --------------------------------------
@@ -227,10 +251,21 @@ public class PlayerController : MonoBehaviour
             }
             else
             {
-                if (isMoving)
-                    PlayAnim(runHash);
+                if(isMoving)
+                {
+                    if (isSliding)
+                    {
+                        PlayAnim(slideHash);
+                    }
+                    else
+                    {
+                        PlayAnim(runHash);
+                    }
+                }
                 else
+                {
                     PlayAnim(idleHash);
+                }
             }
         }
     }
@@ -249,7 +284,7 @@ public class PlayerController : MonoBehaviour
     private bool die;
     public void Damage(float damage)
     {
-        return;
+        //return;
         if(die == true) return;
         DOTween.Kill(playerMaterial); // Prevent stacking animations
         damageEffectAnim.Play();

@@ -169,7 +169,7 @@ public class CameraShake : MonoBehaviour
         }
         else
         {
-            ChangeFov(70,1f);
+            ChangeFov(57,1f);
         }
        
     }
