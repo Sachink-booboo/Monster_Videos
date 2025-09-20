@@ -45,6 +45,7 @@ public class PlayerController : MonoBehaviour
     private readonly int aimIdleHash = Animator.StringToHash("AimIdle");
     private readonly int aimRunHash = Animator.StringToHash("AimRun");
     private readonly int slideHash = Animator.StringToHash("Slide");
+    private readonly int swingHash = Animator.StringToHash("Swing");
     private int currentState;
     private int currenActiveLayer;
 
@@ -121,6 +122,30 @@ public class PlayerController : MonoBehaviour
         }
         isClimbing = false;
     }
+
+    [Header("Zipper")]
+    public float zipSpeed;
+    public bool zipLiner;
+    [SerializeField] private ParticleSystem speedLines;
+    public void ZipLiner(Vector3 zipStartPos, Vector3 middlePos, Vector3 zipendPos)
+    {
+        zipLiner = true;
+        PlayAnim(swingHash);
+        transform.DORotateQuaternion(Quaternion.Euler(0,90,0), .2f);
+        speedLines.Play();
+        float Distance1 = Vector3.Distance(zipStartPos, middlePos);
+        float Distance2 = Vector3.Distance(zipendPos, middlePos);
+        Sequence sequence =  DOTween.Sequence();
+        sequence.Append(transform.DOMove(zipStartPos, 0.2f).SetEase(Ease.Linear));
+        sequence.Append(transform.DOMove(middlePos, Distance1/zipSpeed).SetEase(Ease.Linear));
+        sequence.Append(transform.DOMove(zipendPos, Distance2/zipSpeed).SetEase(Ease.Linear));
+        sequence.OnComplete(() =>
+        {
+            zipLiner = false;
+            speedLines.Stop();
+            CameraShake.instance.SwitchCamera(2);
+        });
+    }
     
     void TriggerClimbUp()
     {
@@ -138,7 +163,7 @@ public class PlayerController : MonoBehaviour
     // --------------------------------------
     void HandleMovement()
     {
-        if (isClimbingUp || die) return; // block input
+        if (isClimbingUp || die || zipLiner) return; // block input
 
         moveDir = new Vector3(joystick.Horizontal, 0f, joystick.Vertical).normalized;
         camForward = cam.forward;
@@ -196,7 +221,7 @@ public class PlayerController : MonoBehaviour
     // --------------------------------------
     void HandleJumpAndGravity()
     {
-        if (isClimbing || isClimbingUp) return; // disable gravity during climb or climb-up
+        if (isClimbing || isClimbingUp || zipLiner) return; // disable gravity during climb or climb-up
 
         bool isGrounded = controller.isGrounded || (velocity.y < 0 && Physics.Raycast(transform.position, Vector3.down, 0.2f));
 
@@ -224,6 +249,11 @@ public class PlayerController : MonoBehaviour
     void HandleAnimation()
     {
         if (die)
+        {
+            return;
+        }
+
+        if (zipLiner)
         {
             return;
         }

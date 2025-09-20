@@ -61,7 +61,7 @@ public class Shooting : MonoBehaviour
             HandelHandAim();
         }
 
-        if (currentSelectedGunSet == 0)
+        if (currentSelectedGunSet == 0 || currentSelectedGunSet == 1)
         {
             CheckForShoot();
         }
@@ -153,7 +153,7 @@ public class Shooting : MonoBehaviour
     
     void Shoot()
     {
-        if (leftTarget != null)
+        if (leftTarget != null && PlayerController.instance.zipLiner == false)
         {
             gunSets[currentSelectedGunSet].Guns[0].Shoot(leftTarget,currentSelectedGunSet);
         }
@@ -170,8 +170,16 @@ public class Shooting : MonoBehaviour
 
     void HandelHandAim()
     {
-        SetRightHandWeight();
-        SetLeftHandWeight();
+        if (PlayerController.instance.zipLiner)
+        {
+            SetRightHandWeight();
+            leftHandRig.weight = 0f;
+        }
+        else
+        {
+            SetRightHandWeight();
+            SetLeftHandWeight();
+        }
     }
 
     void SetRightHandWeight()
@@ -230,7 +238,7 @@ public class Shooting : MonoBehaviour
         {
             hasRocketLauncher = true;
         }
-        fireDelay = gunSets[gunIndex].Guns[0].fireRate;
+        fireDelay = gunSets[gunIndex].Guns[gunIndex].fireRate;
         for (int i = 0; i < gunSets.Length; i++)
         {
             gunSets[i].EnableGuns(false);

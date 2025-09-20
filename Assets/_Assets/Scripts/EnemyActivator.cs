@@ -10,6 +10,8 @@ public class EnemyActivator : MonoBehaviour
     [SerializeField] float minimumDistanceToActivate;
     [SerializeField] private Transform player;
 
+    [SerializeField] private Group[] lastGroups;
+
     private void Awake()
     {
         Instance = this;
@@ -18,6 +20,14 @@ public class EnemyActivator : MonoBehaviour
     private void Start()
     {
         StartCoroutine(CheckForActivateGroup());
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.V))
+        {
+            EnableLastEnemy();
+        }
     }
 
     public void EnableEnemy()
@@ -45,6 +55,14 @@ public class EnemyActivator : MonoBehaviour
                 }
             }
             yield return new WaitForSeconds(1f);
+        }
+    }
+
+    public void EnableLastEnemy()
+    {
+        for (int i = 0; i < lastGroups.Length; i++)
+        {
+            lastGroups[i].Activate();
         }
     }
 }

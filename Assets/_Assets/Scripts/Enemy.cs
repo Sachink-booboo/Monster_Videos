@@ -55,10 +55,8 @@ public class Enemy : PoolableObject
 
     private float currenHealth;
     [SerializeField] private float maxHealth;
-
-    [SerializeField] private GameObject normalZombie;
-    [SerializeField] private GameObject burningZombie;
-    [SerializeField] private GameObject headFireEffect;
+    
+    [SerializeField] private GameObject headFireEffect, rightFireEffect, leftFireEffect;
     [SerializeField] private ParticleSystem switchFireEffect;
     void Start()
     {
@@ -219,7 +217,7 @@ public class Enemy : PoolableObject
     public void Damage(int damage = 10, bool hitbyCar = false)
     {
         currenHealth -= damage;
-        PulseEmission(0.75f,0.05f);
+        PulseEmission(0.4f,0.05f);
         hitByCar  = hitbyCar;
         if (currenHealth <= 0)
         {
@@ -417,8 +415,9 @@ public class Enemy : PoolableObject
         switched = true;
         fireZombie = true;
         headFireEffect.SetActive(true);
+
         targetRenderer.GetPropertyBlock(mpb,0);
-        mpb.SetFloat(floatPropertyName, 2);
+        mpb.SetFloat(floatPropertyName, 0.2f);
         targetRenderer.SetPropertyBlock(mpb,0);
         switchFireEffect.Play();
     }
