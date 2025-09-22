@@ -46,6 +46,8 @@ public class PlayerController : MonoBehaviour
     private readonly int aimRunHash = Animator.StringToHash("AimRun");
     private readonly int slideHash = Animator.StringToHash("Slide");
     private readonly int swingHash = Animator.StringToHash("Swing");
+    private readonly int fallHash = Animator.StringToHash("Fall");
+    private readonly int driveHash = Animator.StringToHash("Drive");
     private int currentState;
     private int currenActiveLayer;
 
@@ -81,7 +83,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private GameObject waterSprayGun;
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.W))
+        /*if (Input.GetKeyDown(KeyCode.W))
         {
             die = true;
             PlayAnim(winHash);
@@ -95,7 +97,7 @@ public class PlayerController : MonoBehaviour
             {
                 waterSprayGun.SetActive(false);
             }
-        }
+        }*/
         DetectClimbable();
         HandleMovement();
         HandleJumpAndGravity();
@@ -144,6 +146,30 @@ public class PlayerController : MonoBehaviour
             zipLiner = false;
             speedLines.Stop();
             CameraShake.instance.SwitchCamera(2);
+        });
+    }
+
+    public void SwingOnCrane(Vector3 pos)
+    {
+        zipLiner = true;
+        healthBar.SetActive(false);
+        PlayAnim(swingHash);
+        transform.DOMove(pos, 0.2f);
+    }
+
+    [SerializeField] private Transform boatPos;
+    [SerializeField] private Jetski jetski;
+    public void DropPlayerToBoat()
+    {
+        transform.parent = null;
+        PlayAnim(fallHash);
+        controller.enabled = false;
+        transform.DORotateQuaternion(Quaternion.Euler(0,90,0), 0.25f);
+        transform.DOMove(boatPos.position,2f).SetEase(Ease.Linear).OnComplete(() =>
+        {
+            PlayAnim(driveHash);
+            transform.parent = jetski.transform;
+            jetski.enabled = true;
         });
     }
     
