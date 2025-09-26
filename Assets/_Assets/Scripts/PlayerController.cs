@@ -65,6 +65,7 @@ public class PlayerController : MonoBehaviour
         instance = this;
     }
 
+    [SerializeField] private GameObject lastWall;
     void Start()
     {
         controller = GetComponent<CharacterController>();
@@ -94,6 +95,10 @@ public class PlayerController : MonoBehaviour
             {
                 waterSprayGun.SetActive(false);
             }
+        }
+        if (Input.GetKeyDown(KeyCode.H))
+        {
+            lastWall.layer = 0;
         }
         DetectClimbable();
         HandleMovement();

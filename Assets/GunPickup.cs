@@ -18,6 +18,7 @@ public class GunPickup : MonoBehaviour
             particle.Play();
             DisableParticles();
             PlayerController.instance.GetComponent<Shooting>().SelectGunSet(2);
+            CameraShake.instance.ChangeFov(60);
             foreach (Barrier barrel in barrels)
             {
                 barrel.enabled = true;

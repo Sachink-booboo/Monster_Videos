@@ -696,7 +696,7 @@ MonoBehaviour:
   jumpForce: 6
   stoppingDistance: 3.5
   gravity: -15
-  climbSpeed: 3
+  climbSpeed: 5
   climbCheckDistance: 0.5
   wallLayer:
     serializedVersion: 2
@@ -710,6 +710,7 @@ MonoBehaviour:
   animator: {fileID: 8517951405050979795}
   target: {fileID: 0}
   isBoss: 0
+  specialEnemy: 0
   maxHealth: 10
   normalZombie: {fileID: 0}
   burningZombie: {fileID: 0}

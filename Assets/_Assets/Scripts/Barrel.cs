@@ -25,6 +25,6 @@ public class Barrel : MonoBehaviour
         {
             enemy.gameObject.GetComponent<Enemy>().Damage();
         }
-        CameraShake.instance.Shake(2,1.5f,0.5f);
+        CameraShake.instance.Shake(1.25f,0.7f,0.5f);
     }
 }

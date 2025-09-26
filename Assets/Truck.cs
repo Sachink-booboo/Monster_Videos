@@ -20,7 +20,7 @@ public class Truck : MonoBehaviour
         transform.DOMove(target.position, distance/speed).SetEase(Ease.Linear).OnComplete(() =>
         {
             StartCoroutine(BlastSequnce());
-            CameraShake.instance.Shake(1,3f,3f,2);
+            CameraShake.instance.Shake(1,1f,1f,2);
         });
     }
     
