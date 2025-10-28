@@ -42,7 +42,7 @@ public class Group : MonoBehaviour
             enemies[i].SpawnFromGround();
             BloodParticle spawnEffect = ObjectPooling.Instance.Spawn<BloodParticle>(PoolType.spawnEffect, enemies[i].transform.position);
             spawnEffect.Play(Vector3.up);
-            yield return new WaitForSeconds(0.5f);
+            yield return new WaitForSeconds(0.1f);
         }
     }
 }

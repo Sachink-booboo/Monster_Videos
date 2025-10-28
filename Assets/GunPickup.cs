@@ -14,10 +14,10 @@ public class GunPickup : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             GetComponent<Collider>().enabled = false;
-            gun.SetActive(false);
-            particle.Play();
-            DisableParticles();
-            PlayerController.instance.GetComponent<Shooting>().SelectGunSet(2);
+            // gun.SetActive(false);
+            // particle.Play();
+            // DisableParticles();
+            // PlayerController.instance.GetComponent<Shooting>().SelectGunSet(2);
             foreach (Barrier barrel in barrels)
             {
                 barrel.enabled = true;

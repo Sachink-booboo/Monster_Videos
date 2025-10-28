@@ -7,7 +7,8 @@ public class Gun : MonoBehaviour
     public float fireRate;
     [SerializeField] private ParticleSystem waterSpray;
 
-    private int[] spreadAngles = new[] {-2,-1,0,2,3};
+    private int[] spreadAngles = new[] {-1,1,0,2,-2};
+    [SerializeField] private int bullets;
 
     public void Shoot(Transform target, int index = 0)
     {
@@ -21,7 +22,7 @@ public class Gun : MonoBehaviour
         }
         if (index == 1)
         {
-            for (int i = 0; i < 5; i++)
+            for (int i = 0; i < bullets; i++)
             {
                 Bullet bullet = ObjectPooling.Instance.Spawn<Bullet>(PoolType.BulletRed,bulletSpawnPos.position);
                 if (bullet != null)

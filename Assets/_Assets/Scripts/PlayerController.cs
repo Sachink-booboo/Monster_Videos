@@ -365,7 +365,7 @@ public class PlayerController : MonoBehaviour
 
             if (CameraShake.instance.hook1)
             {
-                CameraShake.instance.ChangeFov(70);
+                CameraShake.instance.ChangeFov(40);
             }
             else
             {
