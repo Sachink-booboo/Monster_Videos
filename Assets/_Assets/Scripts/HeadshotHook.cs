@@ -32,13 +32,13 @@ public class HeadshotHook : MonoBehaviour
         muzzle.Play();
         CameraShake.instance.SwitchCamera(1);
         CameraShake.instance.Shake(0.25f,0.75f,0.5f,1);
-        Time.timeScale = 0.5f;
+        Time.timeScale = 0.65f;
         StartCoroutine(ActiveBullet());
     }
 
     public IEnumerator ActiveBullet()
     {
-        yield return new WaitForSeconds(0.25f);
+        yield return new WaitForSeconds(0.2f);
         bullet.SetActive(true);
         timeline.SetActive(true);
         aim.SetActive(false);

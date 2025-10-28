@@ -56,10 +56,10 @@ public class Enemy : PoolableObject
     private float currenHealth;
     [SerializeField] private float maxHealth;
 
-    [SerializeField] private GameObject normalZombie;
-    [SerializeField] private GameObject burningZombie;
+    [SerializeField] Material burningMaterial;
     [SerializeField] private GameObject headFireEffect;
     [SerializeField] private ParticleSystem switchFireEffect;
+    
     void Start()
     {
         currenHealth = maxHealth;
@@ -277,7 +277,7 @@ public class Enemy : PoolableObject
         {
             if (CameraShake.instance.hook1)
             {
-                SetEmissionValue(0.75f);
+                SetEmissionValue(0.2f);
             }
             else
             {
@@ -417,9 +417,10 @@ public class Enemy : PoolableObject
         switched = true;
         fireZombie = true;
         headFireEffect.SetActive(true);
-        targetRenderer.GetPropertyBlock(mpb,0);
-        mpb.SetFloat(floatPropertyName, 2);
-        targetRenderer.SetPropertyBlock(mpb,0);
+        targetRenderer.sharedMaterial = burningMaterial;
+        //targetRenderer.GetPropertyBlock(mpb,0);
+        //mpb.SetFloat(floatPropertyName, 2);
+        //targetRenderer.SetPropertyBlock(mpb,0);
         switchFireEffect.Play();
     }
 }

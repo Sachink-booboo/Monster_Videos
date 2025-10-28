@@ -378,7 +378,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 04dd8b801f26b3d44ba33fa40aab3880, type: 2}
+  - {fileID: 2100000, guid: 3718d7358432d1542b216643650f79f8, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -694,7 +694,7 @@ MonoBehaviour:
   speedMultiplier: 1
   rotationSpeed: 8
   jumpForce: 6
-  stoppingDistance: 3.5
+  stoppingDistance: 2.4
   gravity: -15
   climbSpeed: 5
   climbCheckDistance: 0.5
@@ -712,8 +712,7 @@ MonoBehaviour:
   isBoss: 0
   specialEnemy: 0
   maxHealth: 10
-  normalZombie: {fileID: 0}
-  burningZombie: {fileID: 0}
+  burningMaterial: {fileID: 2100000, guid: fb26699b702d11d49b36f7ce8934b047, type: 2}
   headFireEffect: {fileID: 101853620300067477}
   switchFireEffect: {fileID: 5760918527954808043}
   fillBar: {fileID: 0}

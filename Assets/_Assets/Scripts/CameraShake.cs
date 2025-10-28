@@ -165,11 +165,11 @@ public class CameraShake : MonoBehaviour
         zoomin = !zoomin;
         if (zoomin)
         {
-            ChangeFov(35,1f);
+            ChangeFov(40,1f);
         }
         else
         {
-            ChangeFov(45,1f);
+            ChangeFov(50,1f);
         }
        
     }
