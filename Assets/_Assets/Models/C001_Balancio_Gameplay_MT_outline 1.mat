@@ -170,7 +170,7 @@ Material:
     - _OutlineEnabled: 1
     - _OutlineScale: 1
     - _OutlineWidth: 2
-    - _Outline_Thickness: 0.01
+    - _Outline_Thickness: 0.003
     - _OverrideLightmapDir: 0
     - _Parallax: 0.005
     - _QueueControl: 0
