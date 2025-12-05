@@ -55,11 +55,9 @@ public class Enemy : PoolableObject
 
     private float currenHealth;
     [SerializeField] private float maxHealth;
-
-    [SerializeField] Material burningMaterial;
+    
     [SerializeField] private GameObject headFireEffect;
     [SerializeField] private ParticleSystem switchFireEffect;
-    
     void Start()
     {
         currenHealth = maxHealth;
@@ -219,7 +217,7 @@ public class Enemy : PoolableObject
     public void Damage(int damage = 10, bool hitbyCar = false)
     {
         currenHealth -= damage;
-        PulseEmission(0.75f,0.05f);
+        //PulseEmission(0.4f,0.05f);
         hitByCar  = hitbyCar;
         if (currenHealth <= 0)
         {
@@ -277,7 +275,8 @@ public class Enemy : PoolableObject
         {
             if (CameraShake.instance.hook1)
             {
-                SetEmissionValue(0.2f);
+                //SetEmissionValue(0.2f);
+                ChangeToGreyMaterial();
             }
             else
             {
@@ -306,7 +305,7 @@ public class Enemy : PoolableObject
         }
         else
         {
-            DOVirtual.DelayedCall(0.8f, () =>
+            DOVirtual.DelayedCall(3f, () =>
             {
                 gameObject.SetActive(false);
             });
@@ -324,8 +323,10 @@ public class Enemy : PoolableObject
         transform.position = spawnPos;
         gameObject.SetActive(true);
     }
-    
-    [SerializeField] private SkinnedMeshRenderer targetRenderer;
+
+    [SerializeField] private Material burnMaterialA, burnMaterialB;
+    [SerializeField] private Material greyMaterialA, greyMaterialB;
+    [SerializeField] private SkinnedMeshRenderer[] targetRenderers;
     [SerializeField] private string floatPropertyName = "_EmissiveIntensity"; // or your shader's float name
     private MaterialPropertyBlock mpb;
     private float currentValue;
@@ -375,24 +376,34 @@ public class Enemy : PoolableObject
     private void SetEmissionValue(float value)
     {
         currentValue = value;
-        targetRenderer.GetPropertyBlock(mpb,0);
+        //targetRenderer.GetPropertyBlock(mpb,0);
         mpb.SetFloat(floatPropertyName, currentValue);
-        targetRenderer.SetPropertyBlock(mpb,0);
+        //targetRenderer.SetPropertyBlock(mpb,0);
+    }
+
+    private void ChangeToGreyMaterial()
+    {
+        Material[] mats = targetRenderers[0].sharedMaterials;
+        mats[0] = greyMaterialB;
+        mats[1] = greyMaterialA;// copy of array
+        targetRenderers[0].sharedMaterials = mats;
+        targetRenderers[1].sharedMaterial = greyMaterialB;
+        targetRenderers[2].sharedMaterial = greyMaterialA;
     }
     
     public void SetPlayerBlackDead(Color baseColor, Color outlineColor, float outlineThickness)
     {
         // Update Base Material (index 0)
-        targetRenderer.GetPropertyBlock(mpb, 0);
+        // targetRenderer.GetPropertyBlock(mpb, 0);
         mpb.SetColor(BaseColorID, baseColor);
-        targetRenderer.SetPropertyBlock(mpb, 0);
+        // targetRenderer.SetPropertyBlock(mpb, 0);
 
         // Update Outline Material (index 1)
         if(isBoss) return;
-        targetRenderer.GetPropertyBlock(mpb, 1);
+        //targetRenderer.GetPropertyBlock(mpb, 1);
         mpb.SetColor(OutlineColorID, outlineColor);
         mpb.SetFloat(OutlineThicknessID, outlineThickness);
-        targetRenderer.SetPropertyBlock(mpb, 1);
+        // targetRenderer.SetPropertyBlock(mpb, 1);
     }
 
     public void SpawnFromGround()
@@ -417,10 +428,16 @@ public class Enemy : PoolableObject
         switched = true;
         fireZombie = true;
         headFireEffect.SetActive(true);
-        targetRenderer.sharedMaterial = burningMaterial;
-        //targetRenderer.GetPropertyBlock(mpb,0);
-        //mpb.SetFloat(floatPropertyName, 2);
-        //targetRenderer.SetPropertyBlock(mpb,0);
+        Material[] mats = targetRenderers[0].sharedMaterials;
+        mats[0] = burnMaterialB;
+        mats[1] = burnMaterialA;
+        targetRenderers[0].sharedMaterials = mats;
+        targetRenderers[1].sharedMaterial = burnMaterialB;
+        targetRenderers[2].sharedMaterial = burnMaterialA;
+        //targetRenderer.sharedMaterial = burnMaterial;
+        // targetRenderer.GetPropertyBlock(mpb,0);
+        // mpb.SetFloat(floatPropertyName, 0.2f);
+        // targetRenderer.SetPropertyBlock(mpb,0);
         switchFireEffect.Play();
     }
 }
