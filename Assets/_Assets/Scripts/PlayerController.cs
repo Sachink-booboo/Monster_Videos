@@ -98,6 +98,10 @@ public class PlayerController : MonoBehaviour
                 waterSprayGun.SetActive(false);
             }
         }*/
+        if (Input.GetKeyDown(KeyCode.W))
+        {
+            Damage(100);
+        }
         DetectClimbable();
         HandleMovement();
         HandleJumpAndGravity();
