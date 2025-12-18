@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using DG.Tweening;
 using UnityEngine;
 
 public class Archery : MonoBehaviour
@@ -36,6 +37,28 @@ public class Archery : MonoBehaviour
     void Update()
     {
         CheckAndShootMummy();
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+        if (enabled) return;
+        if (other.TryGetComponent(out PlayerController player))
+        {
+            this.enabled = true;
+            StartCoroutine(DropBullets());
+        }
+    }
+
+    IEnumerator DropBullets()
+    {
+        var player = PlayerController.instance;
+        for (int i = 0; i < 8; i++)
+        {
+            yield return new WaitForSeconds(0.05f);
+            var obj = player.allBullets[player.allBullets.Count - 1];
+            player.allBullets.Remove(obj);
+            obj.transform.DOJump(banditCharacter.transform.position, 2, 1, 0.3f).OnComplete(() => Destroy(obj.gameObject));
+        }
     }
 
     // -------------------------------------------------
@@ -119,85 +142,6 @@ public class Archery : MonoBehaviour
 
         yield return new WaitForSeconds(0.3f);
         ChangeState(ArcheryAnimStates.BowIdle);
-    }
-
-    // -------------------------------------------------
-    // COINS
-    // -------------------------------------------------
-    void SpawnCoinToStack(Vector3 startPos)
-    {
-        Transform targetPoint = GetNextCoinStackPoint();
-        if (targetPoint == null) return;
-
-        GameObject coin = Instantiate(coinPrefab, startPos, Quaternion.identity);
-        storedCoins.Add(coin);
-
-        Vector3 targetPos = targetPoint.position;
-        StartCoroutine(MoveCoin(coin, targetPos));
-
-        coinStackIndex++;
-    }
-
-    IEnumerator MoveCoin(GameObject coin, Vector3 target)
-    {
-        float t = 0;
-        Vector3 start = coin.transform.position;
-
-        while (t < 1)
-        {
-            t += Time.deltaTime / 0.6f;
-            coin.transform.position = Vector3.Lerp(start, target, t);
-            yield return null;
-        }
-    }
-
-    Transform GetNextCoinStackPoint()
-    {
-        if (coinStackPoints.Length == 0) return null;
-
-        int pointIndex = coinStackIndex % coinStackPoints.Length;
-        int layer = coinStackIndex / coinStackPoints.Length;
-
-        Transform basePoint = coinStackPoints[pointIndex];
-        Vector3 pos = basePoint.position;
-        pos.y += layer * coinLayerHeight;
-
-        GameObject temp = new GameObject("CoinPoint");
-        temp.transform.position = pos;
-        return temp.transform;
-    }
-
-    // -------------------------------------------------
-    // COLLECT STACK
-    // -------------------------------------------------
-    public void CollectStoredCoins(Transform player)
-    {
-        StartCoroutine(CollectRoutine(player));
-    }
-
-    IEnumerator CollectRoutine(Transform player)
-    {
-        foreach (var coin in storedCoins)
-        {
-            Vector3 start = coin.transform.position;
-            Vector3 end = player.position + Vector3.up * 2;
-
-            float t = 0;
-            while (t < 1)
-            {
-                t += Time.deltaTime / 0.4f;
-                coin.transform.position =
-                    Vector3.Lerp(start, end, t) +
-                    Vector3.up * Mathf.Sin(t * Mathf.PI) * 0.8f;
-                yield return null;
-            }
-
-            Destroy(coin);
-            // HUD.AddCoin(1);
-        }
-
-        storedCoins.Clear();
-        coinStackIndex = 0;
     }
 
     // -------------------------------------------------

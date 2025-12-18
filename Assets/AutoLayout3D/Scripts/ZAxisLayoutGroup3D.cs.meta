@@ -1,0 +1,19 @@
+fileFormatVersion: 2
+guid: e0a76ec8fbb34494da6c8b3af4a1f9ce
+timeCreated: 1560086734
+licenseType: Store
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 148554
+  packageName: Auto Layout 3D
+  packageVersion: 1.0.2
+  assetPath: Assets/AutoLayout3D/Scripts/ZAxisLayoutGroup3D.cs
+  uploadId: 342698
