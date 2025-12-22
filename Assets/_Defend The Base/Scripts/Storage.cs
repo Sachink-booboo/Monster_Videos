@@ -15,7 +15,7 @@ public class Storage : MonoBehaviour
 
     public void CollectBullet(PlayerController player)
     {
-        for (int i = 0; i < 24; i++)
+        for (int i = 0; i < 20; i++)
         {
             var temp = allBullets[0];
             allBullets.Remove(temp);

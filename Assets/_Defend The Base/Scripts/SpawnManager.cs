@@ -12,7 +12,7 @@ public class SpawnManager : MonoBehaviour
     [SerializeField] private float halfSize = 30f;
 
     [Header("References")]
-    public GameObject enemyPrefab;
+    public List<GameObject> enemyPrefab;
 
     public List<Enemy> enemyList = new List<Enemy>();
 
@@ -69,7 +69,7 @@ public class SpawnManager : MonoBehaviour
         Transform spawnPos = spawnPoints[ind];
 
 
-        GameObject enemyObj = Instantiate(enemyPrefab, spawnPos.position, Quaternion.identity);
+        GameObject enemyObj = Instantiate(enemyPrefab[Random.Range(0, enemyPrefab.Count)], spawnPos.position, Quaternion.identity);
         Enemy enemy = enemyObj.GetComponent<Enemy>();
 
         enemy.Init(targetPoints[ind]);

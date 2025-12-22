@@ -26,6 +26,8 @@ public class Archery : MonoBehaviour
 
     private float lastFireTime;
     private ArcheryAnimStates currentState;
+    public bool isSecondTower;
+    public MoneyTrigger moneyTrigger;
 
     void Start()
     {
@@ -45,6 +47,10 @@ public class Archery : MonoBehaviour
         if (other.TryGetComponent(out PlayerController player))
         {
             this.enabled = true;
+            if (isSecondTower)
+            {
+                moneyTrigger.DropMoney();
+            }
             StartCoroutine(DropBullets());
         }
     }
@@ -52,7 +58,7 @@ public class Archery : MonoBehaviour
     IEnumerator DropBullets()
     {
         var player = PlayerController.instance;
-        for (int i = 0; i < 8; i++)
+        for (int i = 0; i < 10; i++)
         {
             yield return new WaitForSeconds(0.05f);
             var obj = player.allBullets[player.allBullets.Count - 1];

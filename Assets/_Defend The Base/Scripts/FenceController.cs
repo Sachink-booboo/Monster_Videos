@@ -61,12 +61,12 @@ public class FenceController : MonoBehaviour
 
         bounceSequence
             .Append(transform.DOLocalRotate(
-                originalLocalRotation.eulerAngles + new Vector3(0, 0, tiltAngle),
+                originalLocalRotation.eulerAngles + new Vector3(tiltAngle, 0, 0),
                 tiltTime
             ).SetEase(Ease.OutQuad))
 
             .Append(transform.DOLocalRotate(
-                originalLocalRotation.eulerAngles + new Vector3(0, 0, -tiltAngle),
+                originalLocalRotation.eulerAngles + new Vector3(-tiltAngle, 0, 0),
                 tiltTime
             ).SetEase(Ease.InOutQuad))
 
