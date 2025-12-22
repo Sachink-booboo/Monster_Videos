@@ -6,6 +6,7 @@ public class CraneUpgrade : MonoBehaviour
 {
     public bool isTriggered;
     public MoneyTrigger moneyTrigger;
+   
     void OnTriggerEnter(Collider other)
     {
         if (other.TryGetComponent(out PlayerController player))
@@ -25,5 +26,7 @@ public class CraneUpgrade : MonoBehaviour
             temp.transform.DOJump(transform.position, 1, 1, 0.05f);
             yield return new WaitForSeconds(0.03f);
         }
+        GameController.instance.RestartGame();
+       
     }
 }

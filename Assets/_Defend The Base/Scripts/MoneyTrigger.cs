@@ -8,6 +8,8 @@ public class MoneyTrigger : MonoBehaviour
 {
     public List<GameObject> allMoney;
     public bool isTriggered;
+    public int index = 0;
+    public Collider unlockCollider1, unlockCollider2;
     void OnTriggerEnter(Collider other)
     {
         if (other.TryGetComponent(out PlayerController player))
@@ -28,7 +30,9 @@ public class MoneyTrigger : MonoBehaviour
         for (int i = 0; i < 32; i++)
         {
             yield return new WaitForSeconds(0.03f);
+            allMoney[i].transform.parent = transform;
             allMoney[i].transform.DOScale(new Vector3(1.5f, 2, 1.5f), 0.06f);
+            allMoney[i].transform.localEulerAngles = Vector3.zero;
         }
     }
 
@@ -45,5 +49,12 @@ public class MoneyTrigger : MonoBehaviour
             temp.transform.localEulerAngles = Vector3.zero;
             temp.transform.DOScale(new Vector3(1.5f, 2, 1.5f), 0.025f);
         }
+
+        if (index >= 1)
+        {
+            unlockCollider1.enabled = true;
+            unlockCollider2.enabled = true;
+        }
+        index++;
     }
 }
