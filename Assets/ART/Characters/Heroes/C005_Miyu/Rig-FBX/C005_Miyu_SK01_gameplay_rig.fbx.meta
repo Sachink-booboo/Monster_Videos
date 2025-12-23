@@ -1,0 +1,1275 @@
+fileFormatVersion: 2
+guid: 97012353ab35ddd4bbf6e9ad8b7e8e50
+ModelImporter:
+  serializedVersion: 22200
+  internalIDToNameTable: []
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: C005_Miyu_SK01_Rig_C005_Miyu_SK02_MT
+    second: {fileID: 2100000, guid: 204307b8b17b4f144b493bb9c996714a, type: 2}
+  materials:
+    materialImportMode: 2
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    removeConstantScaleCurves: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 3
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importPhysicalCameras: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    nodeNameCollisionStrategy: 1
+    fileIdsGeneration: 2
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    bakeAxisConversion: 0
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    optimizeBones: 1
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 1
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
+    secondaryUVPackMargin: 4
+    useFileScale: 0
+    strictVertexDataChecks: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human:
+    - boneName: C005_Miyu_SK01_Rig:Root_M
+      humanName: Hips
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: C005_Miyu_SK01_Rig:Hip_L
+      humanName: LeftUpperLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: C005_Miyu_SK01_Rig:Hip_R
+      humanName: RightUpperLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: C005_Miyu_SK01_Rig:Knee_L
+      humanName: LeftLowerLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: C005_Miyu_SK01_Rig:Knee_R
+      humanName: RightLowerLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: C005_Miyu_SK01_Rig:Ankle_L
+      humanName: LeftFoot
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: C005_Miyu_SK01_Rig:Ankle_R
+      humanName: RightFoot
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: C005_Miyu_SK01_Rig:Spine1_M
+      humanName: Spine
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: C005_Miyu_SK01_Rig:Spine2_M
+      humanName: Chest
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: C005_Miyu_SK01_Rig:Neck_M
+      humanName: Neck
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: C005_Miyu_SK01_Rig:Head_M
+      humanName: Head
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: C005_Miyu_SK01_Rig:Scapula_L
+      humanName: LeftShoulder
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: C005_Miyu_SK01_Rig:Scapula_R
+      humanName: RightShoulder
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: C005_Miyu_SK01_Rig:Shoulder_L
+      humanName: LeftUpperArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: C005_Miyu_SK01_Rig:Shoulder_R
+      humanName: RightUpperArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: C005_Miyu_SK01_Rig:Elbow_L
+      humanName: LeftLowerArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: C005_Miyu_SK01_Rig:Elbow_R
+      humanName: RightLowerArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: C005_Miyu_SK01_Rig:Wrist_L
+      humanName: LeftHand
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: C005_Miyu_SK01_Rig:Wrist_R
+      humanName: RightHand
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: C005_Miyu_SK01_Rig:Toes_L
+      humanName: LeftToes
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: C005_Miyu_SK01_Rig:Toes_R
+      humanName: RightToes
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: C005_Miyu_SK01_Rig:ThumbFinger1_L
+      humanName: Left Thumb Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: C005_Miyu_SK01_Rig:ThumbFinger2_L
+      humanName: Left Thumb Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: C005_Miyu_SK01_Rig:ThumbFinger3_L
+      humanName: Left Thumb Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: C005_Miyu_SK01_Rig:IndexFinger1_L
+      humanName: Left Index Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: C005_Miyu_SK01_Rig:IndexFinger2_L
+      humanName: Left Index Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: C005_Miyu_SK01_Rig:IndexFinger3_L
+      humanName: Left Index Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: C005_Miyu_SK01_Rig:MiddleFinger1_L
+      humanName: Left Middle Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: C005_Miyu_SK01_Rig:MiddleFinger2_L
+      humanName: Left Middle Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: C005_Miyu_SK01_Rig:MiddleFinger3_L
+      humanName: Left Middle Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: C005_Miyu_SK01_Rig:RingFinger1_L
+      humanName: Left Ring Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: C005_Miyu_SK01_Rig:RingFinger2_L
+      humanName: Left Ring Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: C005_Miyu_SK01_Rig:RingFinger3_L
+      humanName: Left Ring Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: C005_Miyu_SK01_Rig:PinkyFinger1_L
+      humanName: Left Little Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: C005_Miyu_SK01_Rig:PinkyFinger2_L
+      humanName: Left Little Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: C005_Miyu_SK01_Rig:PinkyFinger3_L
+      humanName: Left Little Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: C005_Miyu_SK01_Rig:ThumbFinger1_R
+      humanName: Right Thumb Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: C005_Miyu_SK01_Rig:ThumbFinger2_R
+      humanName: Right Thumb Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: C005_Miyu_SK01_Rig:ThumbFinger3_R
+      humanName: Right Thumb Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: C005_Miyu_SK01_Rig:IndexFinger1_R
+      humanName: Right Index Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: C005_Miyu_SK01_Rig:IndexFinger2_R
+      humanName: Right Index Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: C005_Miyu_SK01_Rig:IndexFinger3_R
+      humanName: Right Index Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: C005_Miyu_SK01_Rig:MiddleFinger1_R
+      humanName: Right Middle Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: C005_Miyu_SK01_Rig:MiddleFinger2_R
+      humanName: Right Middle Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: C005_Miyu_SK01_Rig:MiddleFinger3_R
+      humanName: Right Middle Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: C005_Miyu_SK01_Rig:RingFinger1_R
+      humanName: Right Ring Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: C005_Miyu_SK01_Rig:RingFinger2_R
+      humanName: Right Ring Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: C005_Miyu_SK01_Rig:RingFinger3_R
+      humanName: Right Ring Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: C005_Miyu_SK01_Rig:PinkyFinger1_R
+      humanName: Right Little Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: C005_Miyu_SK01_Rig:PinkyFinger2_R
+      humanName: Right Little Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: C005_Miyu_SK01_Rig:PinkyFinger3_R
+      humanName: Right Little Distal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: C005_Miyu_SK01_Rig:Chest_M
+      humanName: UpperChest
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    skeleton:
+    - name: C005_Miyu_SK01_gameplay_rig(Clone)
+      parentName: 
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: C005_Miyu_SK01_Rig:DeformationSystem
+      parentName: C005_Miyu_SK01_gameplay_rig(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.01, y: 0.01, z: 0.01}
+    - name: C005_Miyu_SK01_Rig:Root_M
+      parentName: C005_Miyu_SK01_Rig:DeformationSystem
+      position: {x: -1.9709483e-15, y: 83.79798, z: -0.017801717}
+      rotation: {x: 0.5251866, y: -0.47347546, z: -0.5251866, w: 0.47347546}
+      scale: {x: 1, y: 1, z: 1}
+    - name: C005_Miyu_SK01_Rig:Spine1_M
+      parentName: C005_Miyu_SK01_Rig:Root_M
+      position: {x: -10.703503, y: -1.7763568e-15, z: -6.1159137e-15}
+      rotation: {x: -1.1405837e-17, y: 4.1737836e-17, z: 0.04109943, w: 0.9991551}
+      scale: {x: 1, y: 1, z: 1}
+    - name: C005_Miyu_SK01_Rig:Spine2_M
+      parentName: C005_Miyu_SK01_Rig:Spine1_M
+      position: {x: -11.176115, y: -1.4432899e-15, z: -7.7736525e-15}
+      rotation: {x: -7.731527e-17, y: 8.4076576e-17, z: 0.035144538, w: 0.99938226}
+      scale: {x: 1, y: 1, z: 1}
+    - name: C005_Miyu_SK01_Rig:Chest_M
+      parentName: C005_Miyu_SK01_Rig:Spine2_M
+      position: {x: -12.249147, y: -3.1974423e-14, z: -2.2676192e-14}
+      rotation: {x: -1.6301018e-17, y: 3.4014815e-17, z: -0.008291926, w: 0.9999656}
+      scale: {x: 1, y: 1, z: 1}
+    - name: C005_Miyu_SK01_Rig:Neck_M
+      parentName: C005_Miyu_SK01_Rig:Chest_M
+      position: {x: -9.737032, y: 5.3290705e-15, z: 2.7624104e-14}
+      rotation: {x: -7.109651e-17, y: 9.044301e-17, z: -0.0028117716, w: 0.99999607}
+      scale: {x: 1, y: 1, z: 1}
+    - name: C005_Miyu_SK01_Rig:Head_M
+      parentName: C005_Miyu_SK01_Rig:Neck_M
+      position: {x: -6.628988, y: -4.2632564e-14, z: -8.613202e-15}
+      rotation: {x: -1.6115808e-17, y: 3.444893e-17, z: 0.0009270388, w: 0.9999996}
+      scale: {x: 1, y: 1, z: 1}
+    - name: C005_Miyu_SK01_Rig:HeadEnd_M
+      parentName: C005_Miyu_SK01_Rig:Head_M
+      position: {x: -36.067898, y: -6.0662586e-13, z: 2.3535283e-14}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: C005_Miyu_SK01_Rig:Glasses01_M
+      parentName: C005_Miyu_SK01_Rig:Head_M
+      position: {x: -14.831527, y: 18.93284, z: -3.1488673e-14}
+      rotation: {x: 0.00000002041024, y: 0.000000019832644, z: -0.71718186, w: 0.69688606}
+      scale: {x: 1, y: 1, z: 1}
+    - name: C005_Miyu_SK01_Rig:Glasses02_M
+      parentName: C005_Miyu_SK01_Rig:Glasses01_M
+      position: {x: -2.6097965, y: -1.7053026e-13, z: -1.3718697e-13}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: C005_Miyu_SK01_Rig:Hairbang01_R
+      parentName: C005_Miyu_SK01_Rig:Head_M
+      position: {x: -32.794353, y: 18.827852, z: -4.6453776}
+      rotation: {x: -0.23278068, y: 0.7994675, z: -0.52703124, w: -0.1700086}
+      scale: {x: 1, y: 1, z: 1}
+    - name: C005_Miyu_SK01_Rig:Hairbang02_R
+      parentName: C005_Miyu_SK01_Rig:Hairbang01_R
+      position: {x: -8.896504, y: -1.1368684e-13, z: 0}
+      rotation: {x: 0.246919, y: 0.32346994, z: -0.09278897, w: 0.908729}
+      scale: {x: 1, y: 1, z: 1}
+    - name: C005_Miyu_SK01_Rig:Hairbang03_R
+      parentName: C005_Miyu_SK01_Rig:Hairbang02_R
+      position: {x: -11.187524, y: 9.947598e-14, z: -7.993606e-15}
+      rotation: {x: 0.16534165, y: 0.035377126, z: 0.16863392, w: 0.9710681}
+      scale: {x: 1, y: 1, z: 1}
+    - name: C005_Miyu_SK01_Rig:Hairbang04_R
+      parentName: C005_Miyu_SK01_Rig:Hairbang03_R
+      position: {x: -13.91734, y: -1.4210855e-14, z: 2.4868996e-14}
+      rotation: {x: -0.29031453, y: -0.13361666, z: 0.29687342, w: 0.89985013}
+      scale: {x: 1, y: 1, z: 1}
+    - name: C005_Miyu_SK01_Rig:joint5_R
+      parentName: C005_Miyu_SK01_Rig:Hairbang04_R
+      position: {x: -13.046302, y: -3.7303494e-14, z: -2.4868996e-14}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: C005_Miyu_SK01_Rig:Hair00_R
+      parentName: C005_Miyu_SK01_Rig:Head_M
+      position: {x: -25.49178, y: -7.081962, z: -6.0128875}
+      rotation: {x: 0.17685297, y: -0.13426933, z: 0.56706065, w: 0.79318154}
+      scale: {x: 1, y: 1, z: 1}
+    - name: C005_Miyu_SK01_Rig:Hair01_R
+      parentName: C005_Miyu_SK01_Rig:Hair00_R
+      position: {x: -11.969667, y: -1.4210855e-13, z: 8.881784e-16}
+      rotation: {x: -0.018874679, y: 0.041482866, z: -0.12578245, w: 0.9910104}
+      scale: {x: 1, y: 1, z: 1}
+    - name: C005_Miyu_SK01_Rig:Hair02_R
+      parentName: C005_Miyu_SK01_Rig:Hair01_R
+      position: {x: -10.611343, y: 7.1054274e-14, z: -8.881784e-15}
+      rotation: {x: 0.04619173, y: -0.07978048, z: 0.028302887, w: 0.99533933}
+      scale: {x: 1, y: 1, z: 1}
+    - name: C005_Miyu_SK01_Rig:Hair03_R
+      parentName: C005_Miyu_SK01_Rig:Hair02_R
+      position: {x: -9.816366, y: 8.526513e-14, z: 1.7985613e-14}
+      rotation: {x: 0.07913389, y: -0.15338953, z: 0.019805618, w: 0.984793}
+      scale: {x: 1, y: 1, z: 1}
+    - name: C005_Miyu_SK01_Rig:Hair04_R
+      parentName: C005_Miyu_SK01_Rig:Hair03_R
+      position: {x: -12.409449, y: -5.684342e-14, z: -1.4210855e-14}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: C005_Miyu_SK01_Rig:Hairbang01_L
+      parentName: C005_Miyu_SK01_Rig:Head_M
+      position: {x: -32.794353, y: 18.827852, z: 4.6453776}
+      rotation: {x: -0.7994675, y: -0.23278068, z: -0.17000858, w: 0.52703124}
+      scale: {x: 1, y: 1, z: 1}
+    - name: C005_Miyu_SK01_Rig:Hairbang02_L
+      parentName: C005_Miyu_SK01_Rig:Hairbang01_L
+      position: {x: 8.896504, y: 2.842171e-14, z: -7.1054274e-15}
+      rotation: {x: 0.246919, y: 0.32346994, z: -0.09278897, w: 0.908729}
+      scale: {x: 1, y: 1, z: 1}
+    - name: C005_Miyu_SK01_Rig:Hairbang03_L
+      parentName: C005_Miyu_SK01_Rig:Hairbang02_L
+      position: {x: 11.187524, y: -1.4210855e-14, z: 3.1974423e-14}
+      rotation: {x: 0.16534165, y: 0.035377126, z: 0.16863392, w: 0.9710681}
+      scale: {x: 1, y: 1, z: 1}
+    - name: C005_Miyu_SK01_Rig:Hairbang04_L
+      parentName: C005_Miyu_SK01_Rig:Hairbang03_L
+      position: {x: 13.91734, y: 0, z: 2.4868996e-14}
+      rotation: {x: -0.29031453, y: -0.13361666, z: 0.29687342, w: 0.89985013}
+      scale: {x: 1, y: 1, z: 1}
+    - name: C005_Miyu_SK01_Rig:joint5_L
+      parentName: C005_Miyu_SK01_Rig:Hairbang04_L
+      position: {x: 13.046302, y: 3.5527137e-14, z: 2.842171e-14}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: C005_Miyu_SK01_Rig:Hair00_L
+      parentName: C005_Miyu_SK01_Rig:Head_M
+      position: {x: -25.49178, y: -7.081962, z: 6.0128875}
+      rotation: {x: -0.13426933, y: -0.17685297, z: -0.79318154, w: 0.56706065}
+      scale: {x: 1, y: 1, z: 1}
+    - name: C005_Miyu_SK01_Rig:Hair01_L
+      parentName: C005_Miyu_SK01_Rig:Hair00_L
+      position: {x: 11.969667, y: 5.684342e-14, z: 1.7763568e-15}
+      rotation: {x: -0.018874679, y: 0.041482866, z: -0.12578245, w: 0.9910104}
+      scale: {x: 1, y: 1, z: 1}
+    - name: C005_Miyu_SK01_Rig:Hair02_L
+      parentName: C005_Miyu_SK01_Rig:Hair01_L
+      position: {x: 10.611343, y: 0, z: 6.217249e-15}
+      rotation: {x: 0.04619173, y: -0.07978048, z: 0.028302887, w: 0.99533933}
+      scale: {x: 1, y: 1, z: 1}
+    - name: C005_Miyu_SK01_Rig:Hair03_L
+      parentName: C005_Miyu_SK01_Rig:Hair02_L
+      position: {x: 9.816366, y: -1.4210855e-13, z: -1.3100632e-14}
+      rotation: {x: 0.07913389, y: -0.15338953, z: 0.019805618, w: 0.984793}
+      scale: {x: 1, y: 1, z: 1}
+    - name: C005_Miyu_SK01_Rig:Hair04_L
+      parentName: C005_Miyu_SK01_Rig:Hair03_L
+      position: {x: 12.409449, y: 5.684342e-14, z: 1.0658141e-14}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: C005_Miyu_SK01_Rig:Scapula_R
+      parentName: C005_Miyu_SK01_Rig:Chest_M
+      position: {x: -4.460232, y: -1.3715475, z: -3.9751523}
+      rotation: {x: -0.058714036, y: -0.73634315, z: -0.005566488, w: 0.674033}
+      scale: {x: 1, y: 1, z: 1}
+    - name: C005_Miyu_SK01_Rig:Shoulder_R
+      parentName: C005_Miyu_SK01_Rig:Scapula_R
+      position: {x: -7.0091352, y: 0, z: -3.126388e-13}
+      rotation: {x: -0.00021485855, y: 0.0460611, z: -0.013020693, w: 0.99885374}
+      scale: {x: 1, y: 1, z: 1}
+    - name: C005_Miyu_SK01_Rig:ShoulderPart1_R
+      parentName: C005_Miyu_SK01_Rig:Shoulder_R
+      position: {x: -11.506787, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: C005_Miyu_SK01_Rig:Elbow_R
+      parentName: C005_Miyu_SK01_Rig:ShoulderPart1_R
+      position: {x: -11.506788, y: 2.4868996e-14, z: -3.6948222e-13}
+      rotation: {x: 3.3681822e-17, y: -1.7691578e-17, z: -0.06075633, w: 0.9981527}
+      scale: {x: 1, y: 1, z: 1}
+    - name: C005_Miyu_SK01_Rig:ElbowPart1_R
+      parentName: C005_Miyu_SK01_Rig:Elbow_R
+      position: {x: -8.683995, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: C005_Miyu_SK01_Rig:Wrist_R
+      parentName: C005_Miyu_SK01_Rig:ElbowPart1_R
+      position: {x: -8.683995, y: -3.5527137e-15, z: 7.1054274e-14}
+      rotation: {x: -0.0013833878, y: 0.04713578, z: -0.027518913, w: 0.9985084}
+      scale: {x: 1, y: 1, z: 1}
+    - name: C005_Miyu_SK01_Rig:MiddleFinger1_R
+      parentName: C005_Miyu_SK01_Rig:Wrist_R
+      position: {x: -15.001165, y: 1.4210855e-14, z: 1.563194e-13}
+      rotation: {x: 0.07712933, y: -0.05670983, z: 0.058738645, w: 0.9936724}
+      scale: {x: 1, y: 1, z: 1}
+    - name: C005_Miyu_SK01_Rig:MiddleFinger2_R
+      parentName: C005_Miyu_SK01_Rig:MiddleFinger1_R
+      position: {x: -4.3574147, y: -4.440892e-14, z: -3.410605e-13}
+      rotation: {x: 0.00031948433, y: 0.030245122, z: 0.00002119755, w: 0.9995425}
+      scale: {x: 1, y: 1, z: 1}
+    - name: C005_Miyu_SK01_Rig:MiddleFinger3_R
+      parentName: C005_Miyu_SK01_Rig:MiddleFinger2_R
+      position: {x: -3.1405869, y: 2.3092639e-14, z: 1.0373924e-12}
+      rotation: {x: 0.0004659372, y: 0.0174625, z: -0.0000014804785, w: 0.9998474}
+      scale: {x: 1, y: 1, z: 1}
+    - name: C005_Miyu_SK01_Rig:MiddleFinger4_R
+      parentName: C005_Miyu_SK01_Rig:MiddleFinger3_R
+      position: {x: -4.0451446, y: 3.1974423e-14, z: -3.410605e-13}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: C005_Miyu_SK01_Rig:ThumbFinger1_R
+      parentName: C005_Miyu_SK01_Rig:Wrist_R
+      position: {x: -5.3679833, y: 3.3121464, z: -0.8258566}
+      rotation: {x: -0.23352414, y: 0.036827415, z: -0.34931758, w: 0.90669036}
+      scale: {x: 1, y: 1, z: 1}
+    - name: C005_Miyu_SK01_Rig:ThumbFinger2_R
+      parentName: C005_Miyu_SK01_Rig:ThumbFinger1_R
+      position: {x: -4.8754444, y: -9.947598e-14, z: -1.1368684e-13}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: C005_Miyu_SK01_Rig:ThumbFinger3_R
+      parentName: C005_Miyu_SK01_Rig:ThumbFinger2_R
+      position: {x: -4.968547, y: -3.410605e-13, z: 4.689582e-13}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: C005_Miyu_SK01_Rig:ThumbFinger4_R
+      parentName: C005_Miyu_SK01_Rig:ThumbFinger3_R
+      position: {x: -4.873861, y: -0.0000036920999, z: -0.0000023594027}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: C005_Miyu_SK01_Rig:IndexFinger1_R
+      parentName: C005_Miyu_SK01_Rig:Wrist_R
+      position: {x: -15.001873, y: 3.1163535, z: 0.013516998}
+      rotation: {x: 0.015472139, y: -0.05885267, z: -0.057094093, w: 0.9965126}
+      scale: {x: 1, y: 1, z: 1}
+    - name: C005_Miyu_SK01_Rig:IndexFinger2_R
+      parentName: C005_Miyu_SK01_Rig:IndexFinger1_R
+      position: {x: -4.039779, y: 2.1440982e-10, z: 0.000000001017824}
+      rotation: {x: -0.000009290586, y: 0.028479192, z: -0.00032609145, w: 0.99959433}
+      scale: {x: 1, y: 1, z: 1}
+    - name: C005_Miyu_SK01_Rig:IndexFinger3_R
+      parentName: C005_Miyu_SK01_Rig:IndexFinger2_R
+      position: {x: -4.045119, y: 9.592327e-14, z: -1.7053026e-13}
+      rotation: {x: -0.014285465, y: 0.021778762, z: 0.00006204717, w: 0.99966073}
+      scale: {x: 1, y: 1, z: 1}
+    - name: C005_Miyu_SK01_Rig:IndexFinger4_R
+      parentName: C005_Miyu_SK01_Rig:IndexFinger3_R
+      position: {x: -3.9481852, y: -6.750156e-14, z: -4.2632564e-14}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: C005_Miyu_SK01_Rig:RingFinger1_R
+      parentName: C005_Miyu_SK01_Rig:Wrist_R
+      position: {x: -14.864099, y: -1.7884071, z: -0.16473608}
+      rotation: {x: 0.06569173, y: -0.033425473, z: 0.07242808, w: 0.99464643}
+      scale: {x: 1, y: 1, z: 1}
+    - name: C005_Miyu_SK01_Rig:RingFinger2_R
+      parentName: C005_Miyu_SK01_Rig:RingFinger1_R
+      position: {x: -3.892822, y: -9.592327e-14, z: -3.410605e-13}
+      rotation: {x: -0.0024701853, y: 0.001964256, z: 0.000008843071, w: 0.99999505}
+      scale: {x: 1, y: 1, z: 1}
+    - name: C005_Miyu_SK01_Rig:RingFinger3_R
+      parentName: C005_Miyu_SK01_Rig:RingFinger2_R
+      position: {x: -3.0369685, y: 7.1054274e-15, z: -2.1316282e-13}
+      rotation: {x: 0.004942379, y: 0.021715429, z: 0.00004405181, w: 0.999752}
+      scale: {x: 1, y: 1, z: 1}
+    - name: C005_Miyu_SK01_Rig:RingFinger4_R
+      parentName: C005_Miyu_SK01_Rig:RingFinger3_R
+      position: {x: -4.289787, y: -1.6342483e-13, z: 1.4210855e-14}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: C005_Miyu_SK01_Rig:PinkyFinger1_R
+      parentName: C005_Miyu_SK01_Rig:Wrist_R
+      position: {x: -13.928444, y: -4.7832174, z: -0.28222346}
+      rotation: {x: 0.08863778, y: -0.0487784, z: 0.06545664, w: 0.9927132}
+      scale: {x: 1, y: 1, z: 1}
+    - name: C005_Miyu_SK01_Rig:PinkyFinger2_R
+      parentName: C005_Miyu_SK01_Rig:PinkyFinger1_R
+      position: {x: -3.7284493, y: -1.9539925e-14, z: -3.5527137e-13}
+      rotation: {x: 0.0023619737, y: 0.033127844, z: 0.0015078284, w: 0.9994472}
+      scale: {x: 1, y: 1, z: 1}
+    - name: C005_Miyu_SK01_Rig:PinkyFinger3_R
+      parentName: C005_Miyu_SK01_Rig:PinkyFinger2_R
+      position: {x: -3.3982844, y: -4.973799e-14, z: 0}
+      rotation: {x: 0.018688185, y: 0.021011392, z: 0.00051335525, w: 0.99960446}
+      scale: {x: 1, y: 1, z: 1}
+    - name: C005_Miyu_SK01_Rig:PinkyFinger4_R
+      parentName: C005_Miyu_SK01_Rig:PinkyFinger3_R
+      position: {x: -3.757656, y: -2.1316282e-14, z: 8.100187e-13}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: C005_Miyu_SK01_Rig:WingUp00_R
+      parentName: C005_Miyu_SK01_Rig:Chest_M
+      position: {x: 0.041349467, y: -5.9879236, z: -0.68739146}
+      rotation: {x: -0.21256234, y: 0.66081965, z: -0.6088136, w: -0.38403213}
+      scale: {x: 1, y: 1, z: 1}
+    - name: C005_Miyu_SK01_Rig:WinUp01_R
+      parentName: C005_Miyu_SK01_Rig:WingUp00_R
+      position: {x: -9.038235, y: -8.526513e-14, z: -3.5527137e-15}
+      rotation: {x: 0.0013949344, y: -0.0047158953, z: 0.04803654, w: 0.9988335}
+      scale: {x: 1, y: 1, z: 1}
+    - name: C005_Miyu_SK01_Rig:WingUp02_R
+      parentName: C005_Miyu_SK01_Rig:WinUp01_R
+      position: {x: -11.015867, y: 8.526513e-14, z: 0}
+      rotation: {x: 0.044743285, y: 0.08824845, z: -0.10112339, w: 0.9899416}
+      scale: {x: 1, y: 1, z: 1}
+    - name: C005_Miyu_SK01_Rig:WingUp03_R
+      parentName: C005_Miyu_SK01_Rig:WingUp02_R
+      position: {x: -11.420537, y: -7.1054274e-14, z: -1.4210855e-14}
+      rotation: {x: 0.5979933, y: -0.015531063, z: -0.19970372, w: 0.77606785}
+      scale: {x: 1, y: 1, z: 1}
+    - name: C005_Miyu_SK01_Rig:WingUp04_R
+      parentName: C005_Miyu_SK01_Rig:WingUp03_R
+      position: {x: -9.246094, y: 3.5527137e-14, z: 0}
+      rotation: {x: 0.33986774, y: -0.13132794, z: -0.002856651, w: 0.93125445}
+      scale: {x: 1, y: 1, z: 1}
+    - name: C005_Miyu_SK01_Rig:WingUp05_R
+      parentName: C005_Miyu_SK01_Rig:WingUp04_R
+      position: {x: -8.553732, y: 1.0658141e-14, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: C005_Miyu_SK01_Rig:Scapula_L
+      parentName: C005_Miyu_SK01_Rig:Chest_M
+      position: {x: -4.460232, y: -1.3715475, z: 3.9751523}
+      rotation: {x: 0.73634315, y: -0.05871403, z: 0.674033, w: 0.005566495}
+      scale: {x: 1, y: 1, z: 1}
+    - name: C005_Miyu_SK01_Rig:Shoulder_L
+      parentName: C005_Miyu_SK01_Rig:Scapula_L
+      position: {x: 7.0091352, y: 1.0658141e-14, z: 1.8474111e-13}
+      rotation: {x: -0.00021485855, y: 0.0460611, z: -0.013020693, w: 0.99885374}
+      scale: {x: 1, y: 1, z: 1}
+    - name: C005_Miyu_SK01_Rig:ShoulderPart1_L
+      parentName: C005_Miyu_SK01_Rig:Shoulder_L
+      position: {x: 11.506787, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: C005_Miyu_SK01_Rig:Elbow_L
+      parentName: C005_Miyu_SK01_Rig:ShoulderPart1_L
+      position: {x: 11.506788, y: -1.4210855e-14, z: 2.9842795e-13}
+      rotation: {x: 0.000000014654827, y: -8.920213e-10, z: -0.06075633, w: 0.9981527}
+      scale: {x: 1, y: 1, z: 1}
+    - name: C005_Miyu_SK01_Rig:ElbowPart1_L
+      parentName: C005_Miyu_SK01_Rig:Elbow_L
+      position: {x: 8.683995, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: C005_Miyu_SK01_Rig:Wrist_L
+      parentName: C005_Miyu_SK01_Rig:ElbowPart1_L
+      position: {x: 8.683995, y: -3.5527137e-15, z: -0.00000006231609}
+      rotation: {x: -0.0013833878, y: 0.047135785, z: -0.027518913, w: 0.9985084}
+      scale: {x: 1, y: 1, z: 1}
+    - name: C005_Miyu_SK01_Rig:MiddleFinger1_L
+      parentName: C005_Miyu_SK01_Rig:Wrist_L
+      position: {x: 15.001165, y: -1.5987212e-14, z: -1.2789769e-13}
+      rotation: {x: 0.07712928, y: -0.05670982, z: 0.058738638, w: 0.99367243}
+      scale: {x: 1, y: 1, z: 1}
+    - name: C005_Miyu_SK01_Rig:MiddleFinger2_L
+      parentName: C005_Miyu_SK01_Rig:MiddleFinger1_L
+      position: {x: 4.3574147, y: 4.7961635e-14, z: 3.126388e-13}
+      rotation: {x: 0.00031948433, y: 0.030245122, z: 0.00002119755, w: 0.9995425}
+      scale: {x: 1, y: 1, z: 1}
+    - name: C005_Miyu_SK01_Rig:MiddleFinger3_L
+      parentName: C005_Miyu_SK01_Rig:MiddleFinger2_L
+      position: {x: 3.1405869, y: -1.5987212e-14, z: -9.80549e-13}
+      rotation: {x: 0.0004659372, y: 0.0174625, z: -0.0000014804785, w: 0.9998474}
+      scale: {x: 1, y: 1, z: 1}
+    - name: C005_Miyu_SK01_Rig:MiddleFinger4_L
+      parentName: C005_Miyu_SK01_Rig:MiddleFinger3_L
+      position: {x: 4.0451446, y: -2.6645353e-14, z: 3.5527137e-13}
+      rotation: {x: 0.000000010536712, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: C005_Miyu_SK01_Rig:ThumbFinger1_L
+      parentName: C005_Miyu_SK01_Rig:Wrist_L
+      position: {x: 5.3679833, y: -3.3121464, z: 0.8258566}
+      rotation: {x: -0.23352428, y: 0.03682745, z: -0.34931758, w: 0.9066904}
+      scale: {x: 1, y: 1, z: 1}
+    - name: C005_Miyu_SK01_Rig:ThumbFinger2_L
+      parentName: C005_Miyu_SK01_Rig:ThumbFinger1_L
+      position: {x: 4.8754444, y: 1.2789769e-13, z: 8.526513e-14}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: C005_Miyu_SK01_Rig:ThumbFinger3_L
+      parentName: C005_Miyu_SK01_Rig:ThumbFinger2_L
+      position: {x: 4.968547, y: 2.842171e-13, z: -4.689582e-13}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: C005_Miyu_SK01_Rig:ThumbFinger4_L
+      parentName: C005_Miyu_SK01_Rig:ThumbFinger3_L
+      position: {x: 4.873861, y: 0.0000036920999, z: 0.000002359403}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: C005_Miyu_SK01_Rig:IndexFinger1_L
+      parentName: C005_Miyu_SK01_Rig:Wrist_L
+      position: {x: 15.001873, y: -3.1163535, z: -0.013516998}
+      rotation: {x: 0.015472153, y: -0.058852542, z: -0.057093777, w: 0.9965126}
+      scale: {x: 1, y: 1, z: 1}
+    - name: C005_Miyu_SK01_Rig:IndexFinger2_L
+      parentName: C005_Miyu_SK01_Rig:IndexFinger1_L
+      position: {x: 4.039779, y: -2.1441693e-10, z: -0.000000001017824}
+      rotation: {x: -0.000009290586, y: 0.028479192, z: -0.00032609145, w: 0.99959433}
+      scale: {x: 1, y: 1, z: 1}
+    - name: C005_Miyu_SK01_Rig:IndexFinger3_L
+      parentName: C005_Miyu_SK01_Rig:IndexFinger2_L
+      position: {x: 4.045119, y: -1.030287e-13, z: 1.7053026e-13}
+      rotation: {x: -0.014285465, y: 0.021778762, z: 0.00006204717, w: 0.99966073}
+      scale: {x: 1, y: 1, z: 1}
+    - name: C005_Miyu_SK01_Rig:IndexFinger4_L
+      parentName: C005_Miyu_SK01_Rig:IndexFinger3_L
+      position: {x: 3.9481852, y: 6.750156e-14, z: 5.684342e-14}
+      rotation: {x: 0.000000018250121, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: C005_Miyu_SK01_Rig:RingFinger1_L
+      parentName: C005_Miyu_SK01_Rig:Wrist_L
+      position: {x: 14.864099, y: 1.7884071, z: 0.16473608}
+      rotation: {x: 0.06569179, y: -0.03342537, z: 0.072428115, w: 0.9946465}
+      scale: {x: 1, y: 1, z: 1}
+    - name: C005_Miyu_SK01_Rig:RingFinger2_L
+      parentName: C005_Miyu_SK01_Rig:RingFinger1_L
+      position: {x: 3.892822, y: 9.2370556e-14, z: 3.6948222e-13}
+      rotation: {x: -0.0024701853, y: 0.001964256, z: 0.000008843071, w: 0.99999505}
+      scale: {x: 1, y: 1, z: 1}
+    - name: C005_Miyu_SK01_Rig:RingFinger3_L
+      parentName: C005_Miyu_SK01_Rig:RingFinger2_L
+      position: {x: 3.0369685, y: -1.0658141e-14, z: 1.8474111e-13}
+      rotation: {x: 0.004942379, y: 0.021715429, z: 0.00004405181, w: 0.999752}
+      scale: {x: 1, y: 1, z: 1}
+    - name: C005_Miyu_SK01_Rig:RingFinger4_L
+      parentName: C005_Miyu_SK01_Rig:RingFinger3_L
+      position: {x: 4.289787, y: 1.563194e-13, z: -1.4210855e-14}
+      rotation: {x: 0.000000010536712, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: C005_Miyu_SK01_Rig:PinkyFinger1_L
+      parentName: C005_Miyu_SK01_Rig:Wrist_L
+      position: {x: 13.928444, y: 4.7832174, z: 0.28222346}
+      rotation: {x: 0.088637665, y: -0.048779342, z: 0.06545731, w: 0.9927131}
+      scale: {x: 1, y: 1, z: 1}
+    - name: C005_Miyu_SK01_Rig:PinkyFinger2_L
+      parentName: C005_Miyu_SK01_Rig:PinkyFinger1_L
+      position: {x: 3.7284493, y: 1.2434498e-14, z: 3.2684966e-13}
+      rotation: {x: 0.0023619737, y: 0.033127844, z: 0.0015078284, w: 0.9994472}
+      scale: {x: 1, y: 1, z: 1}
+    - name: C005_Miyu_SK01_Rig:PinkyFinger3_L
+      parentName: C005_Miyu_SK01_Rig:PinkyFinger2_L
+      position: {x: 3.3982844, y: 4.973799e-14, z: -1.4210855e-14}
+      rotation: {x: 0.018688185, y: 0.021011392, z: 0.00051335525, w: 0.99960446}
+      scale: {x: 1, y: 1, z: 1}
+    - name: C005_Miyu_SK01_Rig:PinkyFinger4_L
+      parentName: C005_Miyu_SK01_Rig:PinkyFinger3_L
+      position: {x: 3.757656, y: 2.1316282e-14, z: -8.100187e-13}
+      rotation: {x: 0.000000014901161, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: C005_Miyu_SK01_Rig:WingUp00_L
+      parentName: C005_Miyu_SK01_Rig:Chest_M
+      position: {x: 0.041349467, y: -5.9879236, z: 0.68739146}
+      rotation: {x: -0.66081965, y: -0.21256234, z: -0.38403213, w: 0.6088136}
+      scale: {x: 1, y: 1, z: 1}
+    - name: C005_Miyu_SK01_Rig:WinUp01_L
+      parentName: C005_Miyu_SK01_Rig:WingUp00_L
+      position: {x: 9.038235, y: 8.526513e-14, z: -3.5527137e-15}
+      rotation: {x: 0.0013949344, y: -0.0047158953, z: 0.04803654, w: 0.9988335}
+      scale: {x: 1, y: 1, z: 1}
+    - name: C005_Miyu_SK01_Rig:WingUp02_L
+      parentName: C005_Miyu_SK01_Rig:WinUp01_L
+      position: {x: 11.015867, y: -5.684342e-14, z: -3.1974423e-14}
+      rotation: {x: 0.044743285, y: 0.08824845, z: -0.10112339, w: 0.9899416}
+      scale: {x: 1, y: 1, z: 1}
+    - name: C005_Miyu_SK01_Rig:WingUp03_L
+      parentName: C005_Miyu_SK01_Rig:WingUp02_L
+      position: {x: 11.420537, y: 7.1054274e-14, z: 2.1316282e-14}
+      rotation: {x: 0.5979933, y: -0.015531063, z: -0.19970372, w: 0.77606785}
+      scale: {x: 1, y: 1, z: 1}
+    - name: C005_Miyu_SK01_Rig:WingUp04_L
+      parentName: C005_Miyu_SK01_Rig:WingUp03_L
+      position: {x: 9.246094, y: -7.1054274e-15, z: 7.1054274e-14}
+      rotation: {x: 0.33986774, y: -0.13132794, z: -0.002856651, w: 0.93125445}
+      scale: {x: 1, y: 1, z: 1}
+    - name: C005_Miyu_SK01_Rig:WingUp05_L
+      parentName: C005_Miyu_SK01_Rig:WingUp04_L
+      position: {x: 8.553732, y: -8.881784e-15, z: -1.4210855e-14}
+      rotation: {x: 0.000000019712383, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: C005_Miyu_SK01_Rig:WingMid00_R
+      parentName: C005_Miyu_SK01_Rig:Spine1_M
+      position: {x: -1.7792478, y: -6.020911, z: -1.344709}
+      rotation: {x: -0.20505776, y: 0.63233346, z: -0.5958723, w: -0.4506018}
+      scale: {x: 1, y: 1, z: 1}
+    - name: C005_Miyu_SK01_Rig:WingMid01_R
+      parentName: C005_Miyu_SK01_Rig:WingMid00_R
+      position: {x: -16.061907, y: -1.9895197e-13, z: -6.3948846e-14}
+      rotation: {x: -0.0492436, y: 0.080672234, z: -0.114136845, w: 0.988959}
+      scale: {x: 1, y: 1, z: 1}
+    - name: C005_Miyu_SK01_Rig:WingMid02_R
+      parentName: C005_Miyu_SK01_Rig:WingMid01_R
+      position: {x: -22.627333, y: 7.1054274e-14, z: 3.5527137e-14}
+      rotation: {x: -0.111072406, y: 0.107155986, z: -0.065327935, w: 0.9858564}
+      scale: {x: 1, y: 1, z: 1}
+    - name: C005_Miyu_SK01_Rig:WingMid03_R
+      parentName: C005_Miyu_SK01_Rig:WingMid02_R
+      position: {x: -20.60798, y: -4.2632564e-14, z: 7.1054274e-14}
+      rotation: {x: 0.9854914, y: -0.077938825, z: -0.15067272, w: 0.0054781768}
+      scale: {x: 1, y: 1, z: 1}
+    - name: C005_Miyu_SK01_Rig:WingMid04_R
+      parentName: C005_Miyu_SK01_Rig:WingMid03_R
+      position: {x: -17.893728, y: -2.1316282e-14, z: 1.0658141e-13}
+      rotation: {x: 0.15472704, y: -0.080666155, z: 0.16867934, w: 0.970103}
+      scale: {x: 1, y: 1, z: 1}
+    - name: C005_Miyu_SK01_Rig:WingMid05_R
+      parentName: C005_Miyu_SK01_Rig:WingMid04_R
+      position: {x: -13.023119, y: -4.2632564e-14, z: 7.1054274e-15}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: C005_Miyu_SK01_Rig:WingDown00_R
+      parentName: C005_Miyu_SK01_Rig:Spine1_M
+      position: {x: 0.5842307, y: -7.2730236, z: -2.04383}
+      rotation: {x: -0.2584824, y: 0.65453327, z: -0.6132838, w: -0.35868657}
+      scale: {x: 1, y: 1, z: 1}
+    - name: C005_Miyu_SK01_Rig:WingDown01_R
+      parentName: C005_Miyu_SK01_Rig:WingDown00_R
+      position: {x: -14.577411, y: 2.842171e-14, z: 3.5527137e-15}
+      rotation: {x: -0.0112484535, y: 0.066458315, z: 0.19657582, w: 0.9781691}
+      scale: {x: 1, y: 1, z: 1}
+    - name: C005_Miyu_SK01_Rig:WingDown02_R
+      parentName: C005_Miyu_SK01_Rig:WingDown01_R
+      position: {x: -23.089975, y: -6.3948846e-14, z: 0}
+      rotation: {x: 0.051478967, y: 0.1715926, z: 0.12346973, w: 0.97604364}
+      scale: {x: 1, y: 1, z: 1}
+    - name: C005_Miyu_SK01_Rig:WingDown03_R
+      parentName: C005_Miyu_SK01_Rig:WingDown02_R
+      position: {x: -23.2227, y: 7.1054274e-15, z: 2.1316282e-14}
+      rotation: {x: 0.15829116, y: 0.14334509, z: 0.039499562, w: 0.97613317}
+      scale: {x: 1, y: 1, z: 1}
+    - name: C005_Miyu_SK01_Rig:WingDown04_R
+      parentName: C005_Miyu_SK01_Rig:WingDown03_R
+      position: {x: -17.277054, y: -2.842171e-14, z: -3.1974423e-14}
+      rotation: {x: -0.07367155, y: 0.13808928, z: 0.013875704, w: 0.9875785}
+      scale: {x: 1, y: 1, z: 1}
+    - name: C005_Miyu_SK01_Rig:WingDown05_R
+      parentName: C005_Miyu_SK01_Rig:WingDown04_R
+      position: {x: -12.805065, y: 2.1316282e-14, z: 7.1054274e-15}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: C005_Miyu_SK01_Rig:WingMid00_L
+      parentName: C005_Miyu_SK01_Rig:Spine1_M
+      position: {x: -1.7792478, y: -6.020911, z: 1.344709}
+      rotation: {x: -0.63233346, y: -0.20505776, z: -0.4506018, w: 0.5958723}
+      scale: {x: 1, y: 1, z: 1}
+    - name: C005_Miyu_SK01_Rig:WingMid01_L
+      parentName: C005_Miyu_SK01_Rig:WingMid00_L
+      position: {x: 16.061907, y: 1.4210855e-13, z: 4.2632564e-14}
+      rotation: {x: -0.0492436, y: 0.080672234, z: -0.114136845, w: 0.988959}
+      scale: {x: 1, y: 1, z: 1}
+    - name: C005_Miyu_SK01_Rig:WingMid02_L
+      parentName: C005_Miyu_SK01_Rig:WingMid01_L
+      position: {x: 22.627333, y: -2.1316282e-13, z: -1.4210855e-13}
+      rotation: {x: -0.111072406, y: 0.107155986, z: -0.065327935, w: 0.9858564}
+      scale: {x: 1, y: 1, z: 1}
+    - name: C005_Miyu_SK01_Rig:WingMid03_L
+      parentName: C005_Miyu_SK01_Rig:WingMid02_L
+      position: {x: 20.60798, y: 3.5527137e-14, z: -2.842171e-14}
+      rotation: {x: 0.9854914, y: -0.077938825, z: -0.15067272, w: 0.0054781768}
+      scale: {x: 1, y: 1, z: 1}
+    - name: C005_Miyu_SK01_Rig:WingMid04_L
+      parentName: C005_Miyu_SK01_Rig:WingMid03_L
+      position: {x: 17.893728, y: 7.1054274e-15, z: -9.2370556e-14}
+      rotation: {x: 0.15472704, y: -0.080666155, z: 0.16867934, w: 0.970103}
+      scale: {x: 1, y: 1, z: 1}
+    - name: C005_Miyu_SK01_Rig:WingMid05_L
+      parentName: C005_Miyu_SK01_Rig:WingMid04_L
+      position: {x: 13.023119, y: 1.7763568e-14, z: 1.7763568e-15}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: C005_Miyu_SK01_Rig:WingDown00_L
+      parentName: C005_Miyu_SK01_Rig:Spine1_M
+      position: {x: 0.5842307, y: -7.2730236, z: 2.04383}
+      rotation: {x: -0.65453327, y: -0.2584824, z: -0.35868657, w: 0.6132838}
+      scale: {x: 1, y: 1, z: 1}
+    - name: C005_Miyu_SK01_Rig:WingDown01_L
+      parentName: C005_Miyu_SK01_Rig:WingDown00_L
+      position: {x: 14.577411, y: -8.526513e-14, z: -1.7763568e-14}
+      rotation: {x: -0.0112484535, y: 0.066458315, z: 0.19657582, w: 0.9781691}
+      scale: {x: 1, y: 1, z: 1}
+    - name: C005_Miyu_SK01_Rig:WingDown02_L
+      parentName: C005_Miyu_SK01_Rig:WingDown01_L
+      position: {x: 23.089975, y: 4.2632564e-14, z: -3.5527137e-14}
+      rotation: {x: 0.051478967, y: 0.1715926, z: 0.12346973, w: 0.97604364}
+      scale: {x: 1, y: 1, z: 1}
+    - name: C005_Miyu_SK01_Rig:WingDown03_L
+      parentName: C005_Miyu_SK01_Rig:WingDown02_L
+      position: {x: 23.2227, y: -1.4210855e-14, z: -2.842171e-14}
+      rotation: {x: 0.15829116, y: 0.14334509, z: 0.039499562, w: 0.97613317}
+      scale: {x: 1, y: 1, z: 1}
+    - name: C005_Miyu_SK01_Rig:WingDown04_L
+      parentName: C005_Miyu_SK01_Rig:WingDown03_L
+      position: {x: 17.277054, y: 2.842171e-14, z: 2.4868996e-14}
+      rotation: {x: -0.07367155, y: 0.13808928, z: 0.013875704, w: 0.9875785}
+      scale: {x: 1, y: 1, z: 1}
+    - name: C005_Miyu_SK01_Rig:WingDown05_L
+      parentName: C005_Miyu_SK01_Rig:WingDown04_L
+      position: {x: 12.805065, y: -1.4210855e-14, z: -1.4210855e-14}
+      rotation: {x: 0.000000014901161, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: C005_Miyu_SK01_Rig:Hip_R
+      parentName: C005_Miyu_SK01_Rig:Root_M
+      position: {x: 3.6112309, y: 0.4910656, z: -6.9850383}
+      rotation: {x: -0.07386079, y: 0.9962138, z: -0.041230623, w: -0.020066127}
+      scale: {x: 1, y: 1, z: 1}
+    - name: C005_Miyu_SK01_Rig:HipPart1_R
+      parentName: C005_Miyu_SK01_Rig:Hip_R
+      position: {x: -17.758114, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: C005_Miyu_SK01_Rig:Knee_R
+      parentName: C005_Miyu_SK01_Rig:HipPart1_R
+      position: {x: -17.758114, y: -5.4178884e-14, z: 0.000000007521312}
+      rotation: {x: 7.9893716e-17, y: -3.2168826e-17, z: 0.098716855, w: 0.9951156}
+      scale: {x: 1, y: 1, z: 1}
+    - name: C005_Miyu_SK01_Rig:KneePart1_R
+      parentName: C005_Miyu_SK01_Rig:Knee_R
+      position: {x: -17.335344, y: 0, z: 0}
+      rotation: {x: 3.1404477e-15, y: 0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: C005_Miyu_SK01_Rig:Ankle_R
+      parentName: C005_Miyu_SK01_Rig:KneePart1_R
+      position: {x: -17.335344, y: 9.05942e-14, z: 0.0000000071991977}
+      rotation: {x: -0.04792896, y: -0.017655363, z: -0.076554775, w: 0.99575627}
+      scale: {x: 1, y: 1, z: 1}
+    - name: C005_Miyu_SK01_Rig:Toes_R
+      parentName: C005_Miyu_SK01_Rig:Ankle_R
+      position: {x: -10.466498, y: 13.958898, z: 0.00000027615627}
+      rotation: {x: 0.0041165277, y: 0.0041165277, z: -0.7070948, w: 0.7070948}
+      scale: {x: 1, y: 1, z: 1}
+    - name: C005_Miyu_SK01_Rig:ToesEnd_R
+      parentName: C005_Miyu_SK01_Rig:Toes_R
+      position: {x: -7.498512, y: 9.256844e-14, z: 0.000022472328}
+      rotation: {x: -0.000000013175625, y: 0.0000014984524, z: 1.9743047e-14, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: C005_Miyu_SK01_Rig:Hip_L
+      parentName: C005_Miyu_SK01_Rig:Root_M
+      position: {x: 3.6112309, y: 0.4910656, z: 6.9850383}
+      rotation: {x: 0.9962138, y: 0.07386079, z: 0.020066127, w: -0.041230623}
+      scale: {x: 1, y: 1, z: 1}
+    - name: C005_Miyu_SK01_Rig:HipPart1_L
+      parentName: C005_Miyu_SK01_Rig:Hip_L
+      position: {x: 17.758114, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: C005_Miyu_SK01_Rig:Knee_L
+      parentName: C005_Miyu_SK01_Rig:HipPart1_L
+      position: {x: 17.758114, y: 8.881784e-15, z: -0.000000007521349}
+      rotation: {x: 7.9893716e-17, y: -3.2168826e-17, z: 0.098716855, w: 0.9951156}
+      scale: {x: 1, y: 1, z: 1}
+    - name: C005_Miyu_SK01_Rig:KneePart1_L
+      parentName: C005_Miyu_SK01_Rig:Knee_L
+      position: {x: 17.335344, y: 0, z: 0}
+      rotation: {x: 3.1997402e-15, y: 0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: C005_Miyu_SK01_Rig:Ankle_L
+      parentName: C005_Miyu_SK01_Rig:KneePart1_L
+      position: {x: 17.335344, y: -4.1744386e-14, z: -0.000000008038498}
+      rotation: {x: -0.04792896, y: -0.017655363, z: -0.076554775, w: 0.99575627}
+      scale: {x: 1, y: 1, z: 1}
+    - name: C005_Miyu_SK01_Rig:Toes_L
+      parentName: C005_Miyu_SK01_Rig:Ankle_L
+      position: {x: 10.466498, y: -13.958898, z: -0.00000029130706}
+      rotation: {x: 0.0041175866, y: 0.0041175866, z: -0.7070948, w: 0.7070948}
+      scale: {x: 1, y: 1, z: 1}
+    - name: C005_Miyu_SK01_Rig:ToesEnd_L
+      parentName: C005_Miyu_SK01_Rig:Toes_L
+      position: {x: 7.498512, y: -9.348674e-14, z: 0.0000000017374173}
+      rotation: {x: -2.70822e-10, y: 0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: C005_Miyu_SK01_Rig:Geometry
+      parentName: C005_Miyu_SK01_gameplay_rig(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: C005_Miyu_SK01_Rig:Miyu_SK01_geo
+      parentName: C005_Miyu_SK01_Rig:Geometry
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: C005_Miyu_SK01_Rig:C005_Miyu_SK03_Bracelet_mesh
+      parentName: C005_Miyu_SK01_Rig:Miyu_SK01_geo
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: C005_Miyu_SK01_Rig:C005_Miyu_SK03_CentralBelt_mesh
+      parentName: C005_Miyu_SK01_Rig:Miyu_SK01_geo
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: C005_Miyu_SK01_Rig:C005_Miyu_SK03_Body_mesh
+      parentName: C005_Miyu_SK01_Rig:Miyu_SK01_geo
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: C005_Miyu_SK01_Rig:C005_Miyu_SK03_Eyebrows_mesh
+      parentName: C005_Miyu_SK01_Rig:Miyu_SK01_geo
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: C005_Miyu_SK01_Rig:C005_Miyu_SK03_Eyelashes_mesh
+      parentName: C005_Miyu_SK01_Rig:Miyu_SK01_geo
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: C005_Miyu_SK01_Rig:C005_Miyu_SK03_HairBangs_mesh
+      parentName: C005_Miyu_SK01_Rig:Miyu_SK01_geo
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: C005_Miyu_SK01_Rig:C005_Miyu_SK03_Hair_mesh
+      parentName: C005_Miyu_SK01_Rig:Miyu_SK01_geo
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: C005_Miyu_SK01_Rig:C005_Miyu_SK03_Head_mesh
+      parentName: C005_Miyu_SK01_Rig:Miyu_SK01_geo
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: C005_Miyu_SK01_Rig:C005_Miyu_SK03_Mask_mesh
+      parentName: C005_Miyu_SK01_Rig:Miyu_SK01_geo
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: C005_Miyu_SK01_Rig:C005_Miyu_SK03_Scarf01_mesh
+      parentName: C005_Miyu_SK01_Rig:Miyu_SK01_geo
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: C005_Miyu_SK01_Rig:C005_Miyu_SK03_Wings01_mesh
+      parentName: C005_Miyu_SK01_Rig:Miyu_SK01_geo
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: C005_Miyu_SK01_Rig:C005_Miyu_SK03_eyeL_mesh
+      parentName: C005_Miyu_SK01_Rig:Miyu_SK01_geo
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: C005_Miyu_SK01_Rig:C005_Miyu_SK03_eyeR_mesh
+      parentName: C005_Miyu_SK01_Rig:Miyu_SK01_geo
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: C005_Miyu_SK01_Rig:C005_Miyu_SK03_Wings02_backmesh
+      parentName: C005_Miyu_SK01_Rig:Miyu_SK01_geo
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 3
+  humanoidOversampling: 1
+  avatarSetup: 1
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 1
+  importBlendShapeDeformPercent: 1
+  remapMaterialsIfMaterialImportModeIsNone: 0
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

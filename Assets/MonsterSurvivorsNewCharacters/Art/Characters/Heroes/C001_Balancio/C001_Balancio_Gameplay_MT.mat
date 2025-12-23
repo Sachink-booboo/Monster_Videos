@@ -46,7 +46,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _ColorTex:
-        m_Texture: {fileID: 2800000, guid: 5211ef74cc747d6478deb75207970901, type: 3}
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Color_Mask:
@@ -74,7 +74,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 5211ef74cc747d6478deb75207970901, type: 3}
+        m_Texture: {fileID: 2800000, guid: 4023c2e535824d94384797de9e433cf1, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
@@ -113,10 +113,11 @@ Material:
     m_Floats:
     - _AlphaClip: 0
     - _AlphaToMask: 0
-    - _AmbientStrength: 0.45
+    - _AmbientStrength: 0.485
     - _Blend: 0
     - _BlendModePreserveSpecular: 1
     - _BumpScale: 1
+    - _CastShadows: 1
     - _ClearCoatMask: 0
     - _ClearCoatSmoothness: 0
     - _ColorSaturation: 1
@@ -132,15 +133,15 @@ Material:
     - _EmissiveIntensity: 0
     - _Emissive_Intensity: 0
     - _EnvironmentReflections: 1
-    - _FalloffAmount: 0.4
-    - _FresnelSize: 0.5
-    - _Fresnel_Amount: 0.8
-    - _Fresnel_Intensity: 2
-    - _Fresnel_cutoff: 0.1
+    - _FalloffAmount: 0.414
+    - _FresnelSize: 1.46
+    - _Fresnel_Amount: 0.794
+    - _Fresnel_Intensity: 4
+    - _Fresnel_cutoff: 0.107
     - _GlossMapScale: 0
     - _Glossiness: 0
     - _GlossyReflections: 0
-    - _LightingCutoff: 0.3
+    - _LightingCutoff: 0.347
     - _Metallic: 0
     - _Nighttime: 0
     - _OcclusionStrength: 1
@@ -159,16 +160,18 @@ Material:
     - _Volume_Intensity: 0.1
     - _Volume_Saturation: 1
     - _WorkflowMode: 1
+    - _ZTest: 4
     - _ZWrite: 1
+    - _ZWriteControl: 0
     m_Colors:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _DiffuseColor: {r: 1, g: 0.98295605, b: 0, a: 1}
+    - _DiffuseColor: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _EmissiveColor: {r: 3.322586, g: 0.44762313, b: 0, a: 1}
-    - _FresnelColor: {r: 1, g: 0.9372921, b: 0.13396227, a: 1}
-    - _Shadow_Color: {r: 0.9922546, g: 1, b: 0, a: 1}
+    - _EmissiveColor: {r: 1024, g: 455.88608, b: 0, a: 1}
+    - _FresnelColor: {r: 1, g: 0.7254902, b: 0.16078432, a: 1}
+    - _Shadow_Color: {r: 0.8666667, g: 0.6, b: 0.3137255, a: 1}
     - _SpecColor: {r: 0.2, g: 0.2, b: 0.2, a: 1}
-    - _SpecularColor: {r: 0.19245279, g: 0.17098846, b: 0.15795653, a: 1}
+    - _SpecularColor: {r: 0.5529412, g: 0.22352941, b: 0.023529412, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1

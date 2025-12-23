@@ -1,0 +1,15 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: uiHeroAnimatorMiyuGameOverVictory
+  m_Controller: {fileID: 9100000, guid: 0ba5a327c3a3d304dba19019cf27b807, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: ea6fdb1100c248c48b51f9cb0ffc5e38, type: 2}
+    m_OverrideClip: {fileID: 3372910749400287095, guid: c89ad7c3c5ebeb74a83c8ccc0a7dc186, type: 3}
+  - m_OriginalClip: {fileID: 7400000, guid: f202a8303f254a34d9b03f7ad997d11d, type: 2}
+    m_OverrideClip: {fileID: 1265318473041284107, guid: c89ad7c3c5ebeb74a83c8ccc0a7dc186, type: 3}

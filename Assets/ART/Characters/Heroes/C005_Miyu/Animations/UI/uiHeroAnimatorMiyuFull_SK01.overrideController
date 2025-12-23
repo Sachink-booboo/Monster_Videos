@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: uiHeroAnimatorMiyuFull_SK01
+  m_Controller: {fileID: 9100000, guid: 6870062338c407a4b9c84e59c650459d, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: ea6fdb1100c248c48b51f9cb0ffc5e38, type: 2}
+    m_OverrideClip: {fileID: 53166279982475765, guid: 278f141bccd3d7a499783d4b545c2f41, type: 3}
+  - m_OriginalClip: {fileID: 7400000, guid: e8e7340b3ee135c4397ef34b14428f99, type: 2}
+    m_OverrideClip: {fileID: 8287592721514956436, guid: 278f141bccd3d7a499783d4b545c2f41, type: 3}
+  - m_OriginalClip: {fileID: 7400000, guid: f202a8303f254a34d9b03f7ad997d11d, type: 2}
+    m_OverrideClip: {fileID: 8287592721514956436, guid: 278f141bccd3d7a499783d4b545c2f41, type: 3}
+  - m_OriginalClip: {fileID: 7400000, guid: 89379d7e421dcfc45bf4236037fe9b0f, type: 2}
+    m_OverrideClip: {fileID: 4448895330159882465, guid: 278f141bccd3d7a499783d4b545c2f41, type: 3}
+  - m_OriginalClip: {fileID: 7400000, guid: ff1344f0dbea5d443af8192c842e1124, type: 2}
+    m_OverrideClip: {fileID: 1265318473041284107, guid: c89ad7c3c5ebeb74a83c8ccc0a7dc186, type: 3}
+  - m_OriginalClip: {fileID: 7400000, guid: dcfedb461bfa20941ba2927166f43fb7, type: 2}
+    m_OverrideClip: {fileID: 3372910749400287095, guid: c89ad7c3c5ebeb74a83c8ccc0a7dc186, type: 3}

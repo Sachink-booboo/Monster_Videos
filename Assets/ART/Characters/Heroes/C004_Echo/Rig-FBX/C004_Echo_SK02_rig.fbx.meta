@@ -1,0 +1,605 @@
+fileFormatVersion: 2
+guid: 35c9babe36677bf4cac1a0ea03606b79
+ModelImporter:
+  serializedVersion: 22200
+  internalIDToNameTable: []
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: C004_Echo_SK02_rig_Echo_SK02_MT
+    second: {fileID: 2100000, guid: 9c33868a918e2bb4d87818aa85066249, type: 2}
+  materials:
+    materialImportMode: 2
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    removeConstantScaleCurves: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 3
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importPhysicalCameras: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    nodeNameCollisionStrategy: 1
+    fileIdsGeneration: 2
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    bakeAxisConversion: 0
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    optimizeBones: 1
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 1
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
+    secondaryUVPackMargin: 4
+    useFileScale: 0
+    strictVertexDataChecks: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human:
+    - boneName: C004_Echo_SK02_rig:Root_M
+      humanName: Hips
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: C004_Echo_SK02_rig:Hip_L
+      humanName: LeftUpperLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: C004_Echo_SK02_rig:Hip_R
+      humanName: RightUpperLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: C004_Echo_SK02_rig:Knee_L
+      humanName: LeftLowerLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: C004_Echo_SK02_rig:Knee_R
+      humanName: RightLowerLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: C004_Echo_SK02_rig:Ankle_L
+      humanName: LeftFoot
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: C004_Echo_SK02_rig:Ankle_R
+      humanName: RightFoot
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: C004_Echo_SK02_rig:Spine1_M
+      humanName: Spine
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: C004_Echo_SK02_rig:Spine2_M
+      humanName: Chest
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: C004_Echo_SK02_rig:Neck_M
+      humanName: Neck
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: C004_Echo_SK02_rig:Head_M
+      humanName: Head
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: C004_Echo_SK02_rig:Scapula_L
+      humanName: LeftShoulder
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: C004_Echo_SK02_rig:Scapula_R
+      humanName: RightShoulder
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: C004_Echo_SK02_rig:Shoulder_L
+      humanName: LeftUpperArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: C004_Echo_SK02_rig:Shoulder_R
+      humanName: RightUpperArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: C004_Echo_SK02_rig:Elbow_L
+      humanName: LeftLowerArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: C004_Echo_SK02_rig:Elbow_R
+      humanName: RightLowerArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: C004_Echo_SK02_rig:Wrist_L
+      humanName: LeftHand
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: C004_Echo_SK02_rig:Wrist_R
+      humanName: RightHand
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: C004_Echo_SK02_rig:Toes_L
+      humanName: LeftToes
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: C004_Echo_SK02_rig:Toes_R
+      humanName: RightToes
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: C004_Echo_SK02_rig:Chest_M
+      humanName: UpperChest
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    skeleton:
+    - name: C004_Echo_SK02_rig(Clone)
+      parentName: 
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: C004_Echo_SK02_rig:DeformationSystem
+      parentName: C004_Echo_SK02_rig(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 0.01, y: 0.01, z: 0.01}
+    - name: C004_Echo_SK02_rig:Root_M
+      parentName: C004_Echo_SK02_rig:DeformationSystem
+      position: {x: -2.1150008e-15, y: 100.277626, z: 0.394667}
+      rotation: {x: 0.50333554, y: -0.49664208, z: -0.50333554, w: 0.49664208}
+      scale: {x: 1, y: 1, z: 1}
+    - name: C004_Echo_SK02_rig:Spine1_M
+      parentName: C004_Echo_SK02_rig:Root_M
+      position: {x: -5.417708, y: 9.992007e-16, z: -3.8133724e-15}
+      rotation: {x: -0, y: -0, z: 0.019969525, w: 0.9998006}
+      scale: {x: 1, y: 1, z: 1}
+    - name: C004_Echo_SK02_rig:Spine2_M
+      parentName: C004_Echo_SK02_rig:Spine1_M
+      position: {x: -14.004026, y: 7.993606e-15, z: -7.1344204e-15}
+      rotation: {x: -0, y: -0, z: 0.005635241, w: 0.99998415}
+      scale: {x: 1, y: 1, z: 1}
+    - name: C004_Echo_SK02_rig:Chest_M
+      parentName: C004_Echo_SK02_rig:Spine2_M
+      position: {x: -6.6916733, y: -2.220446e-14, z: -3.206713e-15}
+      rotation: {x: 0.000000029029511, y: -0.00000003055559, z: 0.0004571615, w: 0.9999999}
+      scale: {x: 1, y: 1, z: 1}
+    - name: C004_Echo_SK02_rig:Scapula_R
+      parentName: C004_Echo_SK02_rig:Chest_M
+      position: {x: -17.746784, y: -0.318272, z: -12.747443}
+      rotation: {x: -0.040623922, y: -0.7412362, z: -0.025405439, w: 0.66953206}
+      scale: {x: 1, y: 1, z: 1}
+    - name: C004_Echo_SK02_rig:Shoulder_R
+      parentName: C004_Echo_SK02_rig:Scapula_R
+      position: {x: -8.854058, y: -1.4210855e-14, z: 1.7053026e-13}
+      rotation: {x: 0.009481618, y: -0.054001678, z: 0.0041745314, w: -0.9984871}
+      scale: {x: 1.0000012, y: 1.0000007, z: 1.0000005}
+    - name: C004_Echo_SK02_rig:ShoulderPart1_R
+      parentName: C004_Echo_SK02_rig:Shoulder_R
+      position: {x: -12.915013, y: 0, z: 0}
+      rotation: {x: -0, y: -0.0000000037252894, z: 4.0745354e-10, w: 1}
+      scale: {x: 0.9999997, y: 0.9999998, z: 0.99999994}
+    - name: C004_Echo_SK02_rig:Elbow_R
+      parentName: C004_Echo_SK02_rig:ShoulderPart1_R
+      position: {x: -12.915014, y: 1.2434498e-14, z: -2.842171e-13}
+      rotation: {x: -0.00000012016437, y: 0.00000010058274, z: -0.0063876226, w: 0.9999796}
+      scale: {x: 0.99999994, y: 0.9999998, z: 1}
+    - name: C004_Echo_SK02_rig:ElbowPart1_R
+      parentName: C004_Echo_SK02_rig:Elbow_R
+      position: {x: -10.495143, y: 0, z: 0}
+      rotation: {x: -0, y: -7.1054257e-15, z: 4.656733e-10, w: 1}
+      scale: {x: 1.0000004, y: 1.0000001, z: 1.0000004}
+    - name: C004_Echo_SK02_rig:Wrist_R
+      parentName: C004_Echo_SK02_rig:ElbowPart1_R
+      position: {x: -10.495144, y: 4.440892e-14, z: 0}
+      rotation: {x: 0.050753385, y: -0.072590835, z: 0.0033493142, w: 0.99606395}
+      scale: {x: 1.0000004, y: 1, z: 1.0000004}
+    - name: C004_Echo_SK02_rig:ThumbFinger1_R
+      parentName: C004_Echo_SK02_rig:Wrist_R
+      position: {x: -3.7451093, y: 3.419487e-14, z: -5.684342e-14}
+      rotation: {x: -0.71835965, y: 0.008281959, z: 0.0029144618, w: 0.6956165}
+      scale: {x: 1.0000004, y: 1.0000002, z: 1.0000005}
+    - name: C004_Echo_SK02_rig:ThumbFinger2_R
+      parentName: C004_Echo_SK02_rig:ThumbFinger1_R
+      position: {x: -5.990533, y: -7.1054274e-13, z: -1.4876989e-14}
+      rotation: {x: -0.08200384, y: -0.003604236, z: 0.026849514, w: 0.99626374}
+      scale: {x: 1.0000004, y: 1.0000006, z: 0.99999976}
+    - name: C004_Echo_SK02_rig:ThumbFinger3_R
+      parentName: C004_Echo_SK02_rig:ThumbFinger2_R
+      position: {x: -5.1344953, y: 3.9790393e-13, z: 9.2370556e-14}
+      rotation: {x: 0.9898198, y: 0.021739226, z: 0.0017499924, w: -0.14064543}
+      scale: {x: 0.99999994, y: 1, z: 1.0000004}
+    - name: C004_Echo_SK02_rig:ThumbFinger4_R
+      parentName: C004_Echo_SK02_rig:ThumbFinger3_R
+      position: {x: -4.003256, y: 1.7053026e-13, z: 2.4868996e-14}
+      rotation: {x: -0, y: -0, z: -0, w: 1}
+      scale: {x: 1.0000006, y: 0.9999997, z: 1.0000005}
+    - name: C004_Echo_SK02_rig:IndexFinger1_R
+      parentName: C004_Echo_SK02_rig:Wrist_R
+      position: {x: -3.7631512, y: -0.015261923, z: 1.336857}
+      rotation: {x: 0.68903685, y: 0.08917433, z: -0.09061522, w: 0.713488}
+      scale: {x: 1.0000001, y: 1.0000004, z: 1.0000005}
+    - name: C004_Echo_SK02_rig:IndexFinger2_R
+      parentName: C004_Echo_SK02_rig:IndexFinger1_R
+      position: {x: -4.828877, y: 1.7763568e-15, z: -1.687539e-14}
+      rotation: {x: -0.004484504, y: -0.000998862, z: 0.022657564, w: 0.9997328}
+      scale: {x: 1, y: 1, z: 0.99999976}
+    - name: C004_Echo_SK02_rig:IndexFinger3_R
+      parentName: C004_Echo_SK02_rig:IndexFinger2_R
+      position: {x: -5.058571, y: 0, z: 7.993606e-15}
+      rotation: {x: -0.20570727, y: -0.0060206857, z: 0.023031007, w: 0.97832406}
+      scale: {x: 1, y: 1.0000002, z: 1.0000006}
+    - name: C004_Echo_SK02_rig:IndexFinger4_R
+      parentName: C004_Echo_SK02_rig:IndexFinger3_R
+      position: {x: -4.718748, y: 1.9895197e-13, z: -1.563194e-13}
+      rotation: {x: -0.000000014901158, y: -0, z: -0.000000039115537, w: 1}
+      scale: {x: 1.0000005, y: 1.0000004, z: 1.0000007}
+    - name: C004_Echo_SK02_rig:Scapula_L
+      parentName: C004_Echo_SK02_rig:Chest_M
+      position: {x: -17.746784, y: -0.318272, z: 12.747443}
+      rotation: {x: 0.7412362, y: -0.040623922, z: 0.66953206, w: 0.025405435}
+      scale: {x: 1, y: 1, z: 1}
+    - name: C004_Echo_SK02_rig:Shoulder_L
+      parentName: C004_Echo_SK02_rig:Scapula_L
+      position: {x: 8.854058, y: 6.3948846e-14, z: -1.7053026e-13}
+      rotation: {x: 0.009481653, y: -0.054001655, z: 0.004174601, w: -0.9984871}
+      scale: {x: 1.0000006, y: 1.0000004, z: 1.0000006}
+    - name: C004_Echo_SK02_rig:ShoulderPart1_L
+      parentName: C004_Echo_SK02_rig:Shoulder_L
+      position: {x: 12.915013, y: 0, z: 0}
+      rotation: {x: -0, y: -0, z: 1.7462297e-10, w: 1}
+      scale: {x: 1.0000006, y: 1.0000001, z: 1.0000001}
+    - name: C004_Echo_SK02_rig:Elbow_L
+      parentName: C004_Echo_SK02_rig:ShoulderPart1_L
+      position: {x: 12.915014, y: -1.7763568e-15, z: 2.5579538e-13}
+      rotation: {x: -0.00000009126959, y: 0.000000048428763, z: -0.006387605, w: 0.9999797}
+      scale: {x: 1.0000004, y: 1, z: 1.0000004}
+    - name: C004_Echo_SK02_rig:ElbowPart1_L
+      parentName: C004_Echo_SK02_rig:Elbow_L
+      position: {x: 10.495143, y: 0, z: 0}
+      rotation: {x: -0, y: -0, z: 4.420073e-15, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: C004_Echo_SK02_rig:Wrist_L
+      parentName: C004_Echo_SK02_rig:ElbowPart1_L
+      position: {x: 10.495144, y: -5.5067062e-14, z: 1.4210855e-13}
+      rotation: {x: -0.050753415, y: 0.07259078, z: -0.0033493128, w: -0.996064}
+      scale: {x: 1.0000005, y: 1.0000002, z: 1.0000002}
+    - name: C004_Echo_SK02_rig:ThumbFinger1_L
+      parentName: C004_Echo_SK02_rig:Wrist_L
+      position: {x: 3.7451093, y: -3.1086245e-14, z: 8.526513e-14}
+      rotation: {x: 0.71835923, y: -0.00828246, z: -0.0029158928, w: -0.69561684}
+      scale: {x: 1.0000005, y: 1.0000001, z: 1.0000011}
+    - name: C004_Echo_SK02_rig:ThumbFinger2_L
+      parentName: C004_Echo_SK02_rig:ThumbFinger1_L
+      position: {x: 5.990533, y: 7.1054274e-13, z: 1.5543122e-14}
+      rotation: {x: -0.08200402, y: -0.0036030903, z: 0.02685097, w: 0.9962638}
+      scale: {x: 0.99999994, y: 1.0000004, z: 0.9999995}
+    - name: C004_Echo_SK02_rig:ThumbFinger3_L
+      parentName: C004_Echo_SK02_rig:ThumbFinger2_L
+      position: {x: 5.1344953, y: -3.6948222e-13, z: -8.526513e-14}
+      rotation: {x: -0.9898198, y: -0.021737305, z: -0.0017512128, w: 0.14064544}
+      scale: {x: 1, y: 0.99999994, z: 1}
+    - name: C004_Echo_SK02_rig:ThumbFinger4_L
+      parentName: C004_Echo_SK02_rig:ThumbFinger3_L
+      position: {x: 4.003256, y: -1.563194e-13, z: -2.4868996e-14}
+      rotation: {x: -0.000000007450578, y: -0, z: 0.000000029802312, w: 1}
+      scale: {x: 1.0000002, y: 1, z: 1.0000001}
+    - name: C004_Echo_SK02_rig:IndexFinger1_L
+      parentName: C004_Echo_SK02_rig:Wrist_L
+      position: {x: 3.7631512, y: 0.015261923, z: -1.336857}
+      rotation: {x: 0.6890365, y: 0.08917494, z: -0.09061463, w: 0.71348834}
+      scale: {x: 1.0000001, y: 1.0000004, z: 1}
+    - name: C004_Echo_SK02_rig:IndexFinger2_L
+      parentName: C004_Echo_SK02_rig:IndexFinger1_L
+      position: {x: 4.828877, y: 2.1316282e-14, z: 1.8651747e-14}
+      rotation: {x: -0.004484383, y: -0.0009986381, z: 0.02265466, w: 0.99973285}
+      scale: {x: 1, y: 1.0000001, z: 0.9999997}
+    - name: C004_Echo_SK02_rig:IndexFinger3_L
+      parentName: C004_Echo_SK02_rig:IndexFinger2_L
+      position: {x: 5.058571, y: -1.4210855e-14, z: -1.1657342e-14}
+      rotation: {x: -0.20570704, y: -0.006023541, z: 0.02303266, w: 0.97832406}
+      scale: {x: 1.0000001, y: 1.0000008, z: 1}
+    - name: C004_Echo_SK02_rig:IndexFinger4_L
+      parentName: C004_Echo_SK02_rig:IndexFinger3_L
+      position: {x: 4.718748, y: -1.7053026e-13, z: 1.4210855e-13}
+      rotation: {x: -0, y: 0.000000007450578, z: 0.000000003725289, w: 1}
+      scale: {x: 1.0000005, y: 1.0000005, z: 1.0000002}
+    - name: C004_Echo_SK02_rig:Neck_M
+      parentName: C004_Echo_SK02_rig:Chest_M
+      position: {x: -21.578613, y: -1.3260504e-12, z: 4.3391038e-14}
+      rotation: {x: -0, y: -0, z: -0.015574968, w: 0.99987876}
+      scale: {x: 0.99999994, y: 0.99999994, z: 0.9999999}
+    - name: C004_Echo_SK02_rig:Head_M
+      parentName: C004_Echo_SK02_rig:Neck_M
+      position: {x: -8.75324, y: 1.5890067e-14, z: 7.315491e-15}
+      rotation: {x: -0, y: -0, z: 0.057140097, w: 0.9983662}
+      scale: {x: 1.0000004, y: 1.0000004, z: 1.0000004}
+    - name: C004_Echo_SK02_rig:HeadEnd_M
+      parentName: C004_Echo_SK02_rig:Head_M
+      position: {x: -37.838547, y: -3.5527137e-14, z: 3.5159287e-14}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: C004_Echo_SK02_rig:Hip_R
+      parentName: C004_Echo_SK02_rig:Root_M
+      position: {x: 3.2542086, y: 2.3132691, z: -9.262118}
+      rotation: {x: -0.12805985, y: 0.990253, z: -0.038557764, w: -0.038897898}
+      scale: {x: 0.9999998, y: 0.99999994, z: 0.99999976}
+    - name: C004_Echo_SK02_rig:HipPart1_R
+      parentName: C004_Echo_SK02_rig:Hip_R
+      position: {x: -17.125366, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: C004_Echo_SK02_rig:Knee_R
+      parentName: C004_Echo_SK02_rig:HipPart1_R
+      position: {x: -17.125366, y: 0, z: 3.5240788e-10}
+      rotation: {x: 0.0005313782, y: -0.0010651555, z: 0.34912103, w: 0.9370769}
+      scale: {x: 1.0000006, y: 1.0000007, z: 1.0000004}
+    - name: C004_Echo_SK02_rig:KneePart1_R
+      parentName: C004_Echo_SK02_rig:Knee_R
+      position: {x: -14.715557, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: C004_Echo_SK02_rig:Ankle_R
+      parentName: C004_Echo_SK02_rig:KneePart1_R
+      position: {x: -14.715558, y: -3.5527137e-15, z: 1.8214763e-10}
+      rotation: {x: -0.05620118, y: -0.020706853, z: -0.23229805, w: 0.97079885}
+      scale: {x: 1, y: 1.0000002, z: 1.0000001}
+    - name: C004_Echo_SK02_rig:Toes_R
+      parentName: C004_Echo_SK02_rig:Ankle_R
+      position: {x: -34.802483, y: 13.556161, z: 0.000000504307}
+      rotation: {x: 0.0040203966, y: 0.0050228806, z: -0.78069293, w: 0.6248818}
+      scale: {x: 1.0000001, y: 1, z: 1.0000004}
+    - name: C004_Echo_SK02_rig:ToesEnd_R
+      parentName: C004_Echo_SK02_rig:Toes_R
+      position: {x: -35.924076, y: 1.3100632e-12, z: 0.00002032787}
+      rotation: {x: -0.000000069616355, y: 0.0000003254972, z: 0.000000070573144, w: 1}
+      scale: {x: 1.0000002, y: 1, z: 1}
+    - name: C004_Echo_SK02_rig:Hip_L
+      parentName: C004_Echo_SK02_rig:Root_M
+      position: {x: 3.2542086, y: 2.3132691, z: 9.262118}
+      rotation: {x: 0.990253, y: 0.12805985, z: 0.038897872, w: -0.038557753}
+      scale: {x: 1.0000002, y: 1.0000004, z: 1.0000004}
+    - name: C004_Echo_SK02_rig:HipPart1_L
+      parentName: C004_Echo_SK02_rig:Hip_L
+      position: {x: 17.125366, y: 0, z: -7.1054274e-15}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: C004_Echo_SK02_rig:Knee_L
+      parentName: C004_Echo_SK02_rig:HipPart1_L
+      position: {x: 17.125366, y: 0.00000000651211, z: -3.5241143e-10}
+      rotation: {x: -0.0005313903, y: 0.0010651299, z: -0.3491211, w: -0.9370769}
+      scale: {x: 1.0000004, y: 1.0000001, z: 1.0000002}
+    - name: C004_Echo_SK02_rig:KneePart1_L
+      parentName: C004_Echo_SK02_rig:Knee_L
+      position: {x: 14.715557, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: C004_Echo_SK02_rig:Ankle_L
+      parentName: C004_Echo_SK02_rig:KneePart1_L
+      position: {x: 14.715558, y: 0.000000005595677, z: -6.548504e-10}
+      rotation: {x: 0.056201093, y: 0.020706806, z: 0.23229805, w: -0.9707988}
+      scale: {x: 1.0000001, y: 1.0000004, z: 1.0000001}
+    - name: C004_Echo_SK02_rig:Toes_L
+      parentName: C004_Echo_SK02_rig:Ankle_L
+      position: {x: 34.802483, y: -13.556161, z: -0.00000074122704}
+      rotation: {x: 0.0040206257, y: 0.0050230995, z: -0.7806928, w: 0.62488186}
+      scale: {x: 1.0000001, y: 1.0000001, z: 1.0000001}
+    - name: C004_Echo_SK02_rig:ToesEnd_L
+      parentName: C004_Echo_SK02_rig:Toes_L
+      position: {x: 35.924076, y: -3.463896e-14, z: 0.00000024887328}
+      rotation: {x: -0.0000000051222746, y: -6.98492e-10, z: 0.000000009957149, w: 1}
+      scale: {x: 1.0000002, y: 1.0000004, z: 1.0000001}
+    - name: C004_Echo_SK02_rig:Geometry
+      parentName: C004_Echo_SK02_rig(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: C004_Echo_SK02_rig:Echo_SK02_grp
+      parentName: C004_Echo_SK02_rig:Geometry
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: C004_Echo_SK02_rig:Echo_SK02_Head01_mesh
+      parentName: C004_Echo_SK02_rig:Echo_SK02_grp
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: C004_Echo_SK02_rig:Echo_SK02_Neck01_mesh
+      parentName: C004_Echo_SK02_rig:Echo_SK02_grp
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: C004_Echo_SK02_rig:Echo_SK02_Chest_mesh
+      parentName: C004_Echo_SK02_rig:Echo_SK02_grp
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: C004_Echo_SK02_rig:Echo_SK02_Arms_mesh
+      parentName: C004_Echo_SK02_rig:Echo_SK02_grp
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: C004_Echo_SK02_rig:Echo_SK02_Hands_mesh
+      parentName: C004_Echo_SK02_rig:Echo_SK02_grp
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: C004_Echo_SK02_rig:Echo_SK02_Spine01_mesh
+      parentName: C004_Echo_SK02_rig:Echo_SK02_grp
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: C004_Echo_SK02_rig:Echo_SK02_Pelvis01_mesh
+      parentName: C004_Echo_SK02_rig:Echo_SK02_grp
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: C004_Echo_SK02_rig:Echo_SK02_Legs01_mesh
+      parentName: C004_Echo_SK02_rig:Echo_SK02_grp
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: C004_Echo_SK02_rig:Echo_SK02_Legs02_mesh
+      parentName: C004_Echo_SK02_rig:Echo_SK02_grp
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: C004_Echo_SK02_rig:Echo_SK02_Feet01_mesh
+      parentName: C004_Echo_SK02_rig:Echo_SK02_grp
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 3
+  humanoidOversampling: 1
+  avatarSetup: 1
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 1
+  importBlendShapeDeformPercent: 1
+  remapMaterialsIfMaterialImportModeIsNone: 0
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

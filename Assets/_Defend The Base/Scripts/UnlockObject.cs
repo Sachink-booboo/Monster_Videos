@@ -1,6 +1,8 @@
 using System.Collections;
 using DG.Tweening;
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class UnlockObject : MonoBehaviour
 {
@@ -10,6 +12,8 @@ public class UnlockObject : MonoBehaviour
     public Storage storage;
     public Transform point1, point2, point3;
     public bool isTriggered;
+    public Image fillImage;
+    public TextMeshProUGUI fillText;
 
     void OnTriggerEnter(Collider other)
     {
@@ -23,15 +27,22 @@ public class UnlockObject : MonoBehaviour
 
     IEnumerator DropMoney()
     {
+        UpdateUI();
         for (int i = moneyIndex; i < moneyIndex + 16; i++)
         {
             var temp = moneyTrigger.allMoney[i];
             temp.transform.parent = null;
-            temp.transform.DOJump(transform.position, 1, 1, 0.05f);
-            yield return new WaitForSeconds(0.03f);
+            temp.transform.DOJump(transform.position, 2, 1, 0.1f);
+            yield return new WaitForSeconds(0.05f);
         }
         unlockObj.SetActive(true);
         StartCoroutine(StartMovingBullet());
+        if (moneyIndex == 16)
+        {
+            moneyTrigger.DropMoney();
+            moneyTrigger.isTriggered = false;
+        }
+        fillImage.transform.parent.gameObject.SetActive(false);
     }
 
     IEnumerator StartMovingBullet()
@@ -57,5 +68,30 @@ public class UnlockObject : MonoBehaviour
                        Destroy(bullet.gameObject);
                    });
         });
+    }
+
+    public void UpdateUI()
+    {
+        // Reset initial values
+        fillImage.fillAmount = 0f;
+        fillText.text = "15";
+
+        float duration = 2f; // adjust if needed
+
+        // Fill image animation (0 -> 1)
+        DOTween.To(
+            () => fillImage.fillAmount,
+            x => fillImage.fillAmount = x,
+            1f,
+            duration
+        ).SetEase(Ease.Linear);
+
+        // Text animation (30 -> 0)
+        DOTween.To(
+            () => 15,
+            x => fillText.text = x.ToString(),
+            0,
+            duration
+        ).SetEase(Ease.Linear);
     }
 }

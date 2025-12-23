@@ -7,6 +7,7 @@ public class Archery : MonoBehaviour
 {
     [Header("References")]
     // public Animator animator;
+    public Animator animator;
     public GameObject banditCharacter;
     public Transform arrowSpawnPoint;
     public GameObject arrowPrefab;
@@ -46,7 +47,9 @@ public class Archery : MonoBehaviour
         if (enabled) return;
         if (other.TryGetComponent(out PlayerController player))
         {
+            if (player.allBullets.Count <= 0) return;
             this.enabled = true;
+            animator.Play("Shoot");
             if (isSecondTower)
             {
                 moneyTrigger.DropMoney();

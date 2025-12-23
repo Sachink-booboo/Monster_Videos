@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: uiHeroAnimatorBalancioFull_SK01
+  m_Controller: {fileID: 9100000, guid: 6870062338c407a4b9c84e59c650459d, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: ea6fdb1100c248c48b51f9cb0ffc5e38, type: 2}
+    m_OverrideClip: {fileID: -6257813179393507662, guid: bf14410178f9dd9428da54cc7db948bb, type: 3}
+  - m_OriginalClip: {fileID: 7400000, guid: f202a8303f254a34d9b03f7ad997d11d, type: 2}
+    m_OverrideClip: {fileID: -7703522376786479900, guid: bf14410178f9dd9428da54cc7db948bb, type: 3}
+  - m_OriginalClip: {fileID: 7400000, guid: 89379d7e421dcfc45bf4236037fe9b0f, type: 2}
+    m_OverrideClip: {fileID: 9074791720572418622, guid: bf14410178f9dd9428da54cc7db948bb, type: 3}
+  - m_OriginalClip: {fileID: 7400000, guid: e8e7340b3ee135c4397ef34b14428f99, type: 2}
+    m_OverrideClip: {fileID: -7703522376786479900, guid: bf14410178f9dd9428da54cc7db948bb, type: 3}
+  - m_OriginalClip: {fileID: 7400000, guid: ff1344f0dbea5d443af8192c842e1124, type: 2}
+    m_OverrideClip: {fileID: -8167799268260591374, guid: bffb0724e43ff2c429eb85f51cf07220, type: 3}
+  - m_OriginalClip: {fileID: 7400000, guid: dcfedb461bfa20941ba2927166f43fb7, type: 2}
+    m_OverrideClip: {fileID: -1926799728108887068, guid: bffb0724e43ff2c429eb85f51cf07220, type: 3}

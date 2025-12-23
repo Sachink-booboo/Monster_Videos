@@ -9,9 +9,11 @@ public class GameController : MonoBehaviour
     public static GameController instance;
     public Animator craneAnimator;
     public List<GameObject> allCameras;
-    public GameObject spawnManager, craneObject;
+    public GameObject craneObject;
     public BaseController baseController;
     public MoneyTrigger moneyTrigger;
+    public SpawnManager spawnManager;
+    public GameObject train;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     private void Awake()
     {
@@ -19,6 +21,7 @@ public class GameController : MonoBehaviour
     }
     IEnumerator Start()
     {
+        train.transform.DOMoveX(0, 1);
         PlayerController.instance.enabled = false;
         for (int i = 0; i < allCameras.Count; i++)
         {
@@ -44,7 +47,7 @@ public class GameController : MonoBehaviour
         baseController.Init();
         allCameras[2].SetActive(true);
         PlayerController.instance.enabled = true;
-        spawnManager.SetActive(true);
+        spawnManager.gameObject.SetActive(true);
         /*  craneObject.transform.DORotate(new Vector3(0, -125, 0), 40, RotateMode.FastBeyond360).SetSpeedBased().SetEase(Ease.Linear).OnComplete(() =>
          {
              baseController.Init();
@@ -71,7 +74,7 @@ public class GameController : MonoBehaviour
         yield return new WaitForSeconds(2);
         allCameras[4].SetActive(true);
         yield return new WaitForSeconds(2.5f);
-        // baseController.Init();
+        baseController.Init();
         allCameras[3].SetActive(false);
         allCameras[4].SetActive(false);
         PlayerController.instance.enabled = true;

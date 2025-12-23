@@ -1,0 +1,13 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: uiHeroUnlockMiyu
+  m_Controller: {fileID: 9100000, guid: b9ffdfd9b964bbe48a0718a16eb5b067, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: 3d34726bc3a913f41a91b3d8c0aaee51, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 574ab2d6233f48844aca79519aa2316c, type: 2}
