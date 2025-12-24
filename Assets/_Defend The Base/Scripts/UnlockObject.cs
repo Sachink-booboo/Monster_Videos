@@ -40,7 +40,10 @@ public class UnlockObject : MonoBehaviour
         {
             var temp = moneyTrigger.allMoney[i];
             temp.transform.parent = null;
-            temp.transform.DOJump(transform.position, 2, 1, 0.1f);
+            temp.transform.DOJump(transform.position, 2, 1, 0.1f).OnComplete(() =>
+            {
+                temp.gameObject.SetActive(false);
+            });
             yield return new WaitForSeconds(0.05f);
         }
         GameController.instance.fenceLevel1.SetActive(false);
@@ -60,7 +63,11 @@ public class UnlockObject : MonoBehaviour
             temp.transform.DOJump(transform.position, 2, 1, 0.1f);
             yield return new WaitForSeconds(0.05f);
         }
+        unlockObj.transform.localScale = Vector3.zero;
         unlockObj.SetActive(true);
+        // unlockObj.transform.DOScale(Vector3.one, 0.2f).SetEase(Ease.OutBack);
+        unlockObj.transform.DOScale(Vector3.one * 1.5f, 0.1f).OnComplete(() => unlockObj.transform.DOScale(Vector3.one, 0.1f));
+
         StartCoroutine(StartMovingBullet());
         if (moneyIndex == 16)
         {

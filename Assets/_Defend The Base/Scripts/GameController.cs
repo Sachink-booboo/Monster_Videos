@@ -13,7 +13,7 @@ public class GameController : MonoBehaviour
     public BaseController baseController;
     public MoneyTrigger moneyTrigger;
     public SpawnManager spawnManager;
-    public GameObject train, fenceLevel1, fenceLevel2;
+    public GameObject train, fenceLevel1, fenceLevel2, furnace;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     private void Awake()
     {
@@ -45,6 +45,7 @@ public class GameController : MonoBehaviour
         allCameras[1].SetActive(true);
         yield return new WaitForSeconds(2.5f);
         baseController.Init();
+        furnace.transform.DOScale(Vector3.one * 0.011f, 0.2f).SetLoops(6, LoopType.Yoyo);
         allCameras[2].SetActive(true);
         PlayerController.instance.enabled = true;
         spawnManager.gameObject.SetActive(true);
@@ -74,6 +75,7 @@ public class GameController : MonoBehaviour
         yield return new WaitForSeconds(2);
         allCameras[4].SetActive(true);
         yield return new WaitForSeconds(2.5f);
+        furnace.transform.DOScale(Vector3.one * 0.011f, 0.2f).SetLoops(6, LoopType.Yoyo);
         baseController.Init();
         allCameras[3].SetActive(false);
         allCameras[4].SetActive(false);

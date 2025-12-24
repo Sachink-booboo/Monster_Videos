@@ -1,5 +1,6 @@
 using System.Collections;
 using DG.Tweening;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class UpgardeManager : MonoBehaviour
@@ -29,6 +30,7 @@ public class UpgardeManager : MonoBehaviour
             temp.transform.DOJump(transform.position, 3, 1, 0.1f);
             yield return new WaitForSeconds(0.05f);
         }
+        transform.DOScale(Vector3.one * 0.57f, 0.1f).OnComplete(() => transform.DOScale(Vector3.one * 0.52f, 0.1f));
         // GameController.instance.spawnManager.isStop = true;
         effect.Play();
         MoveToTower1();
