@@ -9,7 +9,7 @@ public class MoneyTrigger : MonoBehaviour
     public List<GameObject> allMoney;
     public bool isTriggered;
     public int index = 0;
-    public Collider unlockCollider1, unlockCollider2;
+    public Collider unlockCollider1, unlockCollider2, unlockCollider3;
     void OnTriggerEnter(Collider other)
     {
         if (other.TryGetComponent(out PlayerController player))
@@ -54,6 +54,10 @@ public class MoneyTrigger : MonoBehaviour
         {
             unlockCollider1.enabled = true;
             unlockCollider2.enabled = true;
+        }
+        if (index == 3)
+        {
+            unlockCollider3.enabled = true;
         }
         index++;
     }

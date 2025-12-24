@@ -13,12 +13,12 @@ public class Bullet : PoolableObject
     public bool isMissile;
     [SerializeField] private LayerMask enemyLayerMask;
     [SerializeField] private float impactRange;
-    
+
     private void Update()
     {
         if (EnemyTarget != null)
         {
-            direction = (EnemyTarget.position + new Vector3(0,0.75f,0) - transform.position).normalized;
+            direction = (EnemyTarget.position + new Vector3(0, 0.75f, 0) - transform.position).normalized;
         }
         transform.position += direction * speed * Time.deltaTime;
         //transform.forward = direction;
@@ -31,10 +31,10 @@ public class Bullet : PoolableObject
         bulletTrail.Play();
         bulletDeactivateCoroutine = StartCoroutine(DisableAfterSomeTime());
     }
-    
+
     public void Launch(Vector3 target)
     {
-        direction = (target + new Vector3(0,0.75f,0) - transform.position).normalized;
+        direction = (target + new Vector3(0, 0.75f, 0) - transform.position).normalized;
         gameObject.SetActive(true);
         bulletTrail.Play();
         bulletDeactivateCoroutine = StartCoroutine(DisableAfterSomeTime());
@@ -55,9 +55,9 @@ public class Bullet : PoolableObject
                         temp.Damage();
                     }
                 }
-                CameraShake.instance.Shake(2,1.5f,0.5f);
+                CameraShake.instance.Shake(2, 1.5f, 0.5f);
                 Vector3 spawnPos = transform.position;
-                var explosion = ObjectPooling.Instance.Spawn<BloodParticle>(PoolType.missileExplosion,spawnPos);
+                var explosion = ObjectPooling.Instance.Spawn<BloodParticle>(PoolType.missileExplosion, spawnPos);
                 explosion.Play(Vector3.zero);
             }
             else
@@ -74,7 +74,7 @@ public class Bullet : PoolableObject
             pool?.Release(this);
             gameObject.SetActive(false);
         }
-        
+
         if (other.TryGetComponent(out Barrel barrel))
         {
             barrel.Explode();

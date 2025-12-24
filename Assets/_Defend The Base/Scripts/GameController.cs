@@ -13,7 +13,7 @@ public class GameController : MonoBehaviour
     public BaseController baseController;
     public MoneyTrigger moneyTrigger;
     public SpawnManager spawnManager;
-    public GameObject train;
+    public GameObject train, fenceLevel1, fenceLevel2;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     private void Awake()
     {

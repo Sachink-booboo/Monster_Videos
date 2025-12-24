@@ -8,9 +8,6 @@ public class SpawnManager : MonoBehaviour
     // [SerializeField] private int maxEnemy = 200;
     [SerializeField] private float spawnInterval = 0.5f;
 
-    [Header("Spawn Area")]
-    [SerializeField] private float halfSize = 30f;
-
     [Header("References")]
     public List<GameObject> enemyPrefab;
 
@@ -20,6 +17,12 @@ public class SpawnManager : MonoBehaviour
     public bool isStop;
 
     void Start()
+    {
+        for (int i = 0; i < 50; i++)
+            SpawnEnemy();
+    }
+
+    public void SpawnMoreEnemy()
     {
         for (int i = 0; i < 50; i++)
             SpawnEnemy();

@@ -11,7 +11,7 @@ public class Archery : MonoBehaviour
     public GameObject banditCharacter;
     public Transform arrowSpawnPoint;
     public GameObject arrowPrefab;
-    public GameObject coinPrefab;
+    public ParticleSystem effect;
 
     [Header("Archery Settings")]
     public float detectionRadius = 8f;
@@ -29,6 +29,8 @@ public class Archery : MonoBehaviour
     private ArcheryAnimStates currentState;
     public bool isSecondTower;
     public MoneyTrigger moneyTrigger;
+
+    public GameObject gun1, gun2;
 
     void Start()
     {
@@ -84,7 +86,7 @@ public class Archery : MonoBehaviour
         lastFireTime = Time.time;
         nearest.isTriggered = true;
 
-        RotateTowards(nearest.transform.position);
+        // RotateTowards(nearest.transform.position);
         ChangeState(ArcheryAnimStates.Shoot);
 
         StartCoroutine(ShootRoutine(nearest));
@@ -162,6 +164,15 @@ public class Archery : MonoBehaviour
         currentState = state;
 
         // animator.CrossFade(state.ToString().ToLower(), 0.25f);
+    }
+
+    public void ChangeGun()
+    {
+        gun1.SetActive(false);
+        gun2.SetActive(true);
+        arrowPrefab = ObjectPooling.Instance.poolPrefabs[6].prefab.gameObject;
+        fireRate = 5;
+        animator.Play("RpgShoot");
     }
 }
 public enum ArcheryAnimStates

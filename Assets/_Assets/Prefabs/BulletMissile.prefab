@@ -19138,7 +19138,7 @@ Transform:
   m_GameObject: {fileID: 6473358329571954005}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 5.62, z: 0}
+  m_LocalPosition: {x: 0, y: 5.657, z: -0.082}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -19166,7 +19166,7 @@ MonoBehaviour:
   enemyLayerMask:
     serializedVersion: 2
     m_Bits: 128
-  impactRange: 2
+  impactRange: 1
 --- !u!54 &5392899621606000399
 Rigidbody:
   m_ObjectHideFlags: 0

@@ -14,6 +14,7 @@ public class UnlockObject : MonoBehaviour
     public bool isTriggered;
     public Image fillImage;
     public TextMeshProUGUI fillText;
+    public bool isLast;
 
     void OnTriggerEnter(Collider other)
     {
@@ -21,8 +22,32 @@ public class UnlockObject : MonoBehaviour
         {
             if (isTriggered) return;
             isTriggered = true;
-            StartCoroutine(DropMoney());
+
+            if (isLast)
+            {
+                StartCoroutine(DropAllMoney());
+            }
+            else
+            {
+                StartCoroutine(DropMoney());
+            }
         }
+    }
+
+    IEnumerator DropAllMoney()
+    {
+        for (int i = 0; i < 32; i++)
+        {
+            var temp = moneyTrigger.allMoney[i];
+            temp.transform.parent = null;
+            temp.transform.DOJump(transform.position, 2, 1, 0.1f);
+            yield return new WaitForSeconds(0.05f);
+        }
+        GameController.instance.fenceLevel1.SetActive(false);
+        GameController.instance.fenceLevel2.transform.localScale = Vector3.zero;
+        GameController.instance.fenceLevel2.SetActive(true);
+        GameController.instance.fenceLevel2.transform.DOScale(Vector3.one, 0.01f);
+        GameController.instance.allCameras[5].SetActive(true);
     }
 
     IEnumerator DropMoney()
