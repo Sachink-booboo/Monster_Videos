@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using DG.Tweening;
@@ -15,6 +16,7 @@ public class GameController : MonoBehaviour
     public SpawnManager spawnManager;
     public GameObject train, fenceLevel1, fenceLevel2, furnace;
     public UpgardeManager upgardeManager;
+    public Material material;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     private void Awake()
     {
@@ -22,6 +24,7 @@ public class GameController : MonoBehaviour
     }
     IEnumerator Start()
     {
+        animateMaterial();
         train.transform.DOMoveX(-4, 1);
         PlayerController.instance.enabled = false;
         for (int i = 0; i < allCameras.Count; i++)
@@ -88,5 +91,16 @@ public class GameController : MonoBehaviour
         moneyTrigger.isTriggered = false;
         yield return new WaitForSeconds(1f);
         furnace.transform.DOScale(Vector3.one * 0.009f, 0.1f).SetLoops(6, LoopType.Yoyo);
+    }
+
+    public void animateMaterial()
+    {
+        // Reset offset
+        material.SetTextureOffset("_BaseMap", Vector2.zero);
+
+        material
+               .DOOffset(new Vector2(0f, -1f), "_BaseMap", 2f) // move texture on X
+               .SetEase(Ease.Linear)
+               .SetLoops(-1, LoopType.Incremental); // infinite loop
     }
 }

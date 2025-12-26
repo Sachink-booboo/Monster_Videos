@@ -28,15 +28,15 @@ public class CraneUpgrade : MonoBehaviour
     IEnumerator DropMoney()
     {
         UpdateUI();
+        GameController.instance.allCameras[6].SetActive(true);
         for (int i = 32 - 1; i >= 0; i--)
         {
             var temp = moneyTrigger.allMoney[i];
             temp.transform.parent = null;
-            temp.transform.DOJump(transform.position, 2, 1, 0.1f);
+            temp.transform.DOJump(transform.position, 3, 1, 0.2f);
             yield return new WaitForSeconds(0.05f);
         }
-        GameController.instance.allCameras[6].SetActive(true);
-        yield return new WaitForSeconds(1.5f);
+        // yield return new WaitForSeconds(1.5f);
         level21.SetActive(true);
         level22.SetActive(true);
         level11.SetActive(false);

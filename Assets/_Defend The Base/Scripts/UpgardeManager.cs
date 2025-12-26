@@ -23,11 +23,11 @@ public class UpgardeManager : MonoBehaviour
 
     IEnumerator DropMoney()
     {
-        for (int i = 0; i < 32; i++)
+        for (int i = 32 - 1; i >= 0; i--)
         {
             var temp = moneyTrigger.allMoney[i];
             temp.transform.parent = null;
-            temp.transform.DOJump(transform.position, 3, 1, 0.1f);
+            temp.transform.DOJump(transform.position, 3, 1, 0.2f);
             yield return new WaitForSeconds(0.05f);
         }
         transform.DOScale(Vector3.one * 0.57f, 0.1f).OnComplete(() => transform.DOScale(Vector3.one * 0.52f, 0.1f));

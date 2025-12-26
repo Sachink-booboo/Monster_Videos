@@ -60,7 +60,7 @@ public class UnlockObject : MonoBehaviour
         {
             var temp = moneyTrigger.allMoney[i];
             temp.transform.parent = null;
-            temp.transform.DOJump(transform.position, 2, 1, 0.1f);
+            temp.transform.DOJump(transform.position, 3, 1, 0.2f);
             yield return new WaitForSeconds(0.05f);
         }
         unlockObj.transform.localScale = Vector3.zero;

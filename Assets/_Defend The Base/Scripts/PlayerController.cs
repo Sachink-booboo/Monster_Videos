@@ -65,7 +65,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private GameObject healthBar;
     [SerializeField] private Volume volume;
 
-    public Transform stackPoint;
+    public Transform stackPoint, stackPoint2;
     public List<GameObject> allBullets;
 
     private void Awake()
@@ -420,7 +420,7 @@ public class PlayerController : MonoBehaviour
     {
         allBullets.Add(bullets);
         // bullets.transform.localRotation = quaternion.Euler(new(90, 0, 90));
-        bullets.transform.parent = stackPoint;
+        bullets.transform.parent = stackPoint2;
         bullets.transform.localEulerAngles = new Vector3(90, 0, 90);
         /* bullets.transform.DOJump(stackPoint.transform.position, 2, 1, 1).SetEase(Ease.Linear).OnComplete(() =>
         {

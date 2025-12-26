@@ -154,7 +154,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   center: {x: 0, y: 0, z: 0}
-  size: {x: 1, y: 2, z: 1}
+  size: {x: 0.82, y: 2, z: 0.76}
 --- !u!1001 &7873347763288534892
 PrefabInstance:
   m_ObjectHideFlags: 0

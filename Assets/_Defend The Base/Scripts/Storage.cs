@@ -23,11 +23,12 @@ public class Storage : MonoBehaviour
             allBullets.Remove(temp);
             temp.GetComponent<Rigidbody>().isKinematic = true;
 
-            // temp.transform.localEulerAngles = Vector3.zero;
-            temp.transform.DOJump(PlayerController.instance.stackPoint.position, 3, 1, 0.5f).OnComplete(() =>
-            {
-                player.AddToStack(temp);
-            });
+            player.AddToStack(temp);
+            yield return new WaitForSeconds(0.01f);
+            /*    temp.transform.DOJump(PlayerController.instance.stackPoint.position, 3, 1, 0.5f).OnComplete(() =>
+               {
+                   player.AddToStack(temp);
+               }); */
         }
         yield return new WaitForSeconds(0.02f);
         GetComponent<Collider>().enabled = false;

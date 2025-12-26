@@ -172,6 +172,6 @@ Material:
     - _FresnelColor: {r: 0.6415094, g: 0.4316699, b: 0, a: 1}
     - _Shadow_Color: {r: 0.8666667, g: 0.6, b: 0.3137255, a: 1}
     - _SpecColor: {r: 0.2, g: 0.2, b: 0.2, a: 1}
-    - _SpecularColor: {r: 0.5529412, g: 0.22352941, b: 0.023529412, a: 1}
+    - _SpecularColor: {r: 0.26415092, g: 0.105217345, b: 0.008721969, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
