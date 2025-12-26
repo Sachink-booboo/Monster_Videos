@@ -88,6 +88,25 @@ public class Enemy : PoolableObject
         HandleAnimation();
     }
 
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Shoot"))
+        {
+            var temp = other.gameObject.GetComponentInParent<Archery>();
+            if (!temp.triggeredEnemy.Contains(this))
+                temp.triggeredEnemy.Add(this);
+        }
+    }
+
+    void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Shoot"))
+        {
+            var temp = other.gameObject.GetComponentInParent<Archery>();
+            temp.triggeredEnemy.Remove(this);
+        }
+    }
+
     // --------------------------------------
     void DetectClimbable()
     {

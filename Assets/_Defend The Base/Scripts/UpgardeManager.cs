@@ -52,6 +52,7 @@ public class UpgardeManager : MonoBehaviour
             {
                 animator1.gameObject.SetActive(false);
                 tower1.ChangeGun();
+                tower1.effect2.Play();
             });
             tower1.effect.Play();
         });
@@ -76,6 +77,7 @@ public class UpgardeManager : MonoBehaviour
                     {
                         animator2.gameObject.SetActive(false);
                         tower2.ChangeGun();
+                        tower2.effect2.Play();
                     });
                     tower2.effect.Play();
                 });

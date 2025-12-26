@@ -43,11 +43,16 @@ public class MoneyTrigger : MonoBehaviour
             var temp = allMoney[i];
             temp.transform.parent = null;
 
-            temp.transform.DOScale(Vector3.zero, 0.025f);
+            temp.transform.DOJump(PlayerController.instance.stackPoint.position, 4, 1, 0.5f).OnComplete(() =>
+            {
+                temp.transform.parent = PlayerController.instance.stackPoint;
+                temp.transform.localEulerAngles = Vector3.zero;
+            });
+            /* temp.transform.DOScale(Vector3.zero, 0.025f);
             yield return new WaitForSeconds(0.025f);
-            temp.transform.parent = PlayerController.instance.stackPoint;
             temp.transform.localEulerAngles = Vector3.zero;
-            temp.transform.DOScale(new Vector3(1.5f, 2, 1.5f), 0.025f);
+            temp.transform.DOScale(new Vector3(1.5f, 2, 1.5f), 0.025f); */
+            yield return new WaitForSeconds(0.025f);
         }
 
         if (index >= 1)

@@ -8,12 +8,13 @@ using UnityEngine.UI;
 public class CraneUpgrade : MonoBehaviour
 {
     public ParticleSystem particleSystem;
-    public GameObject level1, level2;
+    public GameObject level11, level12, level21, level22;
     public bool isTriggered;
     public MoneyTrigger moneyTrigger;
     public Image fillImage;
     public TextMeshProUGUI fillText;
-
+    public GameObject crack1, crack2, crack3, crack4;
+    public ParticleSystem effect1, effect2, effect3, effect4;
     void OnTriggerEnter(Collider other)
     {
         if (other.TryGetComponent(out PlayerController player))
@@ -34,14 +35,38 @@ public class CraneUpgrade : MonoBehaviour
             temp.transform.DOJump(transform.position, 2, 1, 0.1f);
             yield return new WaitForSeconds(0.05f);
         }
-        GameController.instance.allCameras[3].SetActive(true);
-        level2.SetActive(true);
-        level1.SetActive(false);
+        GameController.instance.allCameras[6].SetActive(true);
+        yield return new WaitForSeconds(1.5f);
+        level21.SetActive(true);
+        level22.SetActive(true);
+        level11.SetActive(false);
+        level12.SetActive(false);
         particleSystem.Play();
         GameController.instance.craneAnimator.SetTrigger("Upgrade");
-        yield return new WaitForSeconds(1.5f);
+        StartCoroutine(StartUpgrade());
+        yield return new WaitForSeconds(2.4f);
         GameController.instance.RestartGame();
         fillImage.transform.parent.gameObject.SetActive(false);
+    }
+
+    IEnumerator StartUpgrade()
+    {
+        yield return new WaitForSeconds(1.4f);
+        effect1.Play();
+        yield return new WaitForSeconds(0.2f);
+        crack1.SetActive(true);
+        yield return new WaitForSeconds(0.2f);
+        effect2.Play();
+        yield return new WaitForSeconds(0.2f);
+        crack2.SetActive(true);
+        yield return new WaitForSeconds(0.1f);
+        effect3.Play();
+        yield return new WaitForSeconds(0.1f);
+        crack3.SetActive(true);
+        yield return new WaitForSeconds(0.1f);
+        effect4.Play();
+        yield return new WaitForSeconds(0.1f);
+        crack4.SetActive(true);
     }
 
     public void UpdateUI()

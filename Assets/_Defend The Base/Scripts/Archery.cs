@@ -11,7 +11,7 @@ public class Archery : MonoBehaviour
     public GameObject banditCharacter;
     public Transform arrowSpawnPoint;
     public GameObject arrowPrefab;
-    public ParticleSystem effect;
+    public ParticleSystem effect, effect2;
 
     [Header("Archery Settings")]
     public float detectionRadius = 8f;
@@ -31,11 +31,13 @@ public class Archery : MonoBehaviour
     public MoneyTrigger moneyTrigger;
 
     public GameObject gun1, gun2;
+    public List<Enemy> triggeredEnemy;
+    public bool isArchery;
 
     void Start()
     {
         ChangeState(ArcheryAnimStates.BowIdle);
-
+        banditCharacter.transform.DORotate(new Vector3(0, 230, 0), 2).SetLoops(-1, LoopType.Yoyo);
     }
 
     // Update is called once per frame
@@ -80,7 +82,15 @@ public class Archery : MonoBehaviour
         if (Time.time < lastFireTime + (1f / fireRate))
             return;
 
-        Enemy nearest = FindNearestMummy();
+        Enemy nearest;
+        if (isArchery)
+        {
+            nearest = FindNearestTriggeredEnemyInForward();
+        }
+        else
+        {
+            nearest = FindNearestMummy();
+        }
         if (nearest == null) return;
 
         lastFireTime = Time.time;
@@ -90,6 +100,93 @@ public class Archery : MonoBehaviour
         ChangeState(ArcheryAnimStates.Shoot);
 
         StartCoroutine(ShootRoutine(nearest));
+    }
+
+    Enemy FindNearestTriggeredEnemyInForward()
+    {
+        if (triggeredEnemy == null || triggeredEnemy.Count == 0)
+            return null;
+
+        float minDist = detectionRadius;
+        Enemy nearest = null;
+
+        Vector3 origin = banditCharacter.transform.position;
+        Vector3 forward = banditCharacter.transform.forward;
+
+        // iterate backwards so we can safely remove
+        for (int i = triggeredEnemy.Count - 1; i >= 0; i--)
+        {
+            Enemy enemy = triggeredEnemy[i];
+
+            if (enemy == null || enemy.isDead)
+            {
+                triggeredEnemy.RemoveAt(i);
+                continue;
+            }
+
+            if (enemy.isTriggered)
+                continue;
+
+            Vector3 dir = enemy.transform.position - origin;
+            float distance = dir.magnitude;
+
+            if (distance > detectionRadius)
+                continue;
+
+            dir.Normalize();
+
+            // forward direction check
+            float dot = Vector3.Dot(forward, dir);
+            if (dot < 0.1f) // shooting cone
+                continue;
+
+            if (distance < minDist)
+            {
+                minDist = distance;
+                nearest = enemy;
+            }
+        }
+
+        return nearest;
+    }
+
+    Enemy FindNearestMummyInForward()
+    {
+        Enemy[] enemies = FindObjectsOfType<Enemy>();
+        float minDist = detectionRadius;
+        Enemy nearest = null;
+
+        Vector3 origin = banditCharacter.transform.position;
+        Vector3 forward = banditCharacter.transform.forward;
+
+        foreach (var enemy in enemies)
+        {
+            if (enemy.isDead || enemy.isTriggered)
+                continue;
+
+            Vector3 dir = enemy.transform.position - origin;
+            float distance = dir.magnitude;
+
+            if (distance > detectionRadius)
+                continue;
+
+            dir.Normalize();
+
+            // Forward direction check
+            float dot = Vector3.Dot(forward, dir);
+
+            // Adjust this value to control shoot angle
+            if (dot < 0.1f)
+                continue;
+
+            if (distance < minDist)
+            {
+                minDist = distance;
+                nearest = enemy;
+            }
+        }
+
+        return nearest;
     }
 
     Enemy FindNearestMummy()

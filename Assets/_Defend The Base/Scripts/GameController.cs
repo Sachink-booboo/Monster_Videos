@@ -14,6 +14,7 @@ public class GameController : MonoBehaviour
     public MoneyTrigger moneyTrigger;
     public SpawnManager spawnManager;
     public GameObject train, fenceLevel1, fenceLevel2, furnace;
+    public UpgardeManager upgardeManager;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     private void Awake()
     {
@@ -21,7 +22,7 @@ public class GameController : MonoBehaviour
     }
     IEnumerator Start()
     {
-        train.transform.DOMoveX(0, 1);
+        train.transform.DOMoveX(-4, 1);
         PlayerController.instance.enabled = false;
         for (int i = 0; i < allCameras.Count; i++)
         {
@@ -44,11 +45,12 @@ public class GameController : MonoBehaviour
         yield return new WaitForSeconds(2);
         allCameras[1].SetActive(true);
         yield return new WaitForSeconds(2.5f);
-        baseController.Init();
-        furnace.transform.DOScale(Vector3.one * 0.011f, 0.2f).SetLoops(6, LoopType.Yoyo);
         allCameras[2].SetActive(true);
         PlayerController.instance.enabled = true;
         spawnManager.gameObject.SetActive(true);
+        yield return new WaitForSeconds(1);
+        furnace.transform.DOScale(Vector3.one * 0.009f, 0.1f).SetLoops(6, LoopType.Yoyo);
+        baseController.Init();
         /*  craneObject.transform.DORotate(new Vector3(0, -125, 0), 40, RotateMode.FastBeyond360).SetSpeedBased().SetEase(Ease.Linear).OnComplete(() =>
          {
              baseController.Init();
@@ -65,8 +67,11 @@ public class GameController : MonoBehaviour
 
     IEnumerator StartRestartGame()
     {
+        upgardeManager.tower1.enabled = false;
+        upgardeManager.tower2.enabled = false;
         PlayerController.instance.enabled = false;
 
+        allCameras[6].SetActive(false);
         allCameras[3].SetActive(true);
 
         yield return new WaitForSeconds(0.5f);
@@ -75,12 +80,13 @@ public class GameController : MonoBehaviour
         yield return new WaitForSeconds(2);
         allCameras[4].SetActive(true);
         yield return new WaitForSeconds(2.5f);
-        furnace.transform.DOScale(Vector3.one * 0.011f, 0.2f).SetLoops(6, LoopType.Yoyo);
         baseController.Init();
         allCameras[3].SetActive(false);
         allCameras[4].SetActive(false);
         PlayerController.instance.enabled = true;
         moneyTrigger.DropMoney();
         moneyTrigger.isTriggered = false;
+        yield return new WaitForSeconds(1f);
+        furnace.transform.DOScale(Vector3.one * 0.009f, 0.1f).SetLoops(6, LoopType.Yoyo);
     }
 }

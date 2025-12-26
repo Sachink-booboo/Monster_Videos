@@ -73,6 +73,11 @@ public class UnlockObject : MonoBehaviour
         {
             moneyTrigger.DropMoney();
             moneyTrigger.isTriggered = false;
+            GameController.instance.upgardeManager.tower1.enabled = true;
+        }
+        else
+        {
+            GameController.instance.upgardeManager.tower2.enabled = true;
         }
         fillImage.transform.parent.gameObject.SetActive(false);
     }
