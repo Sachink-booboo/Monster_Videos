@@ -71618,8 +71618,8 @@ MonoBehaviour:
   isMissile: 0
   enemyLayerMask:
     serializedVersion: 2
-    m_Bits: 0
-  impactRange: 0
+    m_Bits: 128
+  impactRange: 1
 --- !u!54 &-4706806444763673436
 Rigidbody:
   m_ObjectHideFlags: 0

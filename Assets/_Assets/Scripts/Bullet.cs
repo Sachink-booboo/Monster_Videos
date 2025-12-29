@@ -44,6 +44,20 @@ public class Bullet : PoolableObject
     {
         if (other.TryGetComponent(out Enemy enemy))
         {
+
+            if (impactRange > 0)
+            {
+                Collider[] enemies = Physics.OverlapSphere(transform.position, impactRange, enemyLayerMask);
+                foreach (Collider e in enemies)
+                {
+                    Enemy temp = e.GetComponent<Enemy>();
+                    if (temp != null) // only if Enemy component is present
+                    {
+                        temp.Damage();
+                    }
+                }
+            }
+
             if (isMissile)
             {
                 Collider[] enemies = Physics.OverlapSphere(transform.position, impactRange, enemyLayerMask);
