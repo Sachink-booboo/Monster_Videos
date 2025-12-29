@@ -52,7 +52,7 @@ public class GameController : MonoBehaviour
         PlayerController.instance.enabled = true;
         spawnManager.gameObject.SetActive(true);
         yield return new WaitForSeconds(1);
-        furnace.transform.DOScale(Vector3.one * 0.009f, 0.1f).SetLoops(6, LoopType.Yoyo);
+        furnace.transform.DOScale(Vector3.one * 0.011f, 0.1f).SetLoops(6, LoopType.Yoyo);
         baseController.Init();
         /*  craneObject.transform.DORotate(new Vector3(0, -125, 0), 40, RotateMode.FastBeyond360).SetSpeedBased().SetEase(Ease.Linear).OnComplete(() =>
          {
@@ -83,14 +83,15 @@ public class GameController : MonoBehaviour
         yield return new WaitForSeconds(2);
         allCameras[4].SetActive(true);
         yield return new WaitForSeconds(2.5f);
-        baseController.Init();
         allCameras[3].SetActive(false);
         allCameras[4].SetActive(false);
         PlayerController.instance.enabled = true;
         moneyTrigger.DropMoney();
         moneyTrigger.isTriggered = false;
         yield return new WaitForSeconds(1f);
-        furnace.transform.DOScale(Vector3.one * 0.009f, 0.1f).SetLoops(6, LoopType.Yoyo);
+        furnace.transform.DOScale(Vector3.one * 0.011f, 0.1f).SetLoops(6, LoopType.Yoyo);
+        yield return new WaitForSeconds(0.5f);
+        baseController.Init2();
     }
 
     public void animateMaterial()

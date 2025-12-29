@@ -59,11 +59,9 @@ public class CraneUpgrade : MonoBehaviour
         effect2.Play();
         yield return new WaitForSeconds(0.2f);
         crack2.SetActive(true);
-        yield return new WaitForSeconds(0.1f);
         effect3.Play();
         yield return new WaitForSeconds(0.1f);
         crack3.SetActive(true);
-        yield return new WaitForSeconds(0.1f);
         effect4.Play();
         yield return new WaitForSeconds(0.1f);
         crack4.SetActive(true);

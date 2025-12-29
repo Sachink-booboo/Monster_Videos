@@ -27,6 +27,7 @@ public class MoneyTrigger : MonoBehaviour
     }
     IEnumerator StartDropMoney()
     {
+        yield return new WaitForSeconds(0.5f);
         for (int i = 0; i < 32; i++)
         {
             yield return new WaitForSeconds(0.03f);
@@ -56,6 +57,10 @@ public class MoneyTrigger : MonoBehaviour
         {
             unlockCollider1.enabled = true;
             unlockCollider2.enabled = true;
+        }
+        if (index == 2)
+        {
+            GameController.instance.upgardeManager.moneyDropPoint.gameObject.SetActive(true);
         }
         if (index == 3)
         {

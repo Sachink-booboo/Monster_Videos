@@ -7,10 +7,11 @@ public class UpgardeManager : MonoBehaviour
 {
     public ParticleSystem effect;
     public Animator animator1, animator2;
-    public Transform point1, point2, point3, point4;
+    public Transform point1, point2, point3, point4, moneyDropPoint;
     public bool isTriggered;
     public MoneyTrigger moneyTrigger;
     public Archery tower1, tower2;
+    public UnlockObject unlockObject;
     void OnTriggerEnter(Collider other)
     {
         if (other.TryGetComponent(out PlayerController player))
@@ -27,9 +28,14 @@ public class UpgardeManager : MonoBehaviour
         {
             var temp = moneyTrigger.allMoney[i];
             temp.transform.parent = null;
-            temp.transform.DOJump(transform.position, 3, 1, 0.2f);
+            temp.transform.DOJump(moneyDropPoint.position, 3, 1, 0.2f).OnComplete(() =>
+            {
+                temp.transform.localScale = Vector3.zero;
+            });
             yield return new WaitForSeconds(0.05f);
         }
+        yield return new WaitForSeconds(0.15f);
+        moneyDropPoint.gameObject.SetActive(false);
         transform.DOScale(Vector3.one * 0.57f, 0.1f).OnComplete(() => transform.DOScale(Vector3.one * 0.52f, 0.1f));
         // GameController.instance.spawnManager.isStop = true;
         effect.Play();
@@ -38,6 +44,8 @@ public class UpgardeManager : MonoBehaviour
         GameController.instance.spawnManager.SpawnMoreEnemy();
         moneyTrigger.DropMoney();
         moneyTrigger.isTriggered = false;
+        unlockObject.moneyDropPoint.gameObject.SetActive(true);
+
     }
 
     public void MoveToTower1()

@@ -52,12 +52,8 @@ public class Archery : MonoBehaviour
         if (other.TryGetComponent(out PlayerController player))
         {
             if (player.allBullets.Count <= 0) return;
-            this.enabled = true;
             animator.Play("Shoot");
-            if (isSecondTower)
-            {
-                moneyTrigger.DropMoney();
-            }
+
             StartCoroutine(DropBullets());
         }
     }
@@ -71,6 +67,12 @@ public class Archery : MonoBehaviour
             var obj = player.allBullets[player.allBullets.Count - 1];
             player.allBullets.Remove(obj);
             obj.transform.DOJump(banditCharacter.transform.position, 2, 1, 0.3f).OnComplete(() => Destroy(obj.gameObject));
+        }
+        yield return new WaitForSeconds(0.5f);
+        this.enabled = true;
+        if (isSecondTower)
+        {
+            moneyTrigger.DropMoney();
         }
     }
 

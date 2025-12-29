@@ -10,7 +10,7 @@ public class UnlockObject : MonoBehaviour
     public GameObject unlockObj;
     public MoneyTrigger moneyTrigger;
     public Storage storage;
-    public Transform point1, point2, point3;
+    public Transform point1, point2, point3, moneyDropPoint;
     public bool isTriggered;
     public Image fillImage;
     public TextMeshProUGUI fillText;
@@ -46,6 +46,8 @@ public class UnlockObject : MonoBehaviour
             });
             yield return new WaitForSeconds(0.05f);
         }
+        yield return new WaitForSeconds(0.15f);
+        moneyDropPoint.gameObject.SetActive(false);
         GameController.instance.fenceLevel1.SetActive(false);
         GameController.instance.fenceLevel2.transform.localScale = Vector3.zero;
         GameController.instance.fenceLevel2.SetActive(true);
@@ -69,6 +71,8 @@ public class UnlockObject : MonoBehaviour
         unlockObj.transform.DOScale(Vector3.one * 1.5f, 0.1f).OnComplete(() => unlockObj.transform.DOScale(Vector3.one, 0.1f));
 
         StartCoroutine(StartMovingBullet());
+        fillImage.transform.parent.gameObject.SetActive(false);
+        yield return new WaitForSeconds(2f);
         if (moneyIndex == 16)
         {
             moneyTrigger.DropMoney();
@@ -79,7 +83,6 @@ public class UnlockObject : MonoBehaviour
         {
             GameController.instance.upgardeManager.tower2.enabled = true;
         }
-        fillImage.transform.parent.gameObject.SetActive(false);
     }
 
     IEnumerator StartMovingBullet()
@@ -89,18 +92,19 @@ public class UnlockObject : MonoBehaviour
             var temp = storage.allBullets[0];
             storage.allBullets.Remove(temp);
             MoveBullet(temp);
-            yield return new WaitForSeconds(0.05f);
+            yield return new WaitForSeconds(0.16f);
         }
     }
 
     public void MoveBullet(GameObject bullet)
     {
+        bullet.GetComponent<Rigidbody>().isKinematic = true;
         bullet.transform.position = point1.position;
         bullet.transform.rotation = point1.rotation;
-        bullet.transform.DOMove(point2.position, 10).SetSpeedBased().OnComplete(() =>
+        bullet.transform.DOMove(point2.position, 4).SetEase(Ease.Linear).SetSpeedBased().OnComplete(() =>
         {
             bullet.transform.rotation = point2.rotation;
-            bullet.transform.DOMove(point3.position, 10).SetSpeedBased().OnComplete(() =>
+            bullet.transform.DOMove(point3.position, 4).SetEase(Ease.Linear).SetSpeedBased().OnComplete(() =>
                    {
                        Destroy(bullet.gameObject);
                    });
@@ -113,7 +117,7 @@ public class UnlockObject : MonoBehaviour
         fillImage.fillAmount = 0f;
         fillText.text = "15";
 
-        float duration = 2f; // adjust if needed
+        float duration = 0.8f; // adjust if needed
 
         // Fill image animation (0 -> 1)
         DOTween.To(
