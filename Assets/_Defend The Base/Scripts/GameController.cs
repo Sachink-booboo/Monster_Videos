@@ -10,13 +10,14 @@ public class GameController : MonoBehaviour
     public static GameController instance;
     public Animator craneAnimator;
     public List<GameObject> allCameras;
-    public GameObject craneObject;
+    public GameObject craneObject, money;
     public BaseController baseController;
     public MoneyTrigger moneyTrigger;
     public SpawnManager spawnManager;
     public GameObject train, fenceLevel1, fenceLevel2, furnace;
     public UpgardeManager upgardeManager;
     public Material material;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     private void Awake()
     {

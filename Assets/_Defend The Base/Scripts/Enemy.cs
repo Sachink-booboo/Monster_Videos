@@ -4,6 +4,7 @@ using DG.Tweening;
 using UnityEngine;
 using Random = UnityEngine.Random;
 using UnityEngine.UI;
+using Unity.Mathematics;
 
 public class Enemy : PoolableObject
 {
@@ -66,7 +67,8 @@ public class Enemy : PoolableObject
         currentState = idleHash;
         animator.Play(idleHash);
         int rand = Random.Range(0, 2);
-        finalRunHash = rand == 0 ? runHash : runHash2;
+        // finalRunHash = rand == 0 ? runHash : runHash2;
+        finalRunHash = runHash;
         if (!isBoss)
         {
             offset = new Vector3(Random.Range(-3, 3), 0, Random.Range(-1, 1));
@@ -280,9 +282,14 @@ public class Enemy : PoolableObject
 
     public void Dead()
     {
-        Vector3 spawnPos = transform.position + new Vector3(0, 1.75f, 0);
+        /* Vector3 spawnPos = transform.position + new Vector3(0, 1.75f, 0);
         var coin = ObjectPooling.Instance.Spawn<BloodParticle>(PoolType.goldCoin, spawnPos);
-        coin.Play(Vector3.up);
+        coin.Play(Vector3.up); */
+
+        var temp = Vector3.zero;
+        temp.y = Random.Range(0, 360);
+        var money = Instantiate(GameController.instance.money.gameObject, transform.position, Quaternion.Euler(temp));
+        money.transform.DOJump(transform.position, 2f, 1, 1f).SetEase(Ease.Linear);
         // Vector3 floatingTextSpawnPos = CameraShake.instance.cam.WorldToScreenPoint(spawnPos);
         // FloatingText floatingText = ObjectPooling.Instance.Spawn<FloatingText>(PoolType.ScoreText,floatingTextSpawnPos);
         //floatingText.ShowText(1);
@@ -329,7 +336,7 @@ public class Enemy : PoolableObject
         }
         else
         {
-            DOVirtual.DelayedCall(3f, () =>
+            DOVirtual.DelayedCall(1.5f, () =>
             {
                 gameObject.SetActive(false);
             });
