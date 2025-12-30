@@ -37,7 +37,6 @@ public class UpgardeManager : MonoBehaviour
         yield return new WaitForSeconds(0.15f);
         moneyDropPoint.gameObject.SetActive(false);
         transform.DOScale(Vector3.one * 0.57f, 0.1f).OnComplete(() => transform.DOScale(Vector3.one * 0.52f, 0.1f));
-        // GameController.instance.spawnManager.isStop = true;
         effect.Play();
         MoveToTower1();
         MoveToTower2();

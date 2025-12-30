@@ -73,6 +73,9 @@ public class GameController : MonoBehaviour
     {
         upgardeManager.tower1.enabled = false;
         upgardeManager.tower2.enabled = false;
+        upgardeManager.tower1.animator.enabled = false;
+        upgardeManager.tower2.animator.enabled = false;
+
         PlayerController.instance.enabled = false;
 
         allCameras[6].SetActive(false);

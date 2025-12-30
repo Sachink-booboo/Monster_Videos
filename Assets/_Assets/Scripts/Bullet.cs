@@ -12,7 +12,7 @@ public class Bullet : PoolableObject
     [SerializeField] private ParticleSystem bulletTrail;
     public bool isMissile;
     [SerializeField] private LayerMask enemyLayerMask;
-    [SerializeField] private float impactRange;
+    public float impactRange;
 
     private void Update()
     {

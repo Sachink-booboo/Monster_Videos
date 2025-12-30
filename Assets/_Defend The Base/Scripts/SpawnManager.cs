@@ -6,7 +6,7 @@ public class SpawnManager : MonoBehaviour
     [Header("Spawn Settings")]
     public Transform[] spawnPoints, targetPoints;
     // [SerializeField] private int maxEnemy = 200;
-    [SerializeField] private float spawnInterval = 0.5f;
+    public float spawnInterval = 0.5f;
 
     [Header("References")]
     public List<GameObject> enemyPrefab;
@@ -24,6 +24,7 @@ public class SpawnManager : MonoBehaviour
 
     public void SpawnMoreEnemy()
     {
+        spawnInterval = 0.05f;
         for (int i = 0; i < 50; i++)
             SpawnEnemy();
     }

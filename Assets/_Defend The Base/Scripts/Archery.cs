@@ -32,12 +32,21 @@ public class Archery : MonoBehaviour
 
     public GameObject gun1, gun2;
     public List<Enemy> triggeredEnemy;
-    public bool isArchery;
+    public bool isArchery, isMultiShot;
 
     void Start()
     {
         ChangeState(ArcheryAnimStates.BowIdle);
-        banditCharacter.transform.DORotate(new Vector3(0, 230, 0), 2).SetLoops(-1, LoopType.Yoyo);
+        if (isArchery) banditCharacter.transform.DORotate(new Vector3(0, 230, 0), 2).SetLoops(-1, LoopType.Yoyo);
+
+        if (isMultiShot)
+        {
+            animator.Play("MultyShot");
+        }
+        else
+        {
+            animator.Play("Shoot");
+        }
     }
 
     // Update is called once per frame
@@ -52,7 +61,6 @@ public class Archery : MonoBehaviour
         if (other.TryGetComponent(out PlayerController player))
         {
             if (player.allBullets.Count <= 0) return;
-            animator.Play("Shoot");
 
             StartCoroutine(DropBullets());
         }
@@ -84,24 +92,51 @@ public class Archery : MonoBehaviour
         if (Time.time < lastFireTime + (1f / fireRate))
             return;
 
-        Enemy nearest;
-        if (isArchery)
+        if (isMultiShot)
         {
-            nearest = FindNearestTriggeredEnemyInForward();
+            for (int i = 0; i < 3; i++)
+            {
+                Enemy nearest;
+                if (isArchery)
+                {
+                    nearest = FindNearestTriggeredEnemyInForward();
+                }
+                else
+                {
+                    nearest = FindNearestMummy();
+                }
+                if (nearest == null) return;
+
+                lastFireTime = Time.time;
+                nearest.isTriggered = true;
+
+                // RotateTowards(nearest.transform.position);
+                ChangeState(ArcheryAnimStates.Shoot);
+
+                StartCoroutine(ShootRoutine(nearest));
+            }
         }
         else
         {
-            nearest = FindNearestMummy();
+            Enemy nearest;
+            if (isArchery)
+            {
+                nearest = FindNearestTriggeredEnemyInForward();
+            }
+            else
+            {
+                nearest = FindNearestMummy();
+            }
+            if (nearest == null) return;
+
+            lastFireTime = Time.time;
+            nearest.isTriggered = true;
+
+            // RotateTowards(nearest.transform.position);
+            ChangeState(ArcheryAnimStates.Shoot);
+
+            StartCoroutine(ShootRoutine(nearest));
         }
-        if (nearest == null) return;
-
-        lastFireTime = Time.time;
-        nearest.isTriggered = true;
-
-        // RotateTowards(nearest.transform.position);
-        ChangeState(ArcheryAnimStates.Shoot);
-
-        StartCoroutine(ShootRoutine(nearest));
     }
 
     Enemy FindNearestTriggeredEnemyInForward()
@@ -230,6 +265,8 @@ public class Archery : MonoBehaviour
         GameObject arrow = Instantiate(arrowPrefab, arrowSpawnPoint.position, Quaternion.identity);
         arrow.transform.LookAt(enemy.transform);
 
+        if (isMultiShot) arrow.GetComponent<Bullet>().impactRange = 2;
+
         Vector3 targetPos = enemy.transform.position + Vector3.up * 1f;
 
         while (Vector3.Distance(arrow.transform.position, targetPos) > 0.2f)
@@ -269,9 +306,10 @@ public class Archery : MonoBehaviour
     {
         gun1.SetActive(false);
         gun2.SetActive(true);
-        arrowPrefab = ObjectPooling.Instance.poolPrefabs[6].prefab.gameObject;
-        fireRate = 5;
-        animator.Play("RpgShoot");
+        // arrowPrefab = ObjectPooling.Instance.poolPrefabs[6].prefab.gameObject;
+        fireRate = 7;
+        animator.Play("MultyShot");
+        isMultiShot = true;
     }
 }
 public enum ArcheryAnimStates
