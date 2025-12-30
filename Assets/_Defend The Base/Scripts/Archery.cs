@@ -9,7 +9,7 @@ public class Archery : MonoBehaviour
     // public Animator animator;
     public Animator animator;
     public GameObject banditCharacter;
-    public Transform arrowSpawnPoint;
+    public Transform arrowSpawnPoint, arrowSpawnPoint2;
     public GameObject arrowPrefab;
     public ParticleSystem effect, effect2;
 
@@ -262,7 +262,15 @@ public class Archery : MonoBehaviour
     {
         yield return new WaitForSeconds(0.2f);
 
-        GameObject arrow = Instantiate(arrowPrefab, arrowSpawnPoint.position, Quaternion.identity);
+        GameObject arrow;
+        if (isMultiShot)
+        {
+            arrow = Instantiate(arrowPrefab, arrowSpawnPoint2.position, arrowSpawnPoint2.rotation);
+        }
+        else
+        {
+            arrow = Instantiate(arrowPrefab, arrowSpawnPoint.position, arrowSpawnPoint.rotation);
+        }
         arrow.transform.LookAt(enemy.transform);
 
         if (isMultiShot) arrow.GetComponent<Bullet>().impactRange = 2;
