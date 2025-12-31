@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Collections.Generic;
 using DG.Tweening;
 using TMPro;
 using UnityEngine;
@@ -15,6 +16,7 @@ public class UnlockObject : MonoBehaviour
     public Image fillImage;
     public TextMeshProUGUI fillText;
     public bool isLast;
+    public List<GameObject> allObjects;
 
     void OnTriggerEnter(Collider other)
     {
@@ -36,9 +38,17 @@ public class UnlockObject : MonoBehaviour
 
     IEnumerator DropAllMoney()
     {
+        // Fill image animation (0 -> 1)
+        DOTween.To(
+            () => fillImage.fillAmount,
+            x => fillImage.fillAmount = x,
+            1f,
+            2f
+        ).SetEase(Ease.Linear);
         for (int i = 0; i < 32; i++)
         {
             var temp = moneyTrigger.allMoney[i];
+            // moneyTrigger.allMoney.RemoveAt(i);
             temp.transform.parent = null;
             temp.transform.DOJump(transform.position, 2, 1, 0.1f).OnComplete(() =>
             {
@@ -53,14 +63,19 @@ public class UnlockObject : MonoBehaviour
         GameController.instance.fenceLevel2.SetActive(true);
         GameController.instance.fenceLevel2.transform.DOScale(Vector3.one, 0.01f);
         GameController.instance.allCameras[5].SetActive(true);
+        for (int i = 0; i < allObjects.Count; i++)
+        {
+            allObjects[i].SetActive(false);
+        }
     }
 
     IEnumerator DropMoney()
     {
         UpdateUI();
-        for (int i = moneyIndex; i < moneyIndex + 16; i++)
+        for (int i = 16 - 1; i >= 0; i--)
         {
             var temp = moneyTrigger.allMoney[i];
+            moneyTrigger.allMoney.RemoveAt(i);
             temp.transform.parent = null;
             temp.transform.DOJump(transform.position, 3, 1, 0.2f);
             yield return new WaitForSeconds(0.05f);

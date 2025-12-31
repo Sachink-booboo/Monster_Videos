@@ -22,8 +22,9 @@ public class MoneyTrigger : MonoBehaviour
 
     public void DropMoney()
     {
+        GameController.instance.DropMoney();
         GetComponent<Collider>().enabled = true;
-        StartCoroutine(StartDropMoney());
+        // StartCoroutine(StartDropMoney());
     }
     IEnumerator StartDropMoney()
     {
@@ -67,5 +68,17 @@ public class MoneyTrigger : MonoBehaviour
             unlockCollider3.enabled = true;
         }
         index++;
+    }
+
+    public void AddMoneyToList(GameObject money)
+    {
+        money.transform.DOScale(Vector3.one * 2, 0.5f);
+        money.transform.DOJump(transform.position, 2, 1, 1f).OnComplete(() =>
+        {
+            money.transform.parent = transform;
+            money.transform.eulerAngles = Vector3.zero;
+            allMoney.Add(money);
+        });
+
     }
 }

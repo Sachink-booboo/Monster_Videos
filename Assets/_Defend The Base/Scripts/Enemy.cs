@@ -280,8 +280,11 @@ public class Enemy : PoolableObject
         }
     }
 
+    bool isDeadCalled = false;
     public void Dead()
     {
+        if (isDeadCalled) return;
+        isDeadCalled = true;
         /* Vector3 spawnPos = transform.position + new Vector3(0, 1.75f, 0);
         var coin = ObjectPooling.Instance.Spawn<BloodParticle>(PoolType.goldCoin, spawnPos);
         coin.Play(Vector3.up); */
@@ -289,7 +292,10 @@ public class Enemy : PoolableObject
         var temp = Vector3.zero;
         temp.y = Random.Range(0, 360);
         var money = Instantiate(GameController.instance.money.gameObject, transform.position, Quaternion.Euler(temp));
-        money.transform.DOJump(transform.position, 2f, 1, 1f).SetEase(Ease.Linear);
+        money.transform.DOJump(transform.position, 2f, 1, 1f).SetEase(Ease.Linear).OnComplete(() =>
+        {
+            GameController.instance.allMoneyObjects.Add(money);
+        });
         // Vector3 floatingTextSpawnPos = CameraShake.instance.cam.WorldToScreenPoint(spawnPos);
         // FloatingText floatingText = ObjectPooling.Instance.Spawn<FloatingText>(PoolType.ScoreText,floatingTextSpawnPos);
         //floatingText.ShowText(1);

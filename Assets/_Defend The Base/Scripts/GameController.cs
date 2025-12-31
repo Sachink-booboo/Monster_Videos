@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using DG.Tweening;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Rendering;
 
@@ -17,6 +18,7 @@ public class GameController : MonoBehaviour
     public GameObject train, fenceLevel1, fenceLevel2, furnace;
     public UpgardeManager upgardeManager;
     public Material material;
+    public List<GameObject> allMoneyObjects;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     private void Awake()
@@ -42,6 +44,35 @@ public class GameController : MonoBehaviour
         {
             StartCoroutine(ReturnToBase());
         }); */
+    }
+
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.C))
+        {
+            DropMoney();
+        }
+    }
+
+    public void DropMoney()
+    {
+        StartCoroutine(StartDropMoney());
+        // for (int i = 0; i < 32; i++)
+        // {
+        //     var temp = allMoneyObjects[0];
+        //     moneyTrigger.AddMoneyToList(temp);
+        // }
+    }
+
+    IEnumerator StartDropMoney()
+    {
+        for (int i = 0; i < 32; i++)
+        {
+            var temp = allMoneyObjects[0];
+            allMoneyObjects.RemoveAt(0);
+            moneyTrigger.AddMoneyToList(temp);
+            yield return new WaitForSeconds(0.05f);
+        }
     }
 
     IEnumerator ReturnToBase()

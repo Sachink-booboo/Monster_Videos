@@ -27,6 +27,7 @@ public class UpgardeManager : MonoBehaviour
         for (int i = 32 - 1; i >= 0; i--)
         {
             var temp = moneyTrigger.allMoney[i];
+            moneyTrigger.allMoney.Remove(temp);
             temp.transform.parent = null;
             temp.transform.DOJump(moneyDropPoint.position, 3, 1, 0.2f).OnComplete(() =>
             {
