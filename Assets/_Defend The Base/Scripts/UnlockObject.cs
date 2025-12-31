@@ -93,10 +93,12 @@ public class UnlockObject : MonoBehaviour
             moneyTrigger.DropMoney();
             moneyTrigger.isTriggered = false;
             GameController.instance.upgardeManager.tower1.enabled = true;
+            GameController.instance.upgardeManager.tower1.bulletIcon.SetActive(false);
         }
         else
         {
             GameController.instance.upgardeManager.tower2.enabled = true;
+            GameController.instance.upgardeManager.tower2.bulletIcon.SetActive(false);
         }
     }
 
