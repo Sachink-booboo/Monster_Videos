@@ -71,8 +71,8 @@ public class GameController : MonoBehaviour
 
     IEnumerator StartRestartGame()
     {
-        upgardeManager.tower1.enabled = false;
-        upgardeManager.tower2.enabled = false;
+        upgardeManager.tower1.StopShotting();
+        upgardeManager.tower2.StopShotting();
         PlayerController.instance.enabled = false;
 
         allCameras[6].SetActive(false);

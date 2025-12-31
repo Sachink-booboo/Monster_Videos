@@ -77,11 +77,11 @@ public class UnlockObject : MonoBehaviour
         {
             moneyTrigger.DropMoney();
             moneyTrigger.isTriggered = false;
-            GameController.instance.upgardeManager.tower1.enabled = true;
+            GameController.instance.upgardeManager.tower1.StartShotting();
         }
         else
         {
-            GameController.instance.upgardeManager.tower2.enabled = true;
+            GameController.instance.upgardeManager.tower2.StartShotting();
         }
     }
 

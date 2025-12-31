@@ -42,6 +42,8 @@ public class Archery : MonoBehaviour
         ChangeState(ArcheryAnimStates.BowIdle);
         banditCharacter.transform.DORotate(new Vector3(0, 230, 0), 2).SetLoops(-1, LoopType.Yoyo);
         endPoint = startPoint;
+        startEffect.Play();
+        endEffect.Play();
     }
 
     // Update is called once per frame
@@ -83,7 +85,7 @@ public class Archery : MonoBehaviour
         if (other.TryGetComponent(out PlayerController player))
         {
             if (player.allBullets.Count <= 0) return;
-            animator.Play("Shoot");
+            // animator.Play("Shoot");
 
             StartCoroutine(DropBullets());
         }
@@ -101,6 +103,7 @@ public class Archery : MonoBehaviour
         }
         yield return new WaitForSeconds(0.5f);
         this.enabled = true;
+        animator.Play("Attack");
         if (isSecondTower)
         {
             moneyTrigger.DropMoney();
@@ -265,6 +268,25 @@ public class Archery : MonoBehaviour
         arrowPrefab = ObjectPooling.Instance.poolPrefabs[6].prefab.gameObject;
         fireRate = 5;
         animator.Play("RpgShoot");
+    }
+
+    public void StartShotting()
+    {
+        enabled = true;
+        startEffect.Play();
+        endEffect.Play();
+        animator.Play("Attack");
+    }
+
+    public void StopShotting()
+    {
+        enabled = false;
+        startEffect.Stop();
+        endEffect.Stop();
+        Vector3 scale = cylinderObject.transform.localScale;
+        scale.y = 0;
+        animator.Play("Idle");
+        cylinderObject.transform.localScale = scale;
     }
 }
 public enum ArcheryAnimStates
