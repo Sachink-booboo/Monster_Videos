@@ -71720,6 +71720,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BowArrow
       objectReference: {fileID: 0}
+    - target: {fileID: 2938277104677302490, guid: bf61a7ec019c54503b98347910ca0ed8, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using DG.Tweening;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Archery : MonoBehaviour
@@ -9,7 +10,9 @@ public class Archery : MonoBehaviour
     // public Animator animator;
     public Animator animator;
     public GameObject banditCharacter;
-    public Transform arrowSpawnPoint;
+    public GameObject cylinderObject;
+    public Transform startPoint, endPoint;
+    public ParticleSystem startEffect, endEffect;
     public GameObject arrowPrefab;
     public ParticleSystem effect, effect2;
 
@@ -38,13 +41,41 @@ public class Archery : MonoBehaviour
     {
         ChangeState(ArcheryAnimStates.BowIdle);
         banditCharacter.transform.DORotate(new Vector3(0, 230, 0), 2).SetLoops(-1, LoopType.Yoyo);
+        endPoint = startPoint;
     }
 
     // Update is called once per frame
     void Update()
     {
         CheckAndShootMummy();
+        UpdateLaser(startPoint, endPoint);
+        endEffect.transform.position = endPoint.position + new Vector3(0, 2f, 0);
     }
+
+    void UpdateLaser(Transform start, Transform end)
+    {
+        if (!cylinderObject) return;
+
+        Vector3 startPos = start.position;
+        Vector3 endPos = end.position + new Vector3(0, 2f, 0);
+
+        // Direction & distance
+        Vector3 direction = endPos - startPos;
+        float distance = direction.magnitude;
+
+        // Position at midpoint
+        cylinderObject.transform.position = startPos + direction * 0.5f;
+
+        // Rotate (Cylinder points up by default)
+        cylinderObject.transform.up = direction.normalized;
+
+        // Scale (Y = half distance because Unity cylinder height = 2)
+        Vector3 scale = cylinderObject.transform.localScale;
+        scale.y = distance * 0.5f;
+        cylinderObject.transform.localScale = scale;
+        start.LookAt(end);
+    }
+
 
     void OnTriggerEnter(Collider other)
     {
@@ -100,7 +131,8 @@ public class Archery : MonoBehaviour
 
         // RotateTowards(nearest.transform.position);
         ChangeState(ArcheryAnimStates.Shoot);
-
+        endPoint = nearest.transform;
+        // endPoint.transform.position = nearest.transform.position + Vector3.up * 2f;
         StartCoroutine(ShootRoutine(nearest));
     }
 
@@ -152,45 +184,6 @@ public class Archery : MonoBehaviour
         return nearest;
     }
 
-    Enemy FindNearestMummyInForward()
-    {
-        Enemy[] enemies = FindObjectsOfType<Enemy>();
-        float minDist = detectionRadius;
-        Enemy nearest = null;
-
-        Vector3 origin = banditCharacter.transform.position;
-        Vector3 forward = banditCharacter.transform.forward;
-
-        foreach (var enemy in enemies)
-        {
-            if (enemy.isDead || enemy.isTriggered)
-                continue;
-
-            Vector3 dir = enemy.transform.position - origin;
-            float distance = dir.magnitude;
-
-            if (distance > detectionRadius)
-                continue;
-
-            dir.Normalize();
-
-            // Forward direction check
-            float dot = Vector3.Dot(forward, dir);
-
-            // Adjust this value to control shoot angle
-            if (dot < 0.1f)
-                continue;
-
-            if (distance < minDist)
-            {
-                minDist = distance;
-                nearest = enemy;
-            }
-        }
-
-        return nearest;
-    }
-
     Enemy FindNearestMummy()
     {
         Enemy[] mummies = FindObjectsOfType<Enemy>();
@@ -227,7 +220,7 @@ public class Archery : MonoBehaviour
     {
         yield return new WaitForSeconds(0.2f);
 
-        GameObject arrow = Instantiate(arrowPrefab, arrowSpawnPoint.position, Quaternion.identity);
+        GameObject arrow = Instantiate(arrowPrefab, startPoint.position, Quaternion.identity);
         arrow.transform.LookAt(enemy.transform);
 
         Vector3 targetPos = enemy.transform.position + Vector3.up * 1f;
