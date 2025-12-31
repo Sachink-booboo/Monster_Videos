@@ -32,6 +32,7 @@ public class CraneUpgrade : MonoBehaviour
         for (int i = 32 - 1; i >= 0; i--)
         {
             var temp = moneyTrigger.allMoney[i];
+            moneyTrigger.allMoney.Remove(temp);
             temp.transform.parent = null;
             temp.transform.DOJump(transform.position, 3, 1, 0.2f);
             yield return new WaitForSeconds(0.05f);

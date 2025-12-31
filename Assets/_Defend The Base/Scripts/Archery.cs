@@ -30,7 +30,7 @@ public class Archery : MonoBehaviour
     public bool isSecondTower;
     public MoneyTrigger moneyTrigger;
 
-    public GameObject gun1, gun2;
+    public GameObject gun1, gun2, bulletIcon;
     public List<Enemy> triggeredEnemy;
     public bool isArchery, isMultiShot;
 
@@ -78,6 +78,7 @@ public class Archery : MonoBehaviour
         }
         yield return new WaitForSeconds(0.5f);
         this.enabled = true;
+        bulletIcon.SetActive(false);
         if (isSecondTower)
         {
             moneyTrigger.DropMoney();

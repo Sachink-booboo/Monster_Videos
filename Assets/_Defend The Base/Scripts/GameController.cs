@@ -17,6 +17,7 @@ public class GameController : MonoBehaviour
     public GameObject train, fenceLevel1, fenceLevel2, furnace;
     public UpgardeManager upgardeManager;
     public Material material;
+    public List<GameObject> allMoneyObjects;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     private void Awake()
@@ -75,6 +76,8 @@ public class GameController : MonoBehaviour
         upgardeManager.tower2.enabled = false;
         upgardeManager.tower1.animator.enabled = false;
         upgardeManager.tower2.animator.enabled = false;
+        upgardeManager.tower1.bulletIcon.SetActive(true);
+        upgardeManager.tower2.bulletIcon.SetActive(true);
 
         PlayerController.instance.enabled = false;
 
@@ -107,5 +110,26 @@ public class GameController : MonoBehaviour
                .DOOffset(new Vector2(0f, -1f), "_BaseMap", 2f) // move texture on X
                .SetEase(Ease.Linear)
                .SetLoops(-1, LoopType.Incremental); // infinite loop
+    }
+
+    public void DropMoney()
+    {
+        StartCoroutine(StartDropMoney());
+        // for (int i = 0; i < 32; i++)
+        // {
+        //     var temp = allMoneyObjects[0];
+        //     moneyTrigger.AddMoneyToList(temp);
+        // }
+    }
+
+    IEnumerator StartDropMoney()
+    {
+        for (int i = 0; i < 32; i++)
+        {
+            var temp = allMoneyObjects[0];
+            allMoneyObjects.RemoveAt(0);
+            moneyTrigger.AddMoneyToList(temp);
+            yield return new WaitForSeconds(0.05f);
+        }
     }
 }

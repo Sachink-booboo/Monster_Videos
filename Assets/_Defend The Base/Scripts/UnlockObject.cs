@@ -36,6 +36,13 @@ public class UnlockObject : MonoBehaviour
 
     IEnumerator DropAllMoney()
     {
+        DOTween.To(
+            () => fillImage.fillAmount,
+            x => fillImage.fillAmount = x,
+            1f,
+            2
+        ).SetEase(Ease.Linear);
+
         for (int i = 0; i < 32; i++)
         {
             var temp = moneyTrigger.allMoney[i];
@@ -58,9 +65,10 @@ public class UnlockObject : MonoBehaviour
     IEnumerator DropMoney()
     {
         UpdateUI();
-        for (int i = moneyIndex; i < moneyIndex + 16; i++)
+        for (int i = 15; i >= 0; i--)
         {
             var temp = moneyTrigger.allMoney[i];
+            moneyTrigger.allMoney.Remove(temp);
             temp.transform.parent = null;
             temp.transform.DOJump(transform.position, 3, 1, 0.2f);
             yield return new WaitForSeconds(0.05f);
@@ -79,11 +87,13 @@ public class UnlockObject : MonoBehaviour
             moneyTrigger.isTriggered = false;
             GameController.instance.upgardeManager.tower1.enabled = true;
             GameController.instance.upgardeManager.tower1.animator.enabled = true;
+            GameController.instance.upgardeManager.tower1.bulletIcon.SetActive(false);
         }
         else
         {
             GameController.instance.upgardeManager.tower2.enabled = true;
             GameController.instance.upgardeManager.tower2.animator.enabled = true;
+            GameController.instance.upgardeManager.tower2.bulletIcon.SetActive(false);
         }
     }
 
