@@ -24091,6 +24091,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: RocketMissileFire
       objectReference: {fileID: 0}
+    - target: {fileID: 131070, guid: 4b21d8abf8d26b449b109c8edb5cc78a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 197782, guid: 4b21d8abf8d26b449b109c8edb5cc78a, type: 3}
       propertyPath: m_IsActive
       value: 0

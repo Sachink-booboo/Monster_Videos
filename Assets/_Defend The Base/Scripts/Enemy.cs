@@ -290,6 +290,9 @@ public class Enemy : PoolableObject
         temp.y = Random.Range(0, 360);
         var money = Instantiate(GameController.instance.money.gameObject, transform.position, Quaternion.Euler(temp));
         money.transform.DOJump(transform.position, 2f, 1, 1f).SetEase(Ease.Linear);
+        GameController.instance.allMoneyObjects.Add(money);
+        var effect = Instantiate(GameController.instance.effect, transform.position + Vector3.up, Quaternion.identity);
+
         // Vector3 floatingTextSpawnPos = CameraShake.instance.cam.WorldToScreenPoint(spawnPos);
         // FloatingText floatingText = ObjectPooling.Instance.Spawn<FloatingText>(PoolType.ScoreText,floatingTextSpawnPos);
         //floatingText.ShowText(1);

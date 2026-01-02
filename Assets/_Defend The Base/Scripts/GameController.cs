@@ -16,7 +16,9 @@ public class GameController : MonoBehaviour
     public SpawnManager spawnManager;
     public GameObject train, fenceLevel1, fenceLevel2, furnace;
     public UpgardeManager upgardeManager;
-    public Material material;
+    public Material material, material2;
+    public List<GameObject> allMoneyObjects;
+    public ParticleSystem effect;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     private void Awake()
@@ -101,8 +103,36 @@ public class GameController : MonoBehaviour
         material.SetTextureOffset("_BaseMap", Vector2.zero);
 
         material
-               .DOOffset(new Vector2(0f, -1f), "_BaseMap", 2f) // move texture on X
+               .DOOffset(new Vector2(0f, -2f), "_BaseMap", 2f) // move texture on X
+               .SetEase(Ease.Linear)
+               .SetLoops(-1, LoopType.Incremental); // infinite loop
+
+        material2.SetTextureOffset("_BaseMap", Vector2.zero);
+        material2
+               .DOOffset(new Vector2(0f, -2f), "_BaseMap", 2f) // move texture on X
                .SetEase(Ease.Linear)
                .SetLoops(-1, LoopType.Incremental); // infinite loop
     }
+
+    public void DropMoney()
+    {
+        StartCoroutine(StartDropMoney());
+        // for (int i = 0; i < 32; i++)
+        // {
+        //     var temp = allMoneyObjects[0];
+        //     moneyTrigger.AddMoneyToList(temp);
+        // }
+    }
+
+    IEnumerator StartDropMoney()
+    {
+        for (int i = 0; i < 32; i++)
+        {
+            var temp = allMoneyObjects[0];
+            allMoneyObjects.RemoveAt(0);
+            moneyTrigger.AddMoneyToList(temp);
+            yield return new WaitForSeconds(0.05f);
+        }
+    }
+
 }

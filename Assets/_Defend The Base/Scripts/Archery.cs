@@ -11,7 +11,7 @@ public class Archery : MonoBehaviour
     public Animator animator;
     public GameObject banditCharacter;
     public GameObject cylinderObject;
-    public Transform startPoint, endPoint;
+    public Transform startPoint, endPoint, startPoint2;
     public ParticleSystem startEffect, endEffect;
     public GameObject arrowPrefab;
     public ParticleSystem effect, effect2;
@@ -33,14 +33,15 @@ public class Archery : MonoBehaviour
     public bool isSecondTower;
     public MoneyTrigger moneyTrigger;
 
-    public GameObject gun1, gun2;
+    public GameObject gun1, gun2, bulletIcon;
     public List<Enemy> triggeredEnemy;
     public bool isArchery;
+    [SerializeField] private float endEffectMoveSpeed = 10f;
 
     void Start()
     {
         ChangeState(ArcheryAnimStates.BowIdle);
-        banditCharacter.transform.DORotate(new Vector3(0, 230, 0), 2).SetLoops(-1, LoopType.Yoyo);
+        if (isArchery) banditCharacter.transform.DORotate(new Vector3(0, 230, 0), 4).SetLoops(-1, LoopType.Yoyo);
         endPoint = startPoint;
         startEffect.Play();
         endEffect.Play();
@@ -52,11 +53,24 @@ public class Archery : MonoBehaviour
         CheckAndShootMummy();
         UpdateLaser(startPoint, endPoint);
         endEffect.transform.position = endPoint.position + new Vector3(0, 2f, 0);
+        /*  Vector3 targetPos = endPoint.position + new Vector3(0, 2f, 0);
+         endEffect.transform.position = Vector3.Lerp(
+             endEffect.transform.position,
+             targetPos,
+             Time.deltaTime * endEffectMoveSpeed
+         ); */
+
+        /*   Vector3 targetPos = endPoint.position + new Vector3(0, 2f, 0);
+          endEffect.transform.DOMove(targetPos, 1f); */
     }
 
+    [Header("Laser Smoothing")]
+    [SerializeField] private float laserPositionSmooth = 15f;
+    [SerializeField] private float laserRotationSmooth = 15f;
+    [SerializeField] private float laserScaleSmooth = 15f;
     void UpdateLaser(Transform start, Transform end)
     {
-        if (!cylinderObject) return;
+        if (!cylinderObject || !start || !end) return;
 
         Vector3 startPos = start.position;
         Vector3 endPos = end.position + new Vector3(0, 2f, 0);
@@ -65,18 +79,59 @@ public class Archery : MonoBehaviour
         Vector3 direction = endPos - startPos;
         float distance = direction.magnitude;
 
-        // Position at midpoint
-        cylinderObject.transform.position = startPos + direction * 0.5f;
+        if (distance < 0.01f) return;
 
-        // Rotate (Cylinder points up by default)
-        cylinderObject.transform.up = direction.normalized;
+        // ---------- TARGET VALUES ----------
+        Vector3 targetMidPos = startPos + direction * 0.5f;
+        Quaternion targetRotation = Quaternion.LookRotation(direction) * Quaternion.Euler(90f, 0f, 0f);
 
-        // Scale (Y = half distance because Unity cylinder height = 2)
-        Vector3 scale = cylinderObject.transform.localScale;
-        scale.y = distance * 0.5f;
-        cylinderObject.transform.localScale = scale;
+        Vector3 targetScale = cylinderObject.transform.localScale;
+        targetScale.y = distance * 0.5f; // cylinder height logic
+
+        // ---------- SMOOTH APPLY ----------
+        cylinderObject.transform.position = Vector3.Lerp(
+            cylinderObject.transform.position,
+            targetMidPos,
+            Time.deltaTime * laserPositionSmooth
+        );
+
+        cylinderObject.transform.rotation = Quaternion.Slerp(
+            cylinderObject.transform.rotation,
+            targetRotation,
+            Time.deltaTime * laserRotationSmooth
+        );
+
+        cylinderObject.transform.localScale = Vector3.Lerp(
+            cylinderObject.transform.localScale,
+            targetScale,
+            Time.deltaTime * laserScaleSmooth
+        );
         start.LookAt(end);
-    }
+    }   
+
+    /*  void UpdateLaser(Transform start, Transform end)
+     {
+         if (!cylinderObject) return;
+
+         Vector3 startPos = start.position;
+         Vector3 endPos = end.position + new Vector3(0, 2f, 0);
+
+         // Direction & distance
+         Vector3 direction = endPos - startPos;
+         float distance = direction.magnitude;
+
+         // Position at midpoint
+         cylinderObject.transform.position = startPos + direction * 0.5f;
+
+         // Rotate (Cylinder points up by default)
+         cylinderObject.transform.up = direction.normalized;
+
+         // Scale (Y = half distance because Unity cylinder height = 2)
+         Vector3 scale = cylinderObject.transform.localScale;
+         scale.y = distance * 0.5f;
+         cylinderObject.transform.localScale = scale;
+         start.LookAt(end);
+     } */
 
 
     void OnTriggerEnter(Collider other)
@@ -103,6 +158,7 @@ public class Archery : MonoBehaviour
         }
         yield return new WaitForSeconds(0.5f);
         this.enabled = true;
+        bulletIcon.SetActive(false);
         animator.Play("Attack");
         if (isSecondTower)
         {
@@ -268,11 +324,18 @@ public class Archery : MonoBehaviour
         arrowPrefab = ObjectPooling.Instance.poolPrefabs[6].prefab.gameObject;
         fireRate = 5;
         animator.Play("RpgShoot");
+        Vector3 scale = cylinderObject.transform.localScale;
+        scale.x = 0.35f;
+        scale.z = 0.35f;
+        cylinderObject.transform.localScale = scale;
+        startPoint = startPoint2;
+        cylinderObject.GetComponent<MeshRenderer>().material = GameController.instance.material2;
     }
 
     public void StartShotting()
     {
         enabled = true;
+        bulletIcon.SetActive(false);
         startEffect.Play();
         endEffect.Play();
         animator.Play("Attack");
@@ -281,11 +344,12 @@ public class Archery : MonoBehaviour
     public void StopShotting()
     {
         enabled = false;
+        bulletIcon.SetActive(true);
         startEffect.Stop();
         endEffect.Stop();
         Vector3 scale = cylinderObject.transform.localScale;
         scale.y = 0;
-        animator.Play("Idle");
+        animator.Play("Shoot");
         cylinderObject.transform.localScale = scale;
     }
 }
